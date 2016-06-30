@@ -5,7 +5,7 @@ using System.Web;
 
 namespace OnlineCourse.Models
 {
-    public class Quiz
+    public class QuizModels
     {
         public int QuizID { get; set; }
 
