@@ -5,7 +5,7 @@ using System.Web;
 
 namespace OnlineCourse.Models
 {
-    public class DiscussionForumComment
+    public class DiscussionForumCommentModels
     {
         public int CommentID { get; set; }
 
