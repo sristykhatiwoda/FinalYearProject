@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OnlineCourse.DapperObject
+{
+    interface I_QUIZ_Quiz
+    {
+        List<QUIZ_Quiz> Quizs();
+
+        QUIZ_Quiz Find(int? id);
+
+        int Add(QUIZ_Quiz quiz);
+
+        int Update(QUIZ_Quiz quiz);
+
+        int Delete(int? id);
+    }
+}
