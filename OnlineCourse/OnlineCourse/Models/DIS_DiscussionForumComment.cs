@@ -16,5 +16,7 @@ namespace OnlineCourse.Models
         public int UserID { get; set; }
 
         public int Date { get; set; }
+
+        public int StudentId { get; set; }
     }
 }
