@@ -9,13 +9,13 @@ namespace OnlineCourse.DapperObject
 {
     interface I_MS_Semester
     {
-        List<MS_SemesterDA> Semesters();
+        List<MS_Semester> Semesters();
 
-        MS_SemesterDA Find(int? id);
+        MS_Semester Find(int? id);
 
-        int Add(MS_SemesterDA semester);
+        int Add(MS_Semester semester);
 
-        int Update(MS_SemesterDA semester);
+        int Update(MS_Semester semester);
 
         int Delete(int? id);
     }
