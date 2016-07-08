@@ -34,7 +34,7 @@ namespace OnlineCourse.DapperObject
 
         public MS_Course Find(int? id)
         {
-            string query = "Select from MS_Course where id=" + id;
+            string query = "Select * from MS_Course where id=" + id;
             return db.Query<MS_Course>(query).SingleOrDefault();
 
         }

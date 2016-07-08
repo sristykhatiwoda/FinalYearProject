@@ -9,7 +9,7 @@ using OnlineCourse.Models;
 
 namespace OnlineCourse.DapperObject
 {
-    public class MS_SemesterDA:I_MS_Semester
+    public class MS_SemesterDA: I_MS_Semester
     {
         public static string connStr = System.Configuration.ConfigurationManager.
         ConnectionStrings["DefaultConnection"].ToString();
@@ -17,26 +17,26 @@ namespace OnlineCourse.DapperObject
         public static IDbConnection db = new SqlConnection(connStr);
 
 
-        public List<MS_SemesterDA> Semesters()
+        public List<MS_Semester> Semesters()
         {
-            return db.Query<MS_SemesterDA>("Select * from MS_Semester").ToList();
+            return db.Query<MS_Semester>("Select * from MS_Semester").ToList();
         }
 
-        public int Add(MS_SemesterDA semester)
+        public int Add(MS_Semester semester)
         {
             var sqlQuery = "Insert into MS_Semester(SemesterID, SemesterTitle) Values (@SemesterID, @SemesterTitle)";
             return db.Execute(sqlQuery, semester);
         }
 
 
-        public MS_SemesterDA Find(int? id)
+        public MS_Semester Find(int? id)
         {
             string query = "Select from MS_Semester where SemesterID=" + id;
-            return db.Query<MS_SemesterDA>(query).SingleOrDefault();
+            return db.Query<MS_Semester>(query).SingleOrDefault();
 
         }
 
-        public int Update(MS_SemesterDA semester)
+        public int Update(MS_Semester semester)
         {
             var sqlQuery = "Update MS_Semester set  SemesterTitle= @SemesterTitle Where SemesterID = @SemesterID";
             return db.Execute(sqlQuery, semester);
