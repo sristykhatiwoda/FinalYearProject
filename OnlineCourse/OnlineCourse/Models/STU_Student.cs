@@ -19,7 +19,7 @@ namespace OnlineCourse.Models
 
         public string Password { get; set; }
 
-        public int FacultyId { get; set; }
+        public int FacultyID { get; set; }
 
         public int BatchID { get; set; }
 
