@@ -11,7 +11,7 @@ namespace OnlineCourse.Models
 
         public int CourseID { get; set; }
 
-        public string QuizQuestions { get; set; }
+        public string QuizQuestion { get; set; }
 
         public string Answer { get; set; }
 
@@ -23,6 +23,6 @@ namespace OnlineCourse.Models
 
         public string Option4 { get; set; }
 
-        public int StudentId { get; set; }
+        public int UserId { get; set; }
     }
 }

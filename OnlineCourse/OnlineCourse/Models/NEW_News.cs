@@ -9,10 +9,12 @@ namespace OnlineCourse.Models
     {
         public int NewsID { get; set; }
 
-        public string NewsDiscription { get; set; }
+        public string NewsTitle { get; set; }
+
+        public string NewsDescription { get; set; }
 
         public int UserID { get; set; }
 
-        public string NewsTitle { get; set; }
+        
     }
 }
