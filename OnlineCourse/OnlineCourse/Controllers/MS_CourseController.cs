@@ -29,6 +29,7 @@ namespace OnlineCourse.Controllers
             }
             MS_Course course = db.Find(id);
             if (course == null)
+
             {
                 return HttpNotFound();
             }
@@ -112,7 +113,7 @@ namespace OnlineCourse.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            MS_Course course= db.Find(id);
+            
             db.Delete(id);
             return RedirectToAction("Index");
         }
