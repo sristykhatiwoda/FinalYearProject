@@ -18,17 +18,17 @@ namespace OnlineCourse.DapperObject
         public int Add(STU_Student student)
         {
             var sqlQuery = "Insert into STU_Student" +
-                "(FirstName,MiddleName,LastName,Email,Password,FacultyID,BatchID,SemesterID)" +
+                "(StudentID,FirstName,MiddleName,LastName,Email,Password,FacultyID,BatchID,SemesterID)" +
                 "VALUES" +
-                "(@FirstName,@MiddleName,@LastName,@Email,@Password,@FacultyID,@BatchID,@SemesterID)";
+                "(@StudentID,@FirstName,@MiddleName,@LastName,@Email,@Password,@FacultyID,@BatchID,@SemesterID)";
             return db.Execute(sqlQuery, student);
         }
 
         public int Update(STU_Student student)
         {
-            var sqlQuery = "Update STU_Student SET FirstName=@FirstName,MiddleName=@MiddleName " +
-               "LastName=@LastName,Email=@Email,Password=@Password,FacultyID=@FacultyID" +
-               "BatchID=@BatchID,SemesterID=@SemesterID";
+            var sqlQuery = "Update STU_Student SET FirstName=@FirstName,MiddleName=@MiddleName," +
+               "LastName=@LastName,Email=@Email,Password=@Password,FacultyID=@FacultyID," +
+               "BatchID=@BatchID,StudentID=@StudentID";
             return db.Execute(sqlQuery, student);
         }
 
@@ -44,7 +44,7 @@ namespace OnlineCourse.DapperObject
         public List<STU_Student> Students()
         {
 
-            return db.Query<STU_Student>("SELECT * FROM STU_Student").ToList();
+            return db.Query<STU_Student>("Select * from STU_Student").ToList();
         }
 
         public STU_Student Find(int? id)
