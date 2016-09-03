@@ -7,7 +7,7 @@ namespace OnlineCourse.Models
 {
     public class MS_Semester
     {
-        public int SemesterId { get; set; }
+        public int SemesterID { get; set; }
 
         public string SemesterTitle { get; set; }
 
