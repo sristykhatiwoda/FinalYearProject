@@ -26,23 +26,24 @@ namespace OnlineCourse.DapperObject
 
         public int Add(SC_User user)
         {
-            var sqlQuery = "Insert into SC_User(UserID, FirstName, MiddleName, LastName, Email, Phone, Address, Password, UserTypeID)" +
-                "Values(@UserID, @FirstName, @MiddleName, @LastName, @Email, @Phone, @Address, @Password, @UserTypeID)";
+            var sqlQuery = "Insert into SC_User (FirstName, MiddleName, LastName, Email, Phone, Address, Password, UserTypeID)" +
+                "Values (@FirstName, @MiddleName, @LastName, @Email, @Phone, @Address, @Password, @UserTypeID)";
             return db.Execute(sqlQuery, user);
         }
 
         public SC_User Find(int? id)
         {
-            string query = "Select from SC_User where UserID" + id;
+            string query = "Select * from SC_User where UserID=" + id;
             return db.Query<SC_User>(query).SingleOrDefault();
 
         }
 
         public int Update(SC_User user)
         {
-            var sqlQuery = "Update SC_User set UserID = @UserID, FirstName = @FirstName, MiddleName = @MiddleName," +
-                "LastName = @LastName, Email = @Email, Phone = @Phone, Address = @Address, Password = @Password, UserTypeID = @UserTypeID" +
-                "Where UserID = @UserID";
+            var sqlQuery = "Update SC_User set FirstName = @FirstName, MiddleName = @MiddleName," +
+                "LastName = @LastName, Email = @Email, Phone = @Phone, Address = @Address,"+ 
+                "Password = @Password, UserTypeID = @UserTypeID Where UserID = @UserID";
+
             return db.Execute(sqlQuery, user);
         }
 

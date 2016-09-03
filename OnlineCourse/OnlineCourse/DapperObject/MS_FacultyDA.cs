@@ -25,14 +25,14 @@ namespace OnlineCourse.DapperObject
 
         public int Add(MS_Faculty faculty)
         {
-            var sqlQuery = "Insert into MS_Faculty(FacultyID, FacultyTitle) Values (@FacultyID, @FacultyTitle)";
+            var sqlQuery = "Insert into MS_Faculty(FacultyTitle) Values (@FacultyTitle)";
             return db.Execute(sqlQuery, faculty);
         }
         
 
         public MS_Faculty Find(int? id)
         {
-            string query = "Select from MS_Faculty where FacultyID=" + id;
+            string query = "Select * from MS_Faculty where FacultyID=" + id;
             return db.Query<MS_Faculty>(query).SingleOrDefault();
 
         }

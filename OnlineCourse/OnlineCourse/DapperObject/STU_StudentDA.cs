@@ -18,9 +18,9 @@ namespace OnlineCourse.DapperObject
         public int Add(STU_Student student)
         {
             var sqlQuery = "Insert into STU_Student" +
-                "(StudentID,FirstName,MiddleName,LastName,Email,Password,FacultyID,BatchID,SemesterID)" +
+                "(FirstName,MiddleName,LastName,Email,Password,FacultyID,BatchID,SemesterID)" +
                 "VALUES" +
-                "(@StudentID,@FirstName,@MiddleName,@LastName,@Email,@Password,@FacultyID,@BatchID,@SemesterID)";
+                "(@FirstName,@MiddleName,@LastName,@Email,@Password,@FacultyID,@BatchID,@SemesterID)";
             return db.Execute(sqlQuery, student);
         }
 
@@ -28,7 +28,7 @@ namespace OnlineCourse.DapperObject
         {
             var sqlQuery = "Update STU_Student SET FirstName=@FirstName,MiddleName=@MiddleName," +
                "LastName=@LastName,Email=@Email,Password=@Password,FacultyID=@FacultyID," +
-               "BatchID=@BatchID,StudentID=@StudentID";
+               "BatchID=@BatchID,SemesterID=@SemesterID";
             return db.Execute(sqlQuery, student);
         }
 

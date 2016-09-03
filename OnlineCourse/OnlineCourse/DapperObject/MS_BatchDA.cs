@@ -17,7 +17,7 @@ namespace OnlineCourse.DapperObject
         public static IDbConnection db = new SqlConnection(connStr);
         public int Add(MS_Batch batch)
         {
-            var sqlQuery = "Insert into MS_Batch(BatchID,Batch)values(@BatchID,@Batch)";
+            var sqlQuery = "Insert into MS_Batch(Batch)values(@Batch)";
             return db.Execute(sqlQuery, batch);   
         }
 
@@ -40,7 +40,7 @@ namespace OnlineCourse.DapperObject
     
         public int Update(MS_Batch batch)
         {
-            var sqlQuery = "Update MS_Batch set BatchID=@BatchID,BatchTitle=@BatchTitle where BatchID=@BatchID";
+            var sqlQuery = "Update MS_Batch set BatchTitle=@BatchTitle where BatchID=@BatchID";
             return db.Execute(sqlQuery);
         }
     }

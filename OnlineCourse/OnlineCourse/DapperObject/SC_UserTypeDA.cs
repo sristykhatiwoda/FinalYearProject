@@ -24,14 +24,14 @@ namespace OnlineCourse.DapperObject
 
         public int Add(SC_UserType userType)
         {
-            var sqlQuery = "Insert into SC_UserType(UserTypeID,Type) Values (@UserTypeID,@Type)";
+            var sqlQuery = "Insert into SC_UserType(Type) Values (@Type)";
             return db.Execute(sqlQuery, userType);
         }
 
 
         public SC_UserType Find(int? id)
         {
-            string query = "Select from SC_UserType where UserTypeID=" + id;
+            string query = "Select * from SC_UserType where UserTypeID=" + id;
             return db.Query<SC_UserType>(query).SingleOrDefault();
 
         }
