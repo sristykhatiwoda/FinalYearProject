@@ -14,7 +14,8 @@ namespace OnlineCourse.Controllers
     {
 
         private I_COU_CourseContent db = new COU_CourseContentDA();
-
+        private I_MS_Course dbCourse = new MS_CourseDA();
+        private I_SC_User dbUser = new SC_UserDA();
         // GET: COU_CourseContent
         public ActionResult Index()
         {
@@ -40,6 +41,8 @@ namespace OnlineCourse.Controllers
         // GET: COU_CourseContent/Create
         public ActionResult Create()
         {
+            ViewBag.CourseID = new SelectList(dbCourse.Courses(), "CourseID", "CourseTitle");
+            ViewBag.UserID = new SelectList(dbCourse.Courses(), "UserID", "FirstName");
             return View();
         }
 
@@ -75,6 +78,8 @@ namespace OnlineCourse.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CourseID = new SelectList(dbCourse.Courses(), "CourseID", "CourseTitle", courseContent.CourseID);
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName", courseContent.UserID);
             return View(courseContent);
         }
 
