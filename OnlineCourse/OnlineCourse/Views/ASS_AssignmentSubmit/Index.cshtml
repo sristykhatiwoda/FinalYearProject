@@ -13,26 +13,28 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SubmitAssignmentID)
+            SubmitAssignmentID
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SubmissionDate)
+            SubmissionDate
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Answer)
+            Answer
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Point)
+           Point
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Remarks)
+           Remarks
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AssignmentID)
+            Assignment
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StudentID)
+           StudentID
         </th>
+        <th>Student</th>
+
         <th></th>
     </tr>
 
@@ -54,10 +56,13 @@
             @Html.DisplayFor(modelItem => item.Remarks)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AssignmentID)
+            @Html.DisplayFor(modelItem => item.AssignmentPost.Questions)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StudentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.Student.FirstName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.SubmitAssignmentID}) |
