@@ -18,8 +18,8 @@ namespace OnlineCourse.DapperObject
 
         public int Add(ASS_AssignmentPost assignmentPost)
         {
-            var sqlQuery = "Insert into ASS_AssignmentPost(AssignmentID,Questions,"+
-               " Deadline,CourseID,UserID)Values(@AssignmentID,@Questions,@Deadline,@CourseID,@UserID)";
+            var sqlQuery = "Insert into ASS_AssignmentPost(Questions,"+
+               " Deadline,CourseID,UserID)Values(@Questions,@Deadline,@CourseID,@UserID)";
             return db.Execute(sqlQuery, assignmentPost);
         }
 
@@ -43,8 +43,8 @@ namespace OnlineCourse.DapperObject
 
         public int Update(ASS_AssignmentPost assignmentPost)
         {
-            var sqlQuery = "Update ASS_AssignmentPost set AssignmentID=@AssignmentID,"+
-                          "Questions=@Questions,Deadline=@Deadline,CourseID=@CourseID,"+
+            var sqlQuery = "Update ASS_AssignmentPost set Questions=@Questions," +
+                          "Deadline=@Deadline,CourseID=@CourseID,"+
                          "UserID=@UserID Where AssignmentID=@AssignmentID";
             return db.Execute(sqlQuery,assignmentPost);
         }

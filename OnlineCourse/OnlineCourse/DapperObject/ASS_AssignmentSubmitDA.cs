@@ -17,8 +17,8 @@ namespace OnlineCourse.DapperObject
         public static IDbConnection db = new SqlConnection(connStr);
         public int Add(ASS_AssignmentSubmit assignmentSubmit)
         {
-            var sqlQuery = "Insert into ASS_AssignmentSubmit(SubmitAssignmentID,SubmissionDate,Answer,Point,"+
-                "Remarks,AssignmentID,StudentID)Values(@SubmitAssignmentID,@SubmissionDate,@Answer,@Point,"+
+            var sqlQuery = "Insert into ASS_AssignmentSubmit(SubmissionDate,Answer,Point,"+
+                "Remarks,AssignmentID,StudentID)Values(@SubmissionDate,@Answer,@Point,"+
                "@Remarks,@AssignmentID,@StudentID )";
             return db.Execute(sqlQuery, assignmentSubmit);
 
@@ -43,8 +43,8 @@ namespace OnlineCourse.DapperObject
 
         public int Update(ASS_AssignmentSubmit assignmentSubmit)
         {
-            var sqlQuery = "Update ASS_AssignmentSubmit set SubmitAssignmentID=@SubmitAssignmentID," +
-                          "SubmissionDate=@SubmissionDate,Answer=@Answer,Point=@Point,Remarks=@Remarks" +
+            var sqlQuery = "Update ASS_AssignmentSubmit set " +
+                          "SubmissionDate=@SubmissionDate,Answer=@Answer,Point=@Point,Remarks=@Remarks," +
                          "AssignmentID=@AssignmentID Where SubmitAssignmentID=@SubmitAssignmentID";
             return db.Execute(sqlQuery, assignmentSubmit);
 
