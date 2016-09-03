@@ -12,6 +12,7 @@ namespace OnlineCourse.Controllers
     public class SC_UserController : Controller
     {
         private I_SC_User db = new SC_UserDA();
+        private I_SC_UserType dbUserType = new SC_UserTypeDA();
         // GET: SC_User
         public ActionResult Index()
         {
@@ -37,6 +38,7 @@ namespace OnlineCourse.Controllers
         // GET: SC_User/Create
         public ActionResult Create()
         {
+            ViewBag.UserTypeID = new SelectList(dbUserType.UserTypes(), "UserTypeID", "Type");
             return View();
         }
 
@@ -65,6 +67,7 @@ namespace OnlineCourse.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UserTypeID = new SelectList(dbUserType.UserTypes(), "UserTypeID", "Type",user.UserTypeID);
             return View(user);
         }
 

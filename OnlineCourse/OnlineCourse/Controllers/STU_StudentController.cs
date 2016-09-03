@@ -13,6 +13,9 @@ namespace OnlineCourse.Controllers
     public class STU_StudentController : Controller
     {
         private I_STU_Student db = new STU_StudentDA();
+        private I_MS_Faculty dbFaculty = new MS_FacultyDA();
+        private I_MS_Semester dbSemester = new MS_SemesterDA();
+        private I_MS_Batch dbBatch = new MS_BatchDA();
         // GET: STU_Student
         public ActionResult Index()
         {
@@ -38,7 +41,10 @@ namespace OnlineCourse.Controllers
 
         // GET: STU_Student/Create
         public ActionResult Create()
-        {
+        {   
+            ViewBag.FacultyID = new SelectList(dbFaculty.Faculties(), "FacultyID", "FacultyTitle");
+            ViewBag.BatchID = new SelectList(dbBatch.Batches(), "BatchID", "Batch");
+            ViewBag.SemesterID = new SelectList(dbSemester.Semesters(), "SemesterID", "SemesterTitle");
             return View();
         }
 
@@ -52,6 +58,8 @@ namespace OnlineCourse.Controllers
                 db.Add(student);
                 return RedirectToAction("Index");
             }
+           
+
             return View(student);
         }
 
@@ -67,6 +75,9 @@ namespace OnlineCourse.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.FacultyID = new SelectList(dbFaculty.Faculties(), "FacultyID", "FacultyTitle",student.FacultyID);
+            ViewBag.BatchID = new SelectList(dbBatch.Batches(), "BatchID", "Batch");
+            ViewBag.SemesterID = new SelectList(dbSemester.Semesters(), "SemesterID", "SemesterTitle",student.FacultyID);
             return View(student);
         }
 
@@ -80,6 +91,7 @@ namespace OnlineCourse.Controllers
                 db.Update(student);
                 return RedirectToAction("Index");
             }
+           
             return View(student);
         }
 

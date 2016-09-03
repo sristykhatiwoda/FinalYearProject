@@ -12,6 +12,8 @@ namespace OnlineCourse.Controllers
     public class ASS_AssignmentSubmitController : Controller
     {
         private I_ASS_AssignmentSubmit db = new ASS_AssignmentSubmitDA();
+        private I_ASS_AssignmentPost dbAssignmentPost = new ASS_AssignmentPostDA();
+        private I_STU_Student dbStudent = new STU_StudentDA();
         // GET: ASS_AssignmentSubmit
         public ActionResult Index()
         {
@@ -37,6 +39,8 @@ namespace OnlineCourse.Controllers
         // GET: ASS_AssignmentSubmit/Create
         public ActionResult Create()
         {
+            ViewBag.AssignmentID = new SelectList(dbAssignmentPost.AssignmentPost(), "AssignmentID", "Questions");
+            ViewBag.StudentID= new SelectList(dbStudent.Students(), "StudentID", "FirstName");
             return View();
         }
 
@@ -50,6 +54,7 @@ namespace OnlineCourse.Controllers
                 db.Add(assignmentSubmit);
                 return RedirectToAction("Index");
             }
+            ViewBag.AssignmentID = new SelectList(dbAssignmentPost.AssignmentPost(), "AssignmentID", "Questions");
             return View(assignmentSubmit);
         }
 
@@ -65,6 +70,8 @@ namespace OnlineCourse.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AssignmentID = new SelectList(dbAssignmentPost.AssignmentPost(), "AssignmentID", "Questions",assignmentSubmit.AssignmentID);
+            ViewBag.StudentID = new SelectList(dbStudent.Students(), "StudentID", "FirstName",assignmentSubmit.StudentID);
             return View(assignmentSubmit);
         }
     

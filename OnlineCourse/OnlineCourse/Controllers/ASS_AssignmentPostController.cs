@@ -12,6 +12,8 @@ namespace OnlineCourse.Controllers
     public class ASS_AssignmentPostController : Controller
     {
         private I_ASS_AssignmentPost db = new ASS_AssignmentPostDA();
+        private I_MS_Course dbCourse = new MS_CourseDA();
+        private I_SC_User dbUser = new SC_UserDA();
         // GET: ASS_AssignmentPost
         public ActionResult Index()
         {
@@ -38,6 +40,8 @@ namespace OnlineCourse.Controllers
         // GET: ASS_AssignmentPost/Create
         public ActionResult Create()
         {
+            ViewBag.CourseID= new SelectList(dbCourse.Courses(),"CourseID", "CourseTitle");
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName");
             return View();
         }
 
@@ -51,6 +55,9 @@ namespace OnlineCourse.Controllers
                 db.Add(assignmentPost);
                 return RedirectToAction("Index");
             }
+            ViewBag.CourseID = new SelectList(dbCourse.Courses(), "CourseID", "CourseTitle");
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName");
+
             return View(assignmentPost);
         }
 
@@ -66,18 +73,22 @@ namespace OnlineCourse.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CourseID = new SelectList(dbCourse.Courses(), "CourseID", "CourseTitle",assignmentPost.CourseID);
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName",assignmentPost.UserID);
             return View(assignmentPost);
         }
 
         // POST: ASS_AssignmentPost/Edit/5
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "AssignmentID,Questions,Deadline,CourseID,UserID")]ASS_AssignmentPost assignmentPost)
+        public ActionResult Edit([Bind(Include = "AssignmentID,Questions,Deadline,CourseID," +
+            "UserID")]ASS_AssignmentPost assignmentPost)
         {
             if (ModelState.IsValid)
             {
                 db.Update(assignmentPost);
                 return RedirectToAction("Index");
             }
+            
             return View(assignmentPost);
         }
 
