@@ -14,8 +14,9 @@ namespace OnlineCourse.Controllers
     {
 
         private I_COU_CourseContent db = new COU_CourseContentDA();
-        private I_MS_Course dbCourse = new MS_CourseDA();
         private I_SC_User dbUser = new SC_UserDA();
+        private I_MS_Course dbCourse = new MS_CourseDA();
+       
         // GET: COU_CourseContent
         public ActionResult Index()
         {
@@ -42,13 +43,13 @@ namespace OnlineCourse.Controllers
         public ActionResult Create()
         {
             ViewBag.CourseID = new SelectList(dbCourse.Courses(), "CourseID", "CourseTitle");
-            ViewBag.UserID = new SelectList(dbCourse.Courses(), "UserID", "FirstName");
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName");
             return View();
         }
 
         // POST: COU_CourseContent/Create
         [HttpPost]
-        public ActionResult Create(COU_CourseContent courseContent,HttpPostedFileBase file1)
+        public ActionResult Create(COU_CourseContent courseContent,HttpPostedFileBase file1,HttpPostedFileBase file2)
         {
            if(ModelState.IsValid)
             {
@@ -57,9 +58,15 @@ namespace OnlineCourse.Controllers
                     string fileName = file1.FileName;
                     string filePath = Path.Combine(Server.MapPath("~/files/CourseContent"), Path.GetFileName(fileName));
                     file1.SaveAs(filePath);
-                  courseContent.File = fileName;   
+                  courseContent.Video = fileName;   
                 }
-             
+                if (file2 !=null)
+                {
+                    string newFile = file2.FileName;
+                    string path = Path.Combine(Server.MapPath("~/files/CourseContent"), Path.GetFileName(newFile));
+                    file2.SaveAs(path);
+                    courseContent.Tutorials = newFile;
+                }
                 db.Add(courseContent);
                 return RedirectToAction("Index");
             }
