@@ -19,9 +19,9 @@ namespace OnlineCourse.DapperObject
         public int Add(QUIZ_Quiz quiz)
         {
             // throw new NotImplementedException();
-            var sqlQuery = "insert into QUIZ_Quiz (QuizID, QuizQuestion, Answer, Option1, Option2,"+
+            var sqlQuery = "insert into QUIZ_Quiz (QuizQuestion, Answer, Option1, Option2,"+
                 "Option3, Option4, CourseID, UserID) values"+
-                "(@QuizID, @QuizQuestion, @Answer, @Option1, @Option2, @Option3, @Option4, @CourseID, @UserID)";
+                "( @QuizQuestion, @Answer, @Option1, @Option2, @Option3, @Option4, @CourseID, @UserID)";
             return db.Execute(sqlQuery, quiz);
         }
 
