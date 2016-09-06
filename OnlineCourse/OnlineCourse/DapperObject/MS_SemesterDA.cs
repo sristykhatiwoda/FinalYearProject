@@ -24,7 +24,7 @@ namespace OnlineCourse.DapperObject
 
         public int Add(MS_Semester semester)
         {
-            var sqlQuery = "Insert into MS_Semester(SemesterID, SemesterTitle) Values (@SemesterID, @SemesterTitle)";
+            var sqlQuery = "Insert into MS_Semester(SemesterTitle) Values (@SemesterTitle)";
             return db.Execute(sqlQuery, semester);
         }
 
