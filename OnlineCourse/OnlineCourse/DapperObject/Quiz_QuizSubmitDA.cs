@@ -18,8 +18,8 @@ namespace OnlineCourse.DapperObject
         public int Add(QUIZ_QuizSubmit quizSubmit)
         {
             //throw new NotImplementedException();
-            var sqlQuery = "insert into QUIZ_QuizSubmit (QuizSubmitID, Answer, QuizPoint, StudentID, QuizID)"+
-                "values (@QuizSubmitID, @Answer, @QuizPoint, @StudentID, @QuizID)";
+            var sqlQuery = "insert into QUIZ_QuizSubmit  (Answer, QuizPoint, StudentID, QuizID)"+
+                "values (@Answer, @QuizPoint, @StudentID, @QuizID)";
             return db.Execute(sqlQuery, quizSubmit);
         }
 
@@ -46,7 +46,7 @@ namespace OnlineCourse.DapperObject
         public int Update(QUIZ_QuizSubmit quizSubmit)
         {
             //throw new NotImplementedException();
-            var sqlQuery = "update QUIZ_QuizSubmit set Answer=@Answer, QuizPoint=@QuizPoint,"+
+            var sqlQuery = "Update QUIZ_QuizSubmit set Answer=@Answer, QuizPoint=@QuizPoint,"+
                 " StudentID=@StudentID, QuizID=@QuizID where QuizSubmitId=@QuizSubmitId";
             return db.Execute(sqlQuery, quizSubmit);
         }

@@ -17,7 +17,7 @@ namespace OnlineCourse.DapperObject
         public static IDbConnection db = new SqlConnection(connStr);
         public int Add(MS_Course course)
         {
-            var sqlQuery = "Insert into MS_Course(CourseID,CourseTitle)Values(@CourseID,@CourseTitle)";
+            var sqlQuery = "Insert into MS_Course(CourseTitle)Values(@CourseTitle)";
             return db.Execute(sqlQuery, course);
         }
 
@@ -34,14 +34,18 @@ namespace OnlineCourse.DapperObject
 
         public MS_Course Find(int? id)
         {
+<<<<<<< .mine
+            string query = "Select * from MS_Course where CourseID=" + id;
+=======
             string query = "Select * from MS_Course where id=" + id;
+>>>>>>> .r80
             return db.Query<MS_Course>(query).SingleOrDefault();
 
         }
 
         public int Update(MS_Course course)
         {
-            var sqlQuery = "Update into MS_Course set CourseTitle=@CourseTitle Where CourseID=@CourseID";
+            var sqlQuery = "Update MS_Course set CourseTitle=@CourseTitle Where CourseID=@CourseID";
             return db.Execute(sqlQuery, course);
         }
     }
