@@ -17,7 +17,7 @@ namespace OnlineCourse.DapperObject
         
         public int Add(DIS_DiscussionForum forum)
         {
-            var sqlQuery = "Insert into DIS_DiscussionForum(Title,Description,Date,UserID) values(@Title,@Description,@Date,@UserID)";
+            var sqlQuery = "Insert into DIS_DiscussionForum(Title,Description,Date,UserID,StudentID) values(@Title,@Description,@Date,@UserID,@StudentID)";
             return db.Execute(sqlQuery,forum);
         }
 
@@ -37,7 +37,7 @@ namespace OnlineCourse.DapperObject
         public int Update(DIS_DiscussionForum forum)
         {
             //throw new NotImplementedException();
-            var sqlQuery = "Update DIS_DiscussionForum set Title=@Title,Description=@Description,Date=@Date,UserID=@UserID where DiscussionForumID=@DiscussionForumID";
+            var sqlQuery = "Update DIS_DiscussionForum set Title=@Title,Description=@Description,Date=@Date,UserID=@UserID,StudentID=@StudentID where DiscussionForumID=@DiscussionForumID";
             return db.Execute(sqlQuery, forum);
         }
 
