@@ -20,22 +20,21 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Video, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <img src="~/Video/CourseContent/" height="80" /><br />
+                <img src="~/files/CourseContent/" height="80" /><br />
                 @Html.HiddenFor(model => model.Video)
                 <input type="file" id="att1" name="file1" value="choose file" />
-                <input type="button" id="clear" value="Remove" onclick="clearfile1();" style="margin:5px 0 0 0;" />
                 @Html.ValidationMessageFor(model => model.Video, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Tutorials, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <img src="~/files/CourseContent/" height="80" /><br />
-                @Html.HiddenFor(model => model.File)
+                @Html.HiddenFor(model => model.Tutorials)
                 <input type="file" id="att1" name="file2" value="choose file" />
-                <input type="button" id="clear" value="Remove" onclick="clearfile1();" style="margin:5px 0 0 0;" />
-                @Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger" })
+                @*<input type="button" id="clear" value="Remove" onclick="clearfile1();" style="margin:5px 0 0 0;" />*@
+                @Html.ValidationMessageFor(model => model.Tutorials, "", new { @class = "text-danger" })
             </div>
         </div>
 
