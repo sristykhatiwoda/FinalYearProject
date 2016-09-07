@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace OnlineCourse.Models
 {
@@ -23,6 +26,9 @@ namespace OnlineCourse.Models
 
         public string Option4 { get; set; }
 
-        public int UserId { get; set; }
+        [ForeignKey("SC_User")]
+        public int UserID { get; set; }
+
+        public virtual SC_User User { get; set; } 
     }
 }
