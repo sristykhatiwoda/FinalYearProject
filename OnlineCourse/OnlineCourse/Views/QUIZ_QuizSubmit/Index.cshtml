@@ -1,0 +1,58 @@
+﻿@model IEnumerable<OnlineCourse.Models.QUIZ_QuizSubmit>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QuizSubmitID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuizID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuizPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Answer)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuizSubmitID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuizID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuizPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Answer)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.QuizSubmitID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.QuizSubmitID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.QuizSubmitID })
+        </td>
+    </tr>
+}
+
+</table>

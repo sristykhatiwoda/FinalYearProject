@@ -1,0 +1,65 @@
+﻿@model OnlineCourse.Models.QUIZ_QuizSubmit
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>QUIZ_QuizSubmit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizSubmitID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizSubmitID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuizPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Answer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Answer)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
