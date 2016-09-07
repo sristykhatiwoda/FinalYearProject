@@ -19,7 +19,7 @@
             @Html.DisplayNameFor(model => model.DiscussionForumID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Comments)
+            @Html.DisplayNameFor(model => model.Comment)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.UserID)
@@ -28,7 +28,7 @@
             @Html.DisplayNameFor(model => model.Date)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StudentId)
+            @Html.DisplayNameFor(model => model.StudentID)
         </th>
         <th></th>
     </tr>
@@ -42,7 +42,7 @@
             @Html.DisplayFor(modelItem => item.DiscussionForumID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Comments)
+            @Html.DisplayFor(modelItem => item.Comment)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UserID)
@@ -51,7 +51,7 @@
             @Html.DisplayFor(modelItem => item.Date)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.StudentId)
+            @Html.DisplayFor(modelItem => item.StudentID)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new {  id=item.CommentID }) |
