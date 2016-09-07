@@ -11,12 +11,12 @@ namespace OnlineCourse.Models
 
         public int DiscussionForumID { get; set; }
 
-        public string Comments { get; set; }
+        public string Comment { get; set; }
 
         public int UserID { get; set; }
 
-        public int Date { get; set; }
+        public string Date { get; set; }
 
-        public int StudentId { get; set; }
+        public int StudentID { get; set; }
     }
 }
