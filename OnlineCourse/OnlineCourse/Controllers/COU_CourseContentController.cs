@@ -56,14 +56,14 @@ namespace OnlineCourse.Controllers
                 if (file1 != null)
                 {
                     string fileName = file1.FileName;
-                    string filePath = Path.Combine(Server.MapPath("~/files/CourseContent"), Path.GetFileName(fileName));
+                    string filePath = Path.Combine(Server.MapPath("~/CourseContent/Video"), Path.GetFileName(fileName));
                     file1.SaveAs(filePath);
                   courseContent.Video = fileName;   
                 }
                 if (file2 !=null)
                 {
                     string newFile = file2.FileName;
-                    string path = Path.Combine(Server.MapPath("~/files/CourseContent"), Path.GetFileName(newFile));
+                    string path = Path.Combine(Server.MapPath("~/CourseContent/File"), Path.GetFileName(newFile));
                     file2.SaveAs(path);
                     courseContent.Tutorials = newFile;
                 }
@@ -92,10 +92,25 @@ namespace OnlineCourse.Controllers
 
         // POST: COU_CourseContent/Edit/5
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "CourseContentID,Video,File,CouserID,UserID")]COU_CourseContent courseContent)
+        public ActionResult Edit(COU_CourseContent courseContent,HttpPostedFileBase file1,HttpPostedFileBase file2)
         {
             if(ModelState.IsValid)
             {
+                if (file1 != null)
+                {
+                    string fileName = file1.FileName;
+                    string filePath = Path.Combine(Server.MapPath("~/CourseContent/Video"), Path.GetFileName(fileName));
+                    file1.SaveAs(filePath);
+                    courseContent.Video = fileName;
+
+                }
+                if (file2 != null)
+                {
+                    string newFile = file2.FileName;
+                    string path = Path.Combine(Server.MapPath("~/CourseContent/file"), Path.GetFileName(newFile));
+                    file2.SaveAs(path);
+                    courseContent.Tutorials = newFile;
+                }
                 db.Update(courseContent);
                 return RedirectToAction("Index");
             }
