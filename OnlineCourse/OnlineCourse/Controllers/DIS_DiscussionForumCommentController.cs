@@ -15,6 +15,7 @@ namespace OnlineCourse.Controllers
         private I_SC_User dbUser = new SC_UserDA();
         private I_STU_Student dbStudent = new STU_StudentDA();
         private I_DIS_DiscussionForumComment db = new DIS_DiscussionForumCommentDA();
+        private I_DIS_DiscussionForum dbForum = new DIS_DiscussionForumDA();
         // GET: DIS_DiscussionForumComment
         public ActionResult Index()
         {
@@ -40,8 +41,9 @@ namespace OnlineCourse.Controllers
         // GET: DIS_DiscussionForumComment/Create
         public ActionResult Create()
         {
-            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FisrtName");
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName");
             ViewBag.StudentID = new SelectList(dbStudent.Students(), "StudentID", "FirstName");
+            ViewBag.DiscussionForumID = new SelectList(dbForum.discussionForum(), "DiscussionForumID", "Title");
             return View();
         }
 
@@ -56,6 +58,7 @@ namespace OnlineCourse.Controllers
             }
             ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName");
             ViewBag.StudentID = new SelectList(dbStudent.Students(), "StudentID", "FirstName" );
+            ViewBag.DiscussionForumID = new SelectList(dbForum.discussionForum(), "DiscussionForumID", "Title");
             return View(comments);
         }
 
@@ -71,8 +74,9 @@ namespace OnlineCourse.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName" + " " + "LastName", comments.UserID);
-            ViewBag.StudentID = new SelectList(dbStudent.Students(), "StudentID", "FirstName" ,comments.StudentId);
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName", comments.UserID);
+            ViewBag.StudentID = new SelectList(dbStudent.Students(), "StudentID", "FirstName" ,comments.StudentID);
+            ViewBag.DiscussionForumID = new SelectList(dbForum.discussionForum(), "DiscussionForumID", "Title",comments.DiscussionForumID);
             return View(comments);
         }
 
