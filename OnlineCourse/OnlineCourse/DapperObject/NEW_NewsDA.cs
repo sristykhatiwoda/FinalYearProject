@@ -19,35 +19,35 @@ namespace OnlineCourse.DapperObject
         public int Add(NEW_News news)
         {
             //throw new NotImplementedException();
-            var sqlQuery = "insert into NEW_News (NewsID, NewsTitle, NewsDescription, UserID)"+
-                " values (@NewsID,@NewsTitle,@NewsDescription,@UserID)";
+            var sqlQuery = "Insert into NEW_News (NewsTitle, NewsDescription, UserID)"+
+                " values (@NewsTitle,@NewsDescription,@UserID)";
             return db.Execute(sqlQuery, news); 
         }
 
         public int Delete(int? id)
         {
             // throw new NotImplementedException();
-            var sqlQuery = "delete from NEW_News where NewsID=" + id;
+            var sqlQuery = "Delete from NEW_News where NewsID=" + id;
             return db.Execute(sqlQuery);
         }
 
         public NEW_News Find(int? id)
         {
             // throw new NotImplementedException();
-            string query = "select * from NEW_News where NewsID=" + id;
+            string query = "Select * from NEW_News where NewsID=" + id;
             return db.Query<NEW_News>(query).SingleOrDefault();
         }
 
         public List<NEW_News> News()
         {
             //throw new NotImplementedException();
-            return db.Query<NEW_News>("select * from NEW_News").ToList();
+            return db.Query<NEW_News>("Select * from NEW_News").ToList();
         }
 
         public int Update(NEW_News news)
         {
             //throw new NotImplementedException();
-            var sqlQuery = "update NEW_News set NewsTitle = @NewsTitle,"+
+            var sqlQuery = "Update NEW_News set NewsTitle = @NewsTitle,"+
                 "NewsDescription=@NewsDescription, UserID=@UserID where NewsID=@NewsID";
             return db.Execute(sqlQuery, news);
         }
