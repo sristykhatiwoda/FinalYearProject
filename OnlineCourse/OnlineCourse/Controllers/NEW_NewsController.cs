@@ -12,6 +12,7 @@ namespace OnlineCourse.Controllers
     public class NEW_NewsController : Controller
     {
         private I_NEW_News db = new NEW_NewsDA();
+        private I_SC_User dbUser = new SC_UserDA();
         // GET: NEW_News
         public ActionResult Index()
         {
@@ -34,7 +35,7 @@ namespace OnlineCourse.Controllers
         }
         public ActionResult Create()
         {
-
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName");
             return View();
         }
 
@@ -63,6 +64,7 @@ namespace OnlineCourse.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName", news.UserID);
             return View(news);
         }
 
