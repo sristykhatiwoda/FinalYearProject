@@ -25,6 +25,8 @@ namespace OnlineCourse.Models
 
         public int SemesterID { get; set; }
 
+        public virtual ICollection<ASS_AssignmentSubmit> submit { get; set; }
+
 
     }
 }
