@@ -24,7 +24,7 @@ namespace OnlineCourse.Controllers
         }
 
         // GET: DIS_DiscussionForum/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -87,8 +87,7 @@ namespace OnlineCourse.Controllers
                 db.Update(forum);
                 return RedirectToAction("Index");
             }
-            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName");
-            ViewBag.StudentID = new SelectList(dbStudent.Students(), "StudentID", "FirstName");
+           
             return View(forum);
             
         }
