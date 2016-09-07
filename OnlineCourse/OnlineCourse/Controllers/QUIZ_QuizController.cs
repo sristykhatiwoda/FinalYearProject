@@ -68,7 +68,7 @@ namespace OnlineCourse.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName",quiz.UserId);
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName",quiz.UserID);
             ViewBag.CourseID = new SelectList(dbCourse.Courses(), "CourseID", "CourseTitle",quiz.CourseID);
             return View(quiz);
         }
