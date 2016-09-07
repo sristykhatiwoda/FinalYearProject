@@ -15,6 +15,8 @@ namespace OnlineCourse.Models
         public int CourseID { get; set; }
         public int UserID { get; set; }
 
+        public virtual ICollection<ASS_AssignmentSubmit> submit { get; set; }
+
     }
 
 }
