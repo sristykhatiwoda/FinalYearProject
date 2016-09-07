@@ -17,7 +17,7 @@ namespace OnlineCourse.DapperObject
 
         public int Add(DIS_DiscussionForumComment comments)
         {
-            var sqlQuery = "Insert into DIS_DiscussionForumComment (Date,DiscussionForumID,UserID) values (@Date,@DiscussionForumID,@UserID)";
+            var sqlQuery = "Insert into DIS_DiscussionForumComment (Date,Comment,DiscussionForumID,UserID,StudentID) values (@Date,@Comment,@DiscussionForumID,@UserID,@StudentID)";
             return db.Execute(sqlQuery, comments);
             //throw new NotImplementedException();
         }
@@ -45,7 +45,8 @@ namespace OnlineCourse.DapperObject
         public int Update(DIS_DiscussionForumComment comments)
         {
             //throw new NotImplementedException();
-            var sqlQuery = "Update DIS_DiscussionForumComment set Date=@Date,DiscussionForumID=@DiscussionForumID,UserID=@UserID";
+            var sqlQuery = "Update DIS_DiscussionForumComment set Date=@Date,Comment=@Comment,DiscussionForumID=@DiscussionForumID,"+
+                "UserID=@UserID,StudentID=@StudentID Where CommentID=@CommentID";
             return db.Execute(sqlQuery, comments);
         }
     }
