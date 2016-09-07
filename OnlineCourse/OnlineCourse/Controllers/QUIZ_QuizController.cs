@@ -13,6 +13,8 @@ namespace OnlineCourse.Controllers
     {
         // GET: QUIZ_Quiz
         private I_QUIZ_Quiz db = new QUIZ_QuizDA();
+        private I_SC_User dbUser = new SC_UserDA();
+        private I_MS_Course dbCourse = new MS_CourseDA();
         public ActionResult Index()
         {
             var quiz = db.Quizs();
@@ -35,6 +37,8 @@ namespace OnlineCourse.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName");
+            ViewBag.CourseID = new SelectList(dbCourse.Courses(), "CourseID", "CourseTitle");
             return View();
         }
 
@@ -48,7 +52,8 @@ namespace OnlineCourse.Controllers
 
                 return RedirectToAction("Index");
             }
-
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName");
+            ViewBag.CourseID = new SelectList(dbCourse.Courses(), "CourseID", "CourseTitle");
             return View(quiz);
         }
 
@@ -63,6 +68,8 @@ namespace OnlineCourse.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName",quiz.UserId);
+            ViewBag.CourseID = new SelectList(dbCourse.Courses(), "CourseID", "CourseTitle",quiz.CourseID);
             return View(quiz);
         }
 
@@ -75,6 +82,8 @@ namespace OnlineCourse.Controllers
                 db.Update(quiz);
                 return RedirectToAction("Index");
             }
+            ViewBag.UserID = new SelectList(dbUser.Users(), "UserID", "FirstName");
+            ViewBag.CourseID = new SelectList(dbCourse.Courses(), "CourseID", "CourseTitle");
             return View(quiz);
         }
 
