@@ -35,7 +35,7 @@ namespace OnlineCourse.DapperObject
         public QUIZ_Quiz Find(int? id)
         {
             // throw new NotImplementedException();
-            string query = "select * from QUIZ_Quiz where QuizId=" + id;
+            string query = "select * from QUIZ_Quiz where QuizID=" + id;
             return db.Query<QUIZ_Quiz>(query).SingleOrDefault();
         }
 
