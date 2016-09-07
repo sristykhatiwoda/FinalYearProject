@@ -12,6 +12,8 @@ namespace OnlineCourse.Controllers
     public class QUIZ_QuizSubmitController : Controller
     {
         private I_QUIZ_QuizSubmit db = new Quiz_QuizSubmitDA();
+        private I_STU_Student dbStudent = new STU_StudentDA();
+        private I_QUIZ_Quiz dbQuiz = new QUIZ_QuizDA();
         // GET: QUIZ_QuizSubmit
         public ActionResult Index()
         {
@@ -35,6 +37,8 @@ namespace OnlineCourse.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.StudentID = new SelectList(dbStudent.Students(), "StudentID", "FirstName");
+            ViewBag.QuizID = new SelectList(dbQuiz.Quizs(), "QuizID", "QuizQuestion");
             return View();
         }
 
@@ -46,6 +50,7 @@ namespace OnlineCourse.Controllers
                 db.Add(quizSubmit);
                 return RedirectToAction("Index");
             }
+            
             return View(quizSubmit);
         }
 
@@ -60,6 +65,8 @@ namespace OnlineCourse.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.StudentID = new SelectList(dbStudent.Students(), "StudentID", "FirstName", quizSubmit.StudentID);
+            ViewBag.QuizID = new SelectList(dbQuiz.Quizs(), "QuizID", "QuizQuestion", quizSubmit.QuizID);
             return View(quizSubmit);
         }
 
@@ -71,6 +78,7 @@ namespace OnlineCourse.Controllers
                 db.Update(quizSubmit);
                 return RedirectToAction("Index");
             }
+         
             return View(quizSubmit);
         }
 
