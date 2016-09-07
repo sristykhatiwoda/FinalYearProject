@@ -20,6 +20,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Video, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                <img src="~/CourseContent/Video/@Model.Video" height="80" /><br />
                 @Html.HiddenFor(model => model.Video)
                 <input type="file" id="att1" name="file1" value="choose file" />
                 @Html.ValidationMessageFor(model => model.Video, "", new { @class = "text-danger" })
@@ -29,7 +30,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Tutorials, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <img src="~/CourseContent/file/" height="80" /><br />
+                <img src="~/CourseContent/file/@Model.Tutorials" height="80" /><br />
                 @Html.HiddenFor(model => model.Tutorials)
                 <input type="file" id="att2" name="file2" value="choose file" />
                 @*<input type="button" id="clear" value="Remove" onclick="clearfile2();" style="margin:5px 0 0 0;" />*@
@@ -38,7 +39,7 @@
         </div>
 
         <div class="form-group">
-           CourseName
+            <div class="control-label col-md-2">Course Title</div>
             <div class="col-md-10">
                 @Html.DropDownList("CourseID", String.Empty)
                 @Html.ValidationMessageFor(model => model.CourseID)
@@ -46,7 +47,7 @@
         </div>
 
         <div class="form-group">
-           UserName
+            <div class="control-label col-md-2">User Name</div>
             <div class="col-md-10">
                 @Html.DropDownList("UserID", String.Empty)
                 @Html.ValidationMessageFor(model => model.UserID)
