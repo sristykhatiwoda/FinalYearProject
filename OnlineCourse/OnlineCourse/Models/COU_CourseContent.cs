@@ -11,7 +11,7 @@ namespace OnlineCourse.Models
 
         public string Video { get; set; }
 
-        public string File { get; set; }
+        public string Tutorials { get; set; }
 
         public int CourseID { get; set; }
 
