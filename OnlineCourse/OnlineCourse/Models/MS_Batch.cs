@@ -9,6 +9,6 @@ namespace OnlineCourse.Models
     {
          public int BatchID{ get; set; }
 
-         public string Batch{ get; set; } 
+         public string Year{ get; set; } 
     }
 }

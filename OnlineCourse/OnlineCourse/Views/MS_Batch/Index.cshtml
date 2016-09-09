@@ -16,7 +16,7 @@
             @Html.DisplayNameFor(model => model.BatchID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Batch)
+            @Html.DisplayNameFor(model => model.Year)
         </th>
         <th></th>
     </tr>
@@ -27,12 +27,12 @@
             @Html.DisplayFor(modelItem => item.BatchID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Batch)
+            @Html.DisplayFor(modelItem => item.Year)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.BatchID }) |
-            @Html.ActionLink("Details", "Details", new {  id=item.BatchID }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=item.BatchID})
+            @Html.ActionLink("Edit", "Edit", new { id=item.BatchID}) |
+            @Html.ActionLink("Details", "Details", new { id=item.BatchID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BatchID })
         </td>
     </tr>
 }

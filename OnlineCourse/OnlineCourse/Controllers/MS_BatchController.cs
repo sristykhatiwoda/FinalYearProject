@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using OnlineCourse.Models;
+using System.IO;
 using OnlineCourse.DapperObject;
+using OnlineCourse.Models;
 using System.Net;
 
 namespace OnlineCourse.Controllers
@@ -22,15 +23,15 @@ namespace OnlineCourse.Controllers
         // GET: MS_Batch/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            if(id==null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MS_Batch batch= db.Find(id);
-            if (batch == null)
-
+            MS_Batch batch = db.Find(id);
+            if(batch==null)
             {
                 return HttpNotFound();
+
             }
             return View(batch);
         }
@@ -43,7 +44,7 @@ namespace OnlineCourse.Controllers
 
         // POST: MS_Batch/Create
         [HttpPost]
-        public ActionResult Create([Bind(Include = "BatchID,Batch")] MS_Batch batch)
+        public ActionResult Create([Bind(Include ="BatchID,Year")]MS_Batch batch)
         {
             if (ModelState.IsValid)
             {
@@ -51,8 +52,6 @@ namespace OnlineCourse.Controllers
 
                 return RedirectToAction("Index");
             }
-
-            db.Add(batch);
             return View(batch);
         }
 
@@ -63,9 +62,8 @@ namespace OnlineCourse.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MS_Batch batch = db.Find(id);
+            MS_Batch batch= db.Find(id);
             if (batch == null)
-
             {
                 return HttpNotFound();
             }
@@ -74,15 +72,14 @@ namespace OnlineCourse.Controllers
 
         // POST: MS_Batch/Edit/5
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "BatchID,Batch")] MS_Batch batch)
+        public ActionResult Edit([Bind(Include = "BatchID,Year")] MS_Batch batch)
         {
             if (ModelState.IsValid)
             {
+                //db.Entry(category).State = EntityState.Modified;
                 db.Update(batch);
-
                 return RedirectToAction("Index");
             }
-
             return View(batch);
         }
 
@@ -93,9 +90,8 @@ namespace OnlineCourse.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-           MS_Batch batch = db.Find(id);
+            MS_Batch batch = db.Find(id);
             if (batch == null)
-
             {
                 return HttpNotFound();
             }

@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ASP_MVC_Sample\MVCTest1\MVCTest1\bin\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -77,6 +81,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\LENOVO-B470\Documents\Visual Studio 2015\Projects\MVCTest2\MVCTest2\bin\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\LENOVO-B470\Documents\Visual Studio 2015\Projects\MVCTest2\MVCTest2\bin\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -196,29 +208,182 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ASS_AssignmentPostController.cs" />
+    <Compile Include="Controllers\ASS_AssignmentSubmitController.cs" />
+    <Compile Include="Controllers\COU_CourseContentController.cs" />
+    <Compile Include="Controllers\DIS_DiscussionForumCommentController.cs" />
+    <Compile Include="Controllers\DIS_DiscussionForumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MS_BatchController.cs" />
+    <Compile Include="Controllers\MS_CourseController.cs" />
+    <Compile Include="Controllers\MS_FacultyController.cs" />
+    <Compile Include="Controllers\MS_SemesterController.cs" />
+    <Compile Include="Controllers\NEW_NewsController.cs" />
+    <Compile Include="Controllers\QUIZ_QuizController.cs" />
+    <Compile Include="Controllers\QUIZ_QuizSubmitController.cs" />
+    <Compile Include="Controllers\SC_UserController.cs" />
+    <Compile Include="Controllers\SC_UserTypeController.cs" />
+    <Compile Include="Controllers\STU_StudentController.cs" />
+    <Compile Include="DapperObject\ASS_AssignmentPostDA.cs" />
+    <Compile Include="DapperObject\ASS_AssignmentSubmitDA.cs" />
+    <Compile Include="DapperObject\COU_CourseContentDA.cs" />
+    <Compile Include="DapperObject\DIS_DiscussionForumCommentDA.cs" />
+    <Compile Include="DapperObject\DIS_DiscussionForumDA.cs" />
+    <Compile Include="DapperObject\I_ASS_AssignmentPost.cs" />
+    <Compile Include="DapperObject\I_ASS_AssignmentSubmit.cs" />
+    <Compile Include="DapperObject\I_COU_CourseContent.cs" />
+    <Compile Include="DapperObject\I_DIS_DiscussionForum.cs" />
+    <Compile Include="DapperObject\I_DIS_DiscussionForumComment.cs" />
+    <Compile Include="DapperObject\I_MS_Batch.cs" />
+    <Compile Include="DapperObject\I_MS_Course.cs" />
+    <Compile Include="DapperObject\I_MS_Faculty.cs" />
+    <Compile Include="DapperObject\I_MS_Semester.cs" />
+    <Compile Include="DapperObject\I_NEW_News.cs" />
+    <Compile Include="DapperObject\I_Quiz_Quiz.cs" />
+    <Compile Include="DapperObject\I_QUIZ_QuizSubmit.cs" />
+    <Compile Include="DapperObject\I_SC_User.cs" />
+    <Compile Include="DapperObject\I_SC_UserType.cs" />
+    <Compile Include="DapperObject\I_STU_Student.cs" />
+    <Compile Include="DapperObject\MS_BatchDA.cs" />
+    <Compile Include="DapperObject\MS_CourseDA.cs" />
+    <Compile Include="DapperObject\MS_FacultyDA.cs" />
+    <Compile Include="DapperObject\MS_SemesterDA.cs" />
+    <Compile Include="DapperObject\NEW_NewsDA.cs" />
+    <Compile Include="DapperObject\QUIZ_QuizDA.cs" />
+    <Compile Include="DapperObject\Quiz_QuizSubmitDA.cs" />
+    <Compile Include="DapperObject\SC_UserDA.cs" />
+    <Compile Include="DapperObject\SC_UserTypeDA.cs" />
+    <Compile Include="DapperObject\STU_StudentDA.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ASS_AssignmentPost.cs" />
+    <Compile Include="Models\ASS_AssignmentSubmit.cs" />
+    <Compile Include="Models\COU_CourseContent.cs" />
+    <Compile Include="Models\DIS_DiscussionForum.cs" />
+    <Compile Include="Models\DIS_DiscussionForumComment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MS_Batch.cs" />
+    <Compile Include="Models\MS_Course.cs" />
+    <Compile Include="Models\MS_Faculty.cs" />
+    <Compile Include="Models\MS_Semester.cs" />
+    <Compile Include="Models\NEW_News.cs" />
+    <Compile Include="Models\QUIZ_Quiz.cs" />
+    <Compile Include="Models\QUIZ_QuizSubmit.cs" />
+    <Compile Include="Models\SC_User.cs" />
+    <Compile Include="Models\SC_UserType.cs" />
+    <Compile Include="Models\STU_Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Dapper.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
+    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
+    <Content Include="bin\Microsoft.AI.Web.dll" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\PagedList.dll" />
+    <Content Include="bin\PagedList.Mvc.dll" />
+    <Content Include="bin\PagedList.Mvc.xml" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\dashboard.css" />
+    <Content Include="css\lightbox.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\owl.carousel.css" />
+    <Content Include="css\owl.theme.css" />
+    <Content Include="css\owl.transitions.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\teacher.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\4.jpg" />
+    <Content Include="img\book.jpg" />
+    <Content Include="img\cover_files\2.5194f.main.js" />
+    <Content Include="img\cover_files\5194f.main.css" />
+    <Content Include="img\cover_files\5194f.main.js" />
+    <Content Include="img\cover_files\5194f.vendor.js" />
+    <Content Include="img\cover_files\analytics.js" />
+    <Content Include="img\cover_files\book1.jpg" />
+    <Content Include="img\cover_files\book1_files\2.5194f.main.js" />
+    <Content Include="img\cover_files\book1_files\5194f.main.css" />
+    <Content Include="img\cover_files\book1_files\5194f.main.js" />
+    <Content Include="img\cover_files\book1_files\5194f.vendor.js" />
+    <Content Include="img\cover_files\book1_files\analytics.js" />
+    <Content Include="img\cover_files\book1_files\handler-script.js" />
+    <Content Include="img\cover_files\book1_files\sp.js" />
+    <Content Include="img\cover_files\book2.jpg" />
+    <Content Include="img\cover_files\book2_files\2.5194f.main.js" />
+    <Content Include="img\cover_files\book2_files\5194f.main.css" />
+    <Content Include="img\cover_files\book2_files\5194f.main.js" />
+    <Content Include="img\cover_files\book2_files\5194f.vendor.js" />
+    <Content Include="img\cover_files\book2_files\analytics.js" />
+    <Content Include="img\cover_files\book2_files\handler-script.js" />
+    <Content Include="img\cover_files\book2_files\sp.js" />
+    <Content Include="img\cover_files\handler-script.js" />
+    <Content Include="img\cover_files\sp.js" />
+    <Content Include="img\logo-1.gif" />
+    <Content Include="img\logo.gif" />
+    <Content Include="img\onlinelogo.png" />
+    <Content Include="img\section1.jpg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery.main.js" />
+    <Content Include="js\npm.js" />
+    <Content Include="js\wow.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config" />
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="img\cover_files\book1_files\photo-1462622437620-30b99c08d621" />
+    <Content Include="img\cover_files\book1_files\profile-1441626076969-189b49b39729" />
+    <Content Include="img\cover_files\book2_files\photo-1462037629520-2a7c6feac7f4" />
+    <Content Include="img\cover_files\book2_files\profile-1462033746071-38ac4e9659de" />
+    <Content Include="img\cover_files\profile-1464795563162-9cdef1ffb1fe" />
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -231,7 +396,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -244,7 +411,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -265,9 +431,89 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\MS_Course\Index.cshtml" />
+    <Content Include="Views\MS_Course\Create.cshtml" />
+    <Content Include="Views\STU_Student\Index.cshtml" />
+    <Content Include="Views\STU_Student\Create.cshtml" />
+    <Content Include="Views\STU_Student\Edit.cshtml" />
+    <Content Include="Views\STU_Student\Delete.cshtml" />
+    <Content Include="Views\STU_Student\Details.cshtml" />
+    <Content Include="Views\MS_Course\Details.cshtml" />
+    <Content Include="Views\MS_Course\Edit.cshtml" />
+    <Content Include="Views\MS_Course\Delete.cshtml" />
+    <Content Include="Views\COU_CourseContent\Index.cshtml" />
+    <Content Include="Views\COU_CourseContent\Details.cshtml" />
+    <Content Include="Views\COU_CourseContent\Create.cshtml" />
+    <Content Include="Views\COU_CourseContent\Edit.cshtml" />
+    <Content Include="Views\COU_CourseContent\Delete.cshtml" />
+    <Content Include="Views\ASS_AssignmentPost\Index.cshtml" />
+    <Content Include="Views\ASS_AssignmentPost\Details.cshtml" />
+    <Content Include="Views\ASS_AssignmentPost\Create.cshtml" />
+    <Content Include="Views\ASS_AssignmentPost\Edit.cshtml" />
+    <Content Include="Views\ASS_AssignmentPost\Delete.cshtml" />
+    <Content Include="Views\ASS_AssignmentSubmit\Index.cshtml" />
+    <Content Include="Views\ASS_AssignmentSubmit\Details.cshtml" />
+    <Content Include="Views\ASS_AssignmentSubmit\Create.cshtml" />
+    <Content Include="Views\ASS_AssignmentSubmit\Edit.cshtml" />
+    <Content Include="Views\ASS_AssignmentSubmit\Delete.cshtml" />
+    <Content Include="Views\SC_UserType\Index.cshtml" />
+    <Content Include="Views\SC_UserType\Details.cshtml" />
+    <Content Include="Views\SC_UserType\Create.cshtml" />
+    <Content Include="Views\SC_UserType\Edit.cshtml" />
+    <Content Include="Views\SC_UserType\Delete.cshtml" />
+    <Content Include="Views\SC_User\Index.cshtml" />
+    <Content Include="Views\SC_User\Details.cshtml" />
+    <Content Include="Views\SC_User\Edit.cshtml" />
+    <Content Include="Views\SC_User\Delete.cshtml" />
+    <Content Include="Views\SC_User\Create.cshtml" />
+    <Content Include="Views\MS_Faculty\Create.cshtml" />
+    <Content Include="Views\MS_Faculty\Details.cshtml" />
+    <Content Include="Views\MS_Faculty\Index.cshtml" />
+    <Content Include="Views\MS_Faculty\Delete.cshtml" />
+    <Content Include="Views\MS_Faculty\Edit.cshtml" />
+    <Content Include="Views\MS_Semester\Index.cshtml" />
+    <Content Include="Views\MS_Semester\Details.cshtml" />
+    <Content Include="Views\MS_Semester\Create.cshtml" />
+    <Content Include="Views\MS_Semester\Edit.cshtml" />
+    <Content Include="Views\MS_Semester\Delete.cshtml" />
+    <Content Include="Views\QUIZ_QuizSubmit\Index.cshtml" />
+    <Content Include="Views\QUIZ_QuizSubmit\Details.cshtml" />
+    <Content Include="Views\QUIZ_QuizSubmit\Create.cshtml" />
+    <Content Include="Views\QUIZ_QuizSubmit\Edit.cshtml" />
+    <Content Include="Views\QUIZ_QuizSubmit\Delete.cshtml" />
+    <Content Include="Views\NEW_News\Index.cshtml" />
+    <Content Include="Views\NEW_News\Details.cshtml" />
+    <Content Include="Views\NEW_News\Create.cshtml" />
+    <Content Include="Views\NEW_News\Edit.cshtml" />
+    <Content Include="Views\NEW_News\Delete.cshtml" />
+    <Content Include="Views\DIS_DiscussionForum\Create.cshtml" />
+    <Content Include="Views\DIS_DiscussionForum\Delete.cshtml" />
+    <Content Include="Views\DIS_DiscussionForum\Details.cshtml" />
+    <Content Include="Views\DIS_DiscussionForum\Edit.cshtml" />
+    <Content Include="Views\DIS_DiscussionForum\Index.cshtml" />
+    <Content Include="Views\DIS_DiscussionForumComment\Create.cshtml" />
+    <Content Include="Views\DIS_DiscussionForumComment\Delete.cshtml" />
+    <Content Include="Views\DIS_DiscussionForumComment\Details.cshtml" />
+    <Content Include="Views\DIS_DiscussionForumComment\Edit.cshtml" />
+    <Content Include="Views\DIS_DiscussionForumComment\Index.cshtml" />
+    <Content Include="Views\QUIZ_Quiz\Create.cshtml" />
+    <Content Include="Views\QUIZ_Quiz\Delete.cshtml" />
+    <Content Include="Views\QUIZ_Quiz\Details.cshtml" />
+    <Content Include="Views\QUIZ_Quiz\Edit.cshtml" />
+    <Content Include="Views\QUIZ_Quiz\Index.cshtml" />
+    <Content Include="Views\MS_Batch\Index.cshtml" />
+    <Content Include="Views\MS_Batch\Details.cshtml" />
+    <Content Include="Views\MS_Batch\Create.cshtml" />
+    <Content Include="Views\MS_Batch\Edit.cshtml" />
+    <Content Include="Views\MS_Batch\Delete.cshtml" />
+    <Content Include="Views\Shared\WebPageLayout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="CourseContent\file\" />
+    <Folder Include="CourseContent\Video\" />
+    <Folder Include="images\CourseContent\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
