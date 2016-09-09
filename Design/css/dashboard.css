@@ -1,0 +1,55 @@
+nav.top{
+	background-color:#16a085;
+    position: fixed;
+    top: -1px;
+    width: 100%;
+}
+.col-md-3 {
+    top: 55px;
+    left: -14px;
+}
+.container-fluid {
+   
+   
+}
+#white{
+	color: #ffffff;
+	font-size: 20px;
+    margin: auto;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #16a085;
+    border-color: #16a085;
+}
+.btn:hover {
+    background-color: #1abc9c;
+}
+i.glyphicon.glyphicon-cog {
+    color: #fff;
+}
+.navbar-nav > li > .dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #bdc3c7;
+}
+
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    color: white;
+    margin-left: 8px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}

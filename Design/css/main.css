@@ -1,0 +1,74 @@
+body{
+	background-image: url("../img/book.jpg");
+}
+.h1, h1 {
+    font-size: 85px;
+    margin: auto;
+    /* padding: 30px; */
+    text-align: left;
+    font-weight: bold;
+    font-family: serif;
+    position: absolute;
+    top: 200px;
+    left: 120px;
+    letter-spacing: 3px;
+    line-height: 1;
+}
+img{
+	width: 100%;
+	height: auto;
+}
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    border-radius: 0;
+}
+button.btn.btn-lg {
+    border-radius: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 24px;
+    font-family: initial;
+    position: absolute;
+    top: 400px;
+    left: 125px;
+    background-color: #FF55AA;
+}
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    border-radius: 0;
+    padding: 5px 10px 5px 10px;
+}
+.signbtn {
+    color: #FF55AA;
+    border: none;
+    font-weight: bold;
+}
+.regbtn {
+    color: #ffffff;
+    border: none;
+    background-color: #FF55AA;
+    font-weight: bold;
+}
+.pull-right {
+    float: right!important;
+    position: relative;
+    left: 100px;
+    padding: 15px;
+}
+.logo {
+    position: relative;
+    right: 100px;
+}
+ul.nav.navbar-nav {
+    padding: 15px;
+    margin: auto 0;
+    position: relative;
+    left: 250px;
+    font-family: inherit;
+    font-weight: bolder;
+}
