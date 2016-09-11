@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>teacher</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/teacher.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/dashboard.css">-->
+   
+   
+    <link rel="stylesheet" href="font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="font-awesome/4.6.1/css/font-awesome.min.css">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-default top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+         <a  class="navbar-brand" id="white" href="#">Dashboard</a>
+       </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="divider" role="separator"></li>
+              <li><a href="#" id="white"><span class="sr-only">(current)</span></a></li>
+            </ul>
+           <ul class="nav navbar-nav navbar-right">
+              <li><form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-search"></i></button>
+            </form></li>
+            <li class="dropdown first">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-cog"></i><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Signed in as</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">Help</a></li>
+                  <li><a href="#">Settings</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="">Sign Out</a></li>
+                </ul>
+              </li>
+         </ul>
+           </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+   
+    <div class="row">
+<div class="col-md-3 col-xs-12">
+            <div class="menu" class="nav-collapse">
+              <ul class="nav nav-pills nav-stacked toolgroup sidebar-menu" id="nav-accordion">
+                <li role="presentation"><a href="#" style="background:  #16a085; color: white;">Dashboard</a></li>
+                <li role="presentation"><a href="#">Departments</a></li>
+                <li role="presentation"><a class="active" href="teachers.html">Teachers</a></li>
+                <li role="presentation"><a href="#">Students</a></li>
+                <li role="presentation"><a href="#"></a></li>
+                <li role="presentation"><a href="#"></a></li>
+                 <li role="presentation"><a href="#"></a></li>
+                <li role="presentation"><a href="#"></a></li>
+               
+                
+               
+              </ul>
+            </div>
+            </div>
+<div class="col-md-9">
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#teacherModal">
+  Add Teacher
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="teacherModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Teacher Registeration Form</h4>
+      </div>
+      <div class="modal-body">
+      <form class="form-register" method="GET">
+       <h4 class="Register-heading">Register</h4>
+            
+            <label for="fullname" class="sr-only">Fullname</label>
+            <input name="fullname" type="username" id="fullname" class="register-control" placeholder="fullanme" required>
+            <label for="username" class="sr-only">Username</label>
+            <input name="username" type="username" id="username" class="register-control" placeholder="Username" required>
+            <label for="email" class="sr-only">Email</label>
+            <input name="email" type="email" id="email" class="register-control" placeholder="Email" required>
+            <label for="password" class="sr-only">Password</label>
+            <input name="password" type="password" id="password" class="register-control" placeholder="Password" required>
+            <label for="address" class="sr-only">Address</label>
+            <input name="address" type="address" id="address" class="register-control" placeholder="Address" required>
+            <button class="btn btn-lg btn-primary btn-block" type="btnrergister" name="btntregister">Register</button>
+      </form>
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+   <table border="2" style width="100%" class="table">
+
+  <thead>
+    <th>
+      <td>SN</td>
+      <td>fullname</td>
+      <td>username</td>
+      <td>email</td>
+      <td>password</td>
+      <td>address</td>
+      <td>action</td>
+
+    </th>
+  </thead>
+
+  <tbody>
+    <th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </th>
+  </tbody>
+  
+</table>
+</div>
+</div>
+
+
+
+
+<script src="js/jquery.main.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
