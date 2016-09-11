@@ -26,8 +26,8 @@ namespace OnlineCourse.DapperObject
 
         public int Add(SC_User user)
         {
-            var sqlQuery = "Insert into SC_User (FirstName, MiddleName, LastName, Email, Phone, Address, Password, UserTypeID)" +
-                "Values (@FirstName, @MiddleName, @LastName, @Email, @Phone, @Address, @Password, @UserTypeID)";
+            var sqlQuery = "Insert into SC_User (FirstName, MiddleName, LastName, Email, Phone, Address, Password,Username,UserTypeID)" +
+                "Values (@FirstName, @MiddleName, @LastName, @Email, @Phone, @Address, @Password, @Username,@UserTypeID)";
             return db.Execute(sqlQuery, user);
         }
 
@@ -42,7 +42,7 @@ namespace OnlineCourse.DapperObject
         {
             var sqlQuery = "Update SC_User set FirstName = @FirstName, MiddleName = @MiddleName," +
                 "LastName = @LastName, Email = @Email, Phone = @Phone, Address = @Address,"+ 
-                "Password = @Password, UserTypeID = @UserTypeID Where UserID = @UserID";
+                "Password = @Password, Username=@Username,UserTypeID = @UserTypeID Where UserID = @UserID";
 
             return db.Execute(sqlQuery, user);
         }
@@ -52,6 +52,10 @@ namespace OnlineCourse.DapperObject
             var sqlQuery = "Delete from SC_User where UserID=" + id;
             return db.Execute(sqlQuery);
         }
-
+        public SC_User LoginUserExists(string Username,string Password)
+        {
+            var query = "Select * from SC_User Where Username='" + Username + "' and Password='" + Password + "' AND UserTypeID='1'";
+            return db.Query<SC_User>(query).SingleOrDefault();
+        }
     }
 }
