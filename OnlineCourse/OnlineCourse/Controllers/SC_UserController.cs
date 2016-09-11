@@ -45,7 +45,7 @@ namespace OnlineCourse.Controllers
         // POST: SC_User/Create
         [HttpPost]
         public ActionResult Create([Bind(Include = "UserID,FirstName,MiddleName,LastName,"+
-            "Email,Password,Phone,Address,UserTypeID")] SC_User user)
+            "Email,Password,Username,Phone,Address,UserTypeID")] SC_User user)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace OnlineCourse.Controllers
         // POST: SC_User/Edit/5
         [HttpPost]
         public ActionResult Edit([Bind(Include = "UserID,FirstName,MiddleName,LastName,"+
-            "Email,Password,Phone,Address,UserTypeID")] SC_User user)
+            "Email,Password,Phone,Username,Address,UserTypeID")] SC_User user)
         {
             if (ModelState.IsValid)
             {
