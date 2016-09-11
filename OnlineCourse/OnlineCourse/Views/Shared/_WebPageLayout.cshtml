@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@*@model OnlineCourse.Models.SC_User
+@model OnlineCourse.Models.MS_Batch
+@model OnlineCourse.Models.MS_Faculty*@
+@model OnlineCourse.Models.STU_Student
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -70,46 +75,97 @@
     </div>
     <!-- mobalendforsignin -->
     <!-- mobalstartforregistry -->
-    <div class="modal fade" id="myModalreg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">SigninForm</h4>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
 
-                            <label for="username"><span class="glyphicon glyphicon-user" aria-hidden="true">Username:</span></label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="pwd"><span class="glyphicon glyphicon-eye-open" aria-hidden="true">Password:</span></label>
-                            <input type="password" class="form-control" id="pwd">
-                        </div>
-                        <div class="form-group">
-                            <label for="email"><span class="glyphicon glyphicon-envelope" aria-hidden="true">Email:</span></label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="Address"><span class="glyphicon glyphicon-" aria-hidden="true">Address:</span></label>
-                            <input type="address" class="form-control" id="address">
-                        </div>
-                        <!--<div class="checkbox">
-                          <label><input type="checkbox"> Remember me</label>
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>-->
-                    </form>
+    <!--Partial-->
 
-                </div>
-                <div class="modal-footer">
+    @*<div class="modal fade" id="myModalreg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+        {
+          @Html.AntiForgeryToken()
+          @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:30px 50px;">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">RegistryForm</h4>
+                        <p class="para">Already Joined?<a class="reg" href="#">LogIn</a></p>
+                    </div>
+                    <div class="modal-body" style="padding:30px 50px;">
+                        <form>
+                            <div class="form-group">
 
-                    <button type="button" class="btn btn-primary btn-block">Sign in</button>
+                                <label for="username">FirstName:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your firstname">
+                            </div>
+                            <div class="form-group">
+
+                                <label for="username">MiddleName:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your middlename">
+                            </div>
+                            <div class="form-group">
+
+                                <label for="username">LastName:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your lastname">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control" id="pwd" placeholder="Enter your Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter ypur email">
+                            </div>
+                            <div class="form-group">
+                                <label for="Faculty">Faculty:</label>
+                                <select class="form-control" id="sel1">
+                                    <option>Bsc.Csit</option>
+                                    <option>BBA</option>
+                                    <option>Engineering</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="Batch">Batch:</label>
+                                <select class="form-control" id="sel1">
+                                    <option>2012</option>
+                                    <option>2013</option>
+                                    <option>2014</option>
+                                    <option>2015</option>
+                                    <option>2016</option>
+                                    <option>2017</option>
+
+                                   
+                                </select>
+                            </div>
+                           
+                            <div class="form-group">
+                                <label for="Semester">Semester:</label>
+                                <select class="form-control" id="sel1">
+                                   <option>First</option>
+                                    <option>Second</option>
+                                    <option>Third</option>
+                                    <option>Fourth</option>
+                                    <option>Fifth</option>
+                                    <option>Sixth</option>
+                                    <option>Seventh</option>
+                                    <option>Eigth</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="checkbox">
+                              <label><input type="checkbox"> Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-primary btn-block">Register</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        }
+    </div>*@
 
     <!-- mobalendforregistry -->
     <!--Fixed Top Navbar-->
