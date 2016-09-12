@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
 using OnlineCourse.DapperObject;
 using OnlineCourse.Models;
 
@@ -11,14 +12,15 @@ namespace OnlineCourse.Controllers
 {
     public class HomeController : Controller
     {
+        private I_STU_Student db = new STU_StudentDA();
         private I_MS_Batch dbBatch = new MS_BatchDA();
         private I_MS_Faculty dbFaculty = new MS_FacultyDA();
         private I_MS_Semester dbSemester = new MS_SemesterDA();
         public ActionResult Index()
         {
-            ViewBag.UserTypeID = new SelectList(dbBatch.Batches(), "BatchID", "Year");
-            ViewBag.UserTypeID = new SelectList(dbFaculty.Faculties(), "FacultyID", "Faculty");
-            ViewBag.UserTypeID = new SelectList(dbSemester.Semesters(), "SemesterID", "Semester");
+            ViewBag.BatchID = new SelectList(dbBatch.Batches(), "BatchID", "Year");
+            ViewBag.FacultyID = new SelectList(dbFaculty.Faculties(), "FacultyID", "FacultyTitle");
+            ViewBag.SemesterID = new SelectList(dbSemester.Semesters(), "SemesterID", "SemesterTitle");
             return View();
             
         }
@@ -34,6 +36,16 @@ namespace OnlineCourse.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+        public ActionResult Home(STU_Student student)
+        {
+
+            if (ModelState.IsValid)
+            {  
+                db.Add(student);
+                return RedirectToAction("Index", "Dashboard");
+            }
             return View();
         }
     }
