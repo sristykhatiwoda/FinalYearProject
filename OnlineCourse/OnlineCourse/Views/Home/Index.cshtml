@@ -21,28 +21,30 @@
                     </div>
                     <div class="modal-body" style="padding:30px 50px;">
                         <form>
-                            <div class="form-group">
-
-                                <label for="username">FirstName:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your middlename">
-                            </div>
+                            <label for="username">FirstName:</label>
+                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                             <div class="form-group">
 
                                 <label for="username">MiddleName:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your middlename">
+                                @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-group">
 
                                 <label for="username">LastName:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your lastname">
+                                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-group">
                                 <label for="pwd">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter your Password">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter ypur email">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-group">
                                 FacultyID
