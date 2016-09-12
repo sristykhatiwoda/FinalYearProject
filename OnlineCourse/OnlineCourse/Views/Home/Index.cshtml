@@ -1,5 +1,4 @@
-﻿@*@model  IEnumerable<OnlineCourse.Models.STU_Student>*@
-@model OnlineCourse.Models.STU_Student
+﻿@model OnlineCourse.Models.STU_Student
 
 @{
     ViewBag.Title = "Index";
@@ -9,7 +8,7 @@
 <h2>Index</h2>
 
     <div class="modal fade" id="myModalreg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+        @using (Html.BeginForm("Home", "Home", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -24,10 +23,8 @@
                         <form>
                             <div class="form-group">
 
-                                @*@Html.LabelFor(student => student.FirstName, new { @class = "col-md-3 control-label label_padding" })*@
                                 <label for="username">FirstName:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your firstname">
-
+                                <input type="text" class="form-control" id="name" placeholder="Enter your middlename">
                             </div>
                             <div class="form-group">
 
@@ -48,42 +45,31 @@
                                 <input type="email" class="form-control" id="email" placeholder="Enter ypur email">
                             </div>
                             <div class="form-group">
-                                <label for="Faculty">Faculty:</label>
-                                @*@Html.DropDownList("FacultyID", String.Empty)
-                                @Html.ValidationMessageFor(model => model.FacultyID)*@
-                                @*<select class="form-control" id="sel1">
-                                    <option>Bsc.Csit</option>
-                                    <option>BBA</option>
-                                    <option>Engineering</option>
-                                </select>*@
+                                @Html.LabelFor(model => model.FacultyID, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("FacultyID", String.Empty)
+                                    @Html.ValidationMessageFor(model => model.FacultyID)
+
+
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="Batch">Batch:</label>
-                                <select class="form-control" id="sel1">
-                                    <option>2012</option>
-                                    <option>2013</option>
-                                    <option>2014</option>
-                                    <option>2015</option>
-                                    <option>2016</option>
-                                    <option>2017</option>
+                                @Html.LabelFor(model => model.BatchID, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("BatchID", String.Empty)
+                                    @Html.ValidationMessageFor(model => model.BatchID)
 
 
-                                </select>
+                                </div>
                             </div>
-
                             <div class="form-group">
-                                <label for="Semester">Semester:</label>
-                                <select class="form-control" id="sel1">
-                                    <option>First</option>
-                                    <option>Second</option>
-                                    <option>Third</option>
-                                    <option>Fourth</option>
-                                    <option>Fifth</option>
-                                    <option>Sixth</option>
-                                    <option>Seventh</option>
-                                    <option>Eigth</option>
+                                @Html.LabelFor(model => model.SemesterID, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("SemesterID", String.Empty)
+                                    @Html.ValidationMessageFor(model => model.SemesterID)
 
-                                </select>
+
+                                </div>
                             </div>
                             <!--<div class="checkbox">
                               <label><input type="checkbox"> Remember me</label>
@@ -94,7 +80,7 @@
                     </div>
                     <div class="modal-footer">
 
-                        <button type="button" class="btn btn-primary btn-block">Register</button>
+                        <input type="Submit" value="Register" class="btn btn-primary btn-block"/>
                     </div>
                 </div>
             </div>
