@@ -189,3 +189,54 @@ padding: 10px 0;
     text-transform: uppercase;
 }
 /*quizend*/
+
+/*logincourses*/
+h2.cou {
+    /* top: 185px; */
+    /* position: relative; */
+    margin-top: auto;
+    padding-top: 75px;
+    text-align: center;
+    font-size: 44px;
+    color: #2c3e50;
+    font-family: -webkit-pictograph;
+    margin-bottom: 35px;
+}
+.parallax{
+    background-image: url(../img/cou.jpg);
+    width: 100%;
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    border-left: 5px solid #eee;
+    color: #2c3e50;
+    font-family: -webkit-body;
+    text-transform: initial;
+    text-align: justify;
+}
+a.prog img {
+    opacity: 0.5;
+}
+a.prog img:hover {
+    opacity: 100;
+}
+a.btn.btn-default.submit {
+    padding: 10px 0;
+    margin-right: 200px;
+    background-color: #4a6371;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    width: 95px;
+    border-radius: 5px;
+    /* float: left; */
+    line-height: normal;
+}
+/*logincoursesend*/
