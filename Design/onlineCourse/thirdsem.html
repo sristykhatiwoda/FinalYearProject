@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Online Course</title>
+     <!-- Bootstrap core CSS -->
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.theme.min.css" rel="stylesheet">
+    <link href="css/bootstrap.theme.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/owl.transitions.css"/>
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    <!--<link href="css/main.css" rel="stylesheet">-->
+    <!--<link href="css/custom.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="fonts/css/font-awesome.css">
+    <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" type="text/css" href="css/student.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/effects.min.css">
+     <link rel="stylesheet" href="fonts/css/effectspre.css">-->
+     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+
+  <body>
+      <header>
+      
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+        <div class="logo pull-left animated wow fadeInLeft img-responsive">
+            <img src="img/logo.png" style="width:150px; height:80px;" alt="">
+        </div>
+      </div>
+            <!--<div>
+              <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Courses</a></li>
+               <li><a href="#">Programs</a></li>
+               <li><a href="#">About</a></li>
+             </ul>
+             </div>-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <nav class="pull-left">
+              <ul class="list-unstyled">
+              <li class=" " data-wow-delay="0s"><a href="#">Courses</a></li>
+              <li class="" data-wow-delay=".1s"><a href="#introd">Programs</a></li>
+              <!--<li class="" data-wow-delay=".1s"><a href="#introd">Assignment</a></li>-->
+              <div class="dropdown">
+  <li class="dropdown drop">
+                <a class="" data-wow-delay=".1s" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assignment</a>
+                <ul class="dropdown-menu semester">
+                  <li><a class="sem" href="#">FirstSemester</a><li>
+                  <li role="separator" class="divider"></li>
+                  <li><a class="sem" href="#">SecondSemester</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a class="sem" href="#">ThirdSemester</a></li>
+                  
+                </ul>
+              </li>
+    
+    
+  
+</div>
+              <div class="dropdown">
+  <li class="dropdown second">
+                <a class="" data-wow-delay=".1s" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">StartQuiz</a>
+                <ul class="dropdown-menu semester">
+                  <li><a class="sem" href="#">FirstSemester</a><li>
+                  <li role="separator" class="divider"></li>
+                  <li><a class="sem" href="#">SecondSemester</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a class="sem" href="#">ThirdSemester</a></li>
+                  
+                </ul>
+              </li>
+    
+    
+  
+</div>
+              </ul>
+            </nav>
+
+            
+            <ul class="nav navbar-nav">
+              <li class="divider" role="separator"></li>
+              <li><a href="#" id="white"><span class="sr-only">(current)</span></a></li>
+            </ul>
+           <ul class="nav navbar-nav navbar-right">
+              <li><form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default grow-shadow"><i class="glyphicon glyphicon-search"></i></button>
+            </form></li>
+            <li class="dropdown first">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-cog"></i><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Signed in as</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Your courses</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Your Profile</a></li>
+                  <!--<li><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Help</a></li>-->
+                  <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href=""><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sign Out</a></li>
+                </ul>
+              </li>
+         </ul>
+           <!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+        
+             
+      </div>
+      
+    </div>
+  
+    </header>
+    <!--<header>
+      <nav class="navbar navbar-default top">
+        <div class="container-fluid">
+          
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+         <a  class="navbar-brand" id="white" href="#">Dashboard</a>
+       </div>
+        
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="divider" role="separator"></li>
+              <li><a href="#" id="white"><span class="sr-only">(current)</span></a></li>
+            </ul>
+           <ul class="nav navbar-nav navbar-right">
+              <li><form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-search"></i></button>
+            </form></li>
+            <li class="dropdown first">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-cog"></i><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Signed in as</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Your Courses</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Your Profile</a></li>
+                 
+                  <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href=""><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sign Out</a></li>
+                </ul>
+              </li>
+         </ul>
+           </div>--><!-- /.navbar-collapse -->
+        <!--</div>--><!-- /.container-fluid -->
+        <!--</nav>
+    </header>-->
+    <div class="container firstsem">
+      <div class="row">
+      <div class="col-md-2 col-sm-12 side">
+       <nav class="w3-sidenav  w3-white w3-card-2 w3-animate-left" style="width:;" id="mySidenav">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-closenav w3-large w3-hide-large">Close &times;</a>
+  <a class="sidebar w3-panel" href="#">FirstSemester</a>
+  <a class="sidebar w3-panel " href="#">SecondSemester</a>
+  <a class="sidebar w3-panel  active" href="#">ThirdSemester</a>
+  
+</nav>
+
+
+        
+      </div>
+      <div class="col-md-10 col-sm-12">
+        <div class="container-fluide">
+        <div class="jumbotron question">
+          <p class="qust">
+            1. What does CSS stand for?
+            
+          </p>
+          <form>
+          <div class="radio">
+            <label>
+              <input type="radio" name="quiz" id="3" value="3">
+               Cascading Style Sheets
+            </label>
+          </div>
+           <div class="radio">
+            <label>
+              <input type="radio" name="quiz" id="3" value="3">
+               Cascading Style Sheets
+            </label>
+          </div>
+           <div class="radio">
+            <label>
+              <input type="radio" name="quiz" id="3" value="3">
+               Cascading Style Sheets
+            </label>
+          </div>
+           <div class="radio">
+            <label>
+              <input type="radio" name="quiz" id="3" value="3">
+               Cascading Style Sheets
+            </label>
+          </div>
+          <input type="submit" class="w3-btn w3-orange w3-large w3-text-white" value="Next">
+        </form>
+
+        </div>
+        <footer>
+    
+    <h3>Connect With Online Courses</h3>
+    <a class="font" href="#">
+  <i class="fa fa-facebook" aria-hidden="true"></i><i class="fa fa-twitter" aria-hidden="true"></i><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <p class="footer">Learning Management System’s mission is to pioneer the best social learning experiences for everyone, anywhere.</p>
+      
+    </div>
+  </footer>
+        </div>
+        
+      </div>
+      </div>
+    </div>
+
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script>
+function w3_open() {
+    document.getElementById("mySidenav").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidenav").style.display = "none";
+}
+</script>
+  <script type="text/javascript" src="js/ajaxchimp.js"></script>
+  <script type="text/javascript" src="js/scrollTo.js"></script>
+  <!--<script type="text/javascript" src="js/gruntfile.js"></script>-->
+    <script>
+    $(function(){
+$('#myModalog').modal({
+   show:true,
+   backdrop:'static'
+});
+ //now on button click
+  $('#myModalog').modal('show');
+});
+    </script>
+    
+    
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+  </html>
