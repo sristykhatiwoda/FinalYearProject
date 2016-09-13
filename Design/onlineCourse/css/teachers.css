@@ -72,7 +72,7 @@ li.dropdown.dp {
     top: -44px;
 }
 li.dropdown.dp a.sem {
-    padding: 10px 0px;
+   padding: 10px 22px;
     color: #fff;
 }
 li.dropdown.dp a.sem:hover {
@@ -80,3 +80,112 @@ li.dropdown.dp a.sem:hover {
     color: #eeecee;
 }
 /*student.htmlend*/
+/*assignment1*/
+ul.news2 .ass {
+    /* color: red; */
+    font-size: 20px;
+    font-family: serif;
+    padding: 0;
+    margin-left: 0;
+}
+.upload_btn {
+    display: inline-block;
+    /* float: left; */
+    margin-left: 20px;
+    float: left;
+}
+label.btn.btn-primary.left-file {
+    background-color: #4a6371;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 0;
+    margin-right: 0;
+    display: inline-block;
+    float: left;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    width: 180px;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.btn_clearfix {
+    display: inline-block;
+    width: 100%;
+    clear: both;
+}
+.uploads.colorpicker span {
+    line-height: 46px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 12px;
+    color: #404040;
+    float: left;
+}
+.upload_btn.left-file .btn {
+    padding: 10px 0;
+    margin-right: 0px;
+    background-color: #4a6371;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    float: left;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    width: 180px;
+    line-height: normal;
+}
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    background-color: #4a6371;
+    border-color: #4a6371;
+    border-bottom: #4a6371;
+    border-right: #4a6371;
+    float: left;
+    clear: both;
+    margin-left: 35px;
+    text-transform: uppercase;
+}
+.uploads.colorpicker {
+    margin-top: 75px;
+    /* padding: 31px; */
+}
+/*assignment1end*/
+
+/*quizend*/
+.start strong {
+    display: block;
+    font-size: 25px;
+    font-family: serif;
+}
+.start span {
+    display: block;
+    font-size: 16px;
+    margin: 8px 0;
+    font-family: -webkit-body;
+}
+
+.start .btn{
+padding: 10px 0;
+    margin-right: 0px;
+    background-color: #4a6371;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 0px;
+    font-size: 16px;
+    display: inline-block;
+    float: left;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    width: 180px;
+    line-height: normal;
+    text-transform: uppercase;
+}
+/*quizend*/

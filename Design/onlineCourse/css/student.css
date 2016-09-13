@@ -221,3 +221,21 @@ a.sidebar.w3-panel.active {
     padding-left: 450px;
 }
 /*firstsemestersidebarend*/
+
+/*newstart*/
+section#news {
+    margin-top: 111px;
+}
+h2.news1 {
+    text-align: center;
+}
+
+ul.news2 {
+    text-align: justify;
+    margin-top: 35px;
+    /* padding-bottom: 45px; */
+}
+li.arrow {
+    padding-bottom: 20px;
+}
+/*newsend*/
