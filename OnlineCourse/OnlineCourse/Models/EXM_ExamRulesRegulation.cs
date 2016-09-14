@@ -11,4 +11,6 @@ namespace OnlineCourse.Models
 
         public string ExamRulesRegulationText { get; set; }
     }
+
+
 }
