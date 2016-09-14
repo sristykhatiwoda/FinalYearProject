@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using OnlineCourse.DapperObject;
 using OnlineCourse.Models;
 using System.Net;
+using System.IO;
 
 namespace OnlineCourse.Controllers
 {
@@ -47,11 +48,17 @@ namespace OnlineCourse.Controllers
 
         // POST: ASS_AssignmentPost/Create
         [HttpPost]
-        public ActionResult Create([Bind(Include = "AssignmentID,Questions,Deadline,"+
-            "CourseID,UserID")]ASS_AssignmentPost assignmentPost)
+        public ActionResult Create(ASS_AssignmentPost assignmentPost,HttpPostedFileBase file1)
         {
             if (ModelState.IsValid)
             {
+                if(file1!=null)
+                {
+                    string fileName = file1.FileName;
+                    string filePath= Path.Combine(Server.MapPath("~/Assignments"), Path.GetFileName(fileName));
+                    file1.SaveAs(filePath);
+                    assignmentPost.Questions = fileName;
+                }
                 db.Add(assignmentPost);
                 return RedirectToAction("Index");
             }
@@ -81,12 +88,19 @@ namespace OnlineCourse.Controllers
         // POST: ASS_AssignmentPost/Edit/5
         [HttpPost]
         public ActionResult Edit([Bind(Include = "AssignmentID,Questions,Deadline,CourseID," +
-            "UserID")]ASS_AssignmentPost assignmentPost)
+            "UserID")]ASS_AssignmentPost assignmentPost,HttpPostedFileBase file1)
         {
             if (ModelState.IsValid)
             {
-                db.Update(assignmentPost);
-                return RedirectToAction("Index");
+                if (file1 != null)
+                {
+                    string fileName = file1.FileName;
+                    string filePath = Path.Combine(Server.MapPath("~/Assignments"), Path.GetFileName(fileName));
+                    file1.SaveAs(filePath);
+                    assignmentPost.Questions = fileName;
+
+                }
+
             }
             
             return View(assignmentPost);
