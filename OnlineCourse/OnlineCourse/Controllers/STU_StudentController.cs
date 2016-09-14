@@ -43,7 +43,7 @@ namespace OnlineCourse.Controllers
         public ActionResult Create()
         {   
             ViewBag.FacultyID = new SelectList(dbFaculty.Faculties(), "FacultyID", "FacultyTitle");
-            ViewBag.BatchID = new SelectList(dbBatch.Batches(), "BatchID", "Batch");
+            ViewBag.BatchID = new SelectList(dbBatch.Batches(), "BatchID", "Year");
             ViewBag.SemesterID = new SelectList(dbSemester.Semesters(), "SemesterID", "SemesterTitle");
             return View();
         }
