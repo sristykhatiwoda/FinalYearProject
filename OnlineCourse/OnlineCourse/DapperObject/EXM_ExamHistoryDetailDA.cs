@@ -9,18 +9,18 @@ using System.Data.SqlClient;
 
 namespace OnlineCourse.DapperObject
 {
-    public class EXM_ExamHistoryDetailDA:I_EXM_ExamHistoryDetail
+    public class EXM_ExamHistoryDetailDA : I_EXM_ExamHistoryDetail
     {
         public static string connStr = System.Configuration.ConfigurationManager.
            ConnectionStrings["DefaultConnection"].ToString();
 
         public static IDbConnection db = new SqlConnection(connStr);
 
-        public int Add(EXM_ExamHistoryDetailDA examHistoryDetail)
-        { 
+        public int Add(EXM_ExamHistoryDetail examHistoryDetail)
+        {
             var sqlQuery = "Insert into EXM_ExamHistoryDetail(ExamHistoryID,QuizID,SubmittedAnswer,Attempted)  values(@ExamHistoryID,@QuizID,@SubmittedAnswer,@Attempted)";
             return db.Execute(sqlQuery, examHistoryDetail);
-        
+
             //throw new NotImplementedException();
         }
 
@@ -31,20 +31,20 @@ namespace OnlineCourse.DapperObject
             //throw new NotImplementedException();
         }
 
-        public List<EXM_ExamHistoryDetailDA> ExamHistoryDetails()
+        public List<EXM_ExamHistoryDetail> ExamHistoryDetails()
         {
-            return db.Query<EXM_ExamHistoryDetailDA>("Select * from EXM_ExamHistoryDetail").ToList();
+            return db.Query<EXM_ExamHistoryDetail>("Select * from EXM_ExamHistoryDetail").ToList();
             //throw new NotImplementedException();
         }
 
-        public EXM_ExamHistoryDetailDA Find(int? id)
+        public EXM_ExamHistoryDetail Find(int? id)
         {
             var sqlQuery = "Select * from EXM_ExamHistoryDetail where ExamHistoryDetailID=" + id;
-            return db.Query<EXM_ExamHistoryDetailDA>(sqlQuery).SingleOrDefault();
+            return db.Query<EXM_ExamHistoryDetail>(sqlQuery).SingleOrDefault();
             //throw new NotImplementedException();
         }
 
-        public int Update(EXM_ExamHistoryDetailDA examHistoryDetail)
+        public int Update(EXM_ExamHistoryDetail examHistoryDetail)
         {
             var sqlQuery = "Update EXM_ExamHistoryDetail set ExamHistoryID=@ExamHistoryID,QuizID=@QuizID,SubmittedAnswer=@SubmittedAnswer,Attempted=@Attempted where ExamHistoryDetailID=@ExamHistoryDetailID";
             return db.Execute(sqlQuery, examHistoryDetail);
