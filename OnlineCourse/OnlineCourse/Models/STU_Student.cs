@@ -7,7 +7,7 @@ namespace OnlineCourse.Models
 {
     public class STU_Student
     {
-        public int StudentID{ get; set; }
+        public int StudentID { get; set; }
 
         public string FirstName { get; set; }
 
@@ -19,6 +19,7 @@ namespace OnlineCourse.Models
 
         public string Password { get; set; }
 
+        public string Username{get;set;}
         public int FacultyID { get; set; }
 
         public int BatchID { get; set; }

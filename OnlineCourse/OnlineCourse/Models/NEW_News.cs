@@ -9,6 +9,7 @@ namespace OnlineCourse.Models
     {
         public int NewsID { get; set; }
 
+        public string NewsDate { get; set; }
         public string NewsTitle { get; set; }
 
         public string NewsDescription { get; set; }
