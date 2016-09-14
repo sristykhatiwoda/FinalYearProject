@@ -221,6 +221,69 @@ a.for {
 .join {
     text-align: center;
 }
+/*about*/
+.abttext {
+    height: 350px;
+    color: #fff;
+}
+
+p#abttext {
+    font-size: 17px;
+    text-align: justify;
+}
+.abttext {
+    height: 350px;
+    
+}
+.h2, h2 {
+    font-size: 45px;
+    text-align: center;
+    text-decoration: underline;
+    margin: auto;
+    padding: 30px;
+    color: #c5c8c8;
+}
+
+.col-md-6.col-sm-12.abttext.row2 {
+
+    margin-top: 35px;
+}
+.abt img {
+    
+    margin-top: 35px;
+}
+
+.parallax{
+    background-image: url(../img/back.jpg);
+    width: 100%;
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.know .btn:hover {
+    background-color: #ffffff;
+    color: #8f98b7;
+    box-shadow: 3px 3px 5px #8f98b7;
+    border: 1px solid #8f98b7;
+}
+.know .btn {
+    background-color: #8f98b7;
+    border-color: #8f98b7;
+    color: #ffffff;
+}
+.know {
+    text-align: center;
+    line-height: 9;
+}
+strong {
+    text-align: center;
+    font-size: 20px;
+    line-height: 3;
+}
+
+/*aboutend*/
 /*footer*/
 a.font {
     font-size: 25px;
