@@ -1,0 +1,8 @@
+                                         <li>
+                                            <a class="sem" href="#">
+                                                @foreach (var item in Model)
+                                                {
+                                                    @Html.DisplayFor(modelItem => item.CourseTitle)
+                                                }
+                                            </a>
+                                        </li>
