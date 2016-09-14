@@ -55,7 +55,7 @@ namespace OnlineCourse.Controllers
                 if(file1!=null)
                 {
                     string fileName = file1.FileName;
-                    string filePath= Path.Combine(Server.MapPath("~/Assignments"), Path.GetFileName(fileName));
+                    string filePath= Path.Combine(Server.MapPath("~/Assignments/AssignmentPost"), Path.GetFileName(fileName));
                     file1.SaveAs(filePath);
                     assignmentPost.Questions = fileName;
                 }
@@ -95,7 +95,7 @@ namespace OnlineCourse.Controllers
                 if (file1 != null)
                 {
                     string fileName = file1.FileName;
-                    string filePath = Path.Combine(Server.MapPath("~/Assignments"), Path.GetFileName(fileName));
+                    string filePath = Path.Combine(Server.MapPath("~/Assignments/AssignmentPost"), Path.GetFileName(fileName));
                     file1.SaveAs(filePath);
                     assignmentPost.Questions = fileName;
 
