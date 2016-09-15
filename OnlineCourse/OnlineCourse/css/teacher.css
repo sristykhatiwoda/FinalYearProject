@@ -1,110 +1,259 @@
-/*navbarstart*/
-nav.top {
-    background-color: #16a085;
-    width: 100%;
-    /* position: fixed; */
-    top: -1px;
-}
-#white {
-    color: #fff;
-    font-size: 20px;
-    margin: auto;
-}
-.btn-success {
-    color: #fff;
-    background-color: #16a085;
-    border-color: #16a085;
-}
-.btn:hover {
-    background-color: #1abc9c;
-}
-i.glyphicon.glyphicon-cog {
-    color: #fff;
-}
-.caret {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    color: white;
-    margin-left: 8px;
-    vertical-align: middle;
-    border-top: 4px dashed;
-    border-top: 4px solid \9;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-}
-/*navbarend*/
-/*modalstart*/
-.register-control {
-    display: block;
-    margin-left: 53px;
-    padding: 6px 8px;
-    height: 50px;
-    width: 80%;
-    font-size: 16px;
-    line-height: 1.42857143;
-    margin-top: 20px;
-    background-color: #ffffff;
-    background-image: none;
-    border: 1px solid #bdc3c7;
-    border-radius: 3px;
-}
-.btn-primary {
-    /* width: 80%; */
-    color: #ffffff;
-    border-color: #357F22;
-    background-color: #428BEF;
-    margin-top: 29px;
-    margin-left: 38px;
-}
-.btn-block {
-    display: block;
-    width: 55%;
-    margin-left: 122px;
-    padding-right: 0;
-}
-.btn-danger {
-    color: #ffffff;
-    background-color: #D95432;
-    border-color: #d43f3a;
-    margin-top: auto;
-    margin-left: -2px;
-}
-/*modalend*/
-/*footer*/
-a.font {
+/* .logo {
+    margin: 41px 30px 0px 30px;
+    font-size: 33px;
+} */
+a.navbar-brand {
     font-size: 25px;
-    /* margin: 33px 19px 41px 10px; */
-    /* padding-left: 660px; */
-    margin: auto 0;
-    padding-left: 550px;
-    /* margin-left: -4px; */
-    color: #fff;
+    font-family: cursive;
+    padding-bottom: 55px;
 }
-i.fa.fa-twitter {
-    margin: 5px 40px 0px 40px;
-}
-footer {
-    background-color: #4a4d56;
-    height: auto;
-    width: 100%;
-}
-footer h3 {
-    font-size: 25px;
+a.navbar-brand.brand {
+    color: #8c9899;
     font-weight: bold;
+}
+a.btn.static {
+    padding: 8px;
+    font-size: 22px;
+    /* color: red; */
+}
+span.wel {
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
     color: #fff;
-    margin-top: -30px;
-    padding-top: 40px;
-    text-align: center;
-    line-height: 1.8;
+    right: 80px;
+    bottom: -29px;
+    font-family: cursive;
+    font-size: medium;
+}
+
+li.dropdown.drp {
+    left: 150px;
+    top: -22px;
+}
+li.dropdown.drp a.sem {
+    padding: 10px 22px;
+    color: #fff;
+}
+li.dropdown.drp a.sem:hover {
+    background-color: #B7655E;
+    color: #eeecee;
+}
+/*student.html*/
+li.dropdown.drping {
+    left: 285px;
+    top: -24px;
+}
+li.dropdown.drping a.sem {
+    padding: 10px 0px;
+    color: #fff;
+}
+li.dropdown.drping a.sem:hover {
+    background-color: #B7655E;
+    color: #eeecee;
+}
+li.dropdown.upload {
+    left: 165px;
+    top: -22px;
+}
+li.dropdown.upload a.sem {
+    padding: 10px 22px;
+    color: #fff;
+}
+li.dropdown.upload a.sem:hover {
+    background-color: #B7655E;
+    color: #eeecee;
+}
+li.dropdown.dp {
+    left: 275px;
+    top: -44px;
+}
+li.dropdown.dp a.sem {
+   padding: 10px 22px;
+    color: #fff;
+}
+li.dropdown.dp a.sem:hover {
+    background-color: #B7655E;
+    color: #eeecee;
+}
+/*student.htmlend*/
+/*assignment1*/
+ul.news2 .ass {
+    /* color: red; */
+    font-size: 20px;
+    font-family: serif;
+    padding: 0;
+    margin-left: 0;
+}
+.upload_btn {
+    display: inline-block;
+    /* float: left; */
+    margin-left: 20px;
+    float: left;
+}
+label.btn.btn-primary.left-file {
+    background-color: #4a6371;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 0;
+    margin-right: 0;
+    display: inline-block;
+    float: left;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    width: 180px;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.btn_clearfix {
+    display: inline-block;
+    width: 100%;
+    clear: both;
+}
+.uploads.colorpicker span {
+    line-height: 46px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 12px;
+    color: #404040;
+    float: left;
+}
+.upload_btn.left-file .btn {
+    padding: 10px 0;
+    margin-right: 0px;
+    background-color: #4a6371;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    float: left;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    width: 180px;
+    line-height: normal;
+}
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    background-color: #4a6371;
+    border-color: #4a6371;
+    border-bottom: #4a6371;
+    border-right: #4a6371;
+    float: left;
+    clear: both;
+    margin-left: 35px;
+    text-transform: uppercase;
+}
+.uploads.colorpicker {
+    margin-top: 75px;
+    /* padding: 31px; */
+}
+/*assignment1end*/
+
+/*quizend*/
+.start strong {
+    display: block;
+    font-size: 25px;
     font-family: serif;
 }
-footer p {
-    text-align: center;
-    color: #ffffff;
-    font-size: 17px;
-    line-height: 2.8;
-    font-family: initial;
-    /* font-weight: bold; */
+.start span {
+    display: block;
+    font-size: 16px;
+    margin: 8px 0;
+    font-family: -webkit-body;
 }
-/*footerend*/
+
+.start .btn{
+padding: 10px 0;
+    margin-right: 0px;
+    background-color: #4a6371;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 0px;
+    font-size: 16px;
+    display: inline-block;
+    float: left;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    width: 180px;
+    line-height: normal;
+    text-transform: uppercase;
+}
+/*quizend*/
+
+/*logincourses*/
+h2.cou {
+    /* top: 185px; */
+    /* position: relative; */
+    margin-top: auto;
+    padding-top: 75px;
+    text-align: center;
+    font-size: 44px;
+    color: #2c3e50;
+    font-family: -webkit-pictograph;
+    margin-bottom: 35px;
+}
+.parallax{
+    background-image: url(../img/cal.jpg);
+    width: 100%;
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    border-left: 5px solid #eee;
+    color: #2c3e50;
+    font-family: -webkit-body;
+    text-transform: initial;
+    text-align: justify;
+}
+a.prog img {
+    opacity: 0.5;
+}
+a.prog img:hover {
+    opacity: 100;
+}
+a.btn.btn-default.submit {
+    padding: 10px 0;
+    margin-right: 200px;
+    background-color: #4a6371;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    width: 95px;
+    border-radius: 5px;
+    /* float: left; */
+    line-height: normal;
+}
+/*logincoursesend*/
+
+/*teacher dashboard*/
+li.dropdown.up {
+    left: 48px;
+    top: -21px;
+}
+li.dropdown.up a.sem {
+    padding: 10px 22px;
+    color: #fff;
+}
+li.dropdown.up a.sem:hover {
+    background-color: #B7655E;
+    color: #eeecee;
+}
+li.dropdown.drp {
+    left: 165px;
+    top: -44px;
+}
+
+/*teacher dashboard end*/
