@@ -55,8 +55,9 @@ namespace OnlineCourse.DapperObject
         }
        public STU_Student LoginStudentExists(string Username,string Password)
         {
-            var query="Select * from STU_Student where Username='"+Username +"'and Password='"+Password+ "'";
+            var query = "Select * from STU_Student Where Username='" + Username + "' and Password='" + Password + "'";
             return db.Query<STU_Student>(query).SingleOrDefault();
+            
         }
 
     }   
