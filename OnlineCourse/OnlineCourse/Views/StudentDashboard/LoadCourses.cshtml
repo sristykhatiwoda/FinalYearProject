@@ -1,0 +1,13 @@
+﻿@model IEnumerable<OnlineCourse.Models.MS_Course>
+
+
+
+@foreach (var item in Model)
+{
+
+    @Html.DisplayFor(modelItem => item.CourseTitle)
+
+
+}
+
+
