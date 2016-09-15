@@ -16,6 +16,7 @@ namespace OnlineCourse.Controllers
         private I_MS_Batch dbBatch = new MS_BatchDA();
         private I_MS_Faculty dbFaculty = new MS_FacultyDA();
         private I_MS_Semester dbSemester = new MS_SemesterDA();
+        private I_SC_User dbUser = new SC_UserDA();
         public ActionResult Index()
         {
             ViewBag.BatchID = new SelectList(dbBatch.Batches(), "BatchID", "Year");
@@ -44,7 +45,29 @@ namespace OnlineCourse.Controllers
             if (ModelState.IsValid)
             {  
                 db.Add(student);
-                return RedirectToAction("Index", "Dashboard");
+                return RedirectToAction("Index", "StudentDashboard");
+            }
+            return View();
+        }
+        public ActionResult StudentLogin(STU_Student student)
+        {
+
+            if (ModelState.IsValid)
+            {
+                STU_Student login = db.LoginStudentExists(student.Username, student.Password);
+                if (login != null)
+                {
+                    Session["User"] = student.Username;
+                    return RedirectToAction("Index", "StudentDashboard");
+                }
+
+                else
+                {
+                    ModelState.AddModelError("", "Login data is incorrect!");
+                    ViewBag.LoginError = "Incorrect username or password";
+                    return RedirectToAction("Index", "Home");
+                }
+
             }
             return View();
         }
