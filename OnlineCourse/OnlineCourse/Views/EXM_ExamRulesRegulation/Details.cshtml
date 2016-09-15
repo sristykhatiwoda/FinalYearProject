@@ -1,0 +1,35 @@
+﻿@model OnlineCourse.Models.EXM_ExamRulesRegulation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EXM_ExamRulesRegulation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ExamRulesRegulationID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExamRulesRegulationID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExamRulesRegulationText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExamRulesRegulationText)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ExamRulesRegulationID}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
