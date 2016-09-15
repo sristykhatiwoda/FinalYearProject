@@ -18,16 +18,16 @@ namespace OnlineCourse.DapperObject
         public int Add(STU_Student student)
         {
             var sqlQuery = "Insert into STU_Student" +
-                "(FirstName,MiddleName,LastName,Email,Password,FacultyID,BatchID,SemesterID)" +
+                "(FirstName,MiddleName,LastName,Email,Password,Username,FacultyID,BatchID,SemesterID)" +
                 "VALUES" +
-                "(@FirstName,@MiddleName,@LastName,@Email,@Password,@FacultyID,@BatchID,@SemesterID)";
+                "(@FirstName,@MiddleName,@LastName,@Email,@Password,@Username,@FacultyID,@BatchID,@SemesterID)";
             return db.Execute(sqlQuery, student);
         }
 
         public int Update(STU_Student student)
         {
             var sqlQuery = "Update STU_Student SET FirstName=@FirstName,MiddleName=@MiddleName," +
-               "LastName=@LastName,Email=@Email,Password=@Password,FacultyID=@FacultyID," +
+               "LastName=@LastName,Email=@Email,Password=@Password,Username=@Username,FacultyID=@FacultyID," +
                "BatchID=@BatchID,SemesterID=@SemesterID";
             return db.Execute(sqlQuery, student);
         }
@@ -53,7 +53,11 @@ namespace OnlineCourse.DapperObject
             return db.Query<STU_Student>(query).SingleOrDefault();
 
         }
-
+       public STU_Student LoginStudentExists(string Username,string Password)
+        {
+            var query="Select * from STU_Student where Username='"+Username +"'and Password='"+Password+ "'";
+            return db.Query<STU_Student>(query).SingleOrDefault();
+        }
 
     }   
 }
