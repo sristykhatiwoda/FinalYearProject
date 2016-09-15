@@ -39,9 +39,8 @@
         <div class="form-group">
             <div class="control-label col-md-2">CourseTitle</div>
             <div class="col-md-10">
-                @Html.DropDownList("CourseID", String.Empty)
-                @Html.ValidationMessageFor(model => model.CourseID)
-
+       @Html.DropDownList("CourseID",String.Empty)
+        @Html.ValidationMessageFor(model=>model.CourseID)
 
             </div>
         </div>
