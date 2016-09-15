@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OnlineCourse</RootNamespace>
     <AssemblyName>OnlineCourse</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -91,16 +92,14 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -142,6 +141,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -213,28 +213,40 @@
     <Compile Include="Controllers\COU_CourseContentController.cs" />
     <Compile Include="Controllers\DIS_DiscussionForumCommentController.cs" />
     <Compile Include="Controllers\DIS_DiscussionForumController.cs" />
+    <Compile Include="Controllers\EXM_ExamHistoryController.cs" />
+    <Compile Include="Controllers\EXM_ExamHistoryDetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MenuPagesController.cs" />
     <Compile Include="Controllers\MS_BatchController.cs" />
     <Compile Include="Controllers\MS_CourseController.cs" />
     <Compile Include="Controllers\MS_FacultyController.cs" />
     <Compile Include="Controllers\MS_SemesterController.cs" />
     <Compile Include="Controllers\NEW_NewsController.cs" />
+    <Compile Include="Controllers\QuizExamController.cs" />
     <Compile Include="Controllers\QUIZ_QuizController.cs" />
     <Compile Include="Controllers\QUIZ_QuizSubmitController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SC_UserController.cs" />
     <Compile Include="Controllers\SC_UserTypeController.cs" />
+    <Compile Include="Controllers\StudentDashboardController.cs" />
     <Compile Include="Controllers\STU_StudentController.cs" />
     <Compile Include="DapperObject\ASS_AssignmentPostDA.cs" />
     <Compile Include="DapperObject\ASS_AssignmentSubmitDA.cs" />
     <Compile Include="DapperObject\COU_CourseContentDA.cs" />
     <Compile Include="DapperObject\DIS_DiscussionForumCommentDA.cs" />
     <Compile Include="DapperObject\DIS_DiscussionForumDA.cs" />
+    <Compile Include="DapperObject\EXM_ExamHistoryDA.cs" />
+    <Compile Include="DapperObject\EXM_ExamHistoryDetailDA.cs" />
     <Compile Include="DapperObject\I_ASS_AssignmentPost.cs" />
     <Compile Include="DapperObject\I_ASS_AssignmentSubmit.cs" />
     <Compile Include="DapperObject\I_COU_CourseContent.cs" />
     <Compile Include="DapperObject\I_DIS_DiscussionForum.cs" />
     <Compile Include="DapperObject\I_DIS_DiscussionForumComment.cs" />
+    <Compile Include="DapperObject\I_EXM_ExamHistory.cs" />
+    <Compile Include="DapperObject\I_EXM_ExamHistoryDetail.cs" />
+    <Compile Include="DapperObject\I_MenuPages.cs" />
     <Compile Include="DapperObject\I_MS_Batch.cs" />
     <Compile Include="DapperObject\I_MS_Course.cs" />
     <Compile Include="DapperObject\I_MS_Faculty.cs" />
@@ -245,6 +257,7 @@
     <Compile Include="DapperObject\I_SC_User.cs" />
     <Compile Include="DapperObject\I_SC_UserType.cs" />
     <Compile Include="DapperObject\I_STU_Student.cs" />
+    <Compile Include="DapperObject\MenuPagesDA.cs" />
     <Compile Include="DapperObject\MS_BatchDA.cs" />
     <Compile Include="DapperObject\MS_CourseDA.cs" />
     <Compile Include="DapperObject\MS_FacultyDA.cs" />
@@ -264,8 +277,12 @@
     <Compile Include="Models\COU_CourseContent.cs" />
     <Compile Include="Models\DIS_DiscussionForum.cs" />
     <Compile Include="Models\DIS_DiscussionForumComment.cs" />
+    <Compile Include="Models\EXM_ExamHistory.cs" />
+    <Compile Include="Models\EXM_ExamHistoryDetail.cs" />
+    <Compile Include="Models\EXM_ExamRulesRegulation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MenuPages.cs" />
     <Compile Include="Models\MS_Batch.cs" />
     <Compile Include="Models\MS_Course.cs" />
     <Compile Include="Models\MS_Faculty.cs" />
@@ -320,6 +337,8 @@
     <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="CourseContent\file\c3.PNG" />
+    <Content Include="CourseContent\file\New Text Document.txt" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
@@ -327,19 +346,34 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\custom.css" />
     <Content Include="css\dashboard.css" />
+    <Content Include="css\effects.min.css" />
     <Content Include="css\lightbox.css" />
     <Content Include="css\main.css" />
     <Content Include="css\owl.carousel.css" />
     <Content Include="css\owl.theme.css" />
     <Content Include="css\owl.transitions.css" />
+    <Content Include="css\student.css" />
     <Content Include="css\style.css" />
     <Content Include="css\teacher.css" />
+    <Content Include="css\teachers.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\css\effects.css" />
+    <Content Include="fonts\css\effectspre.css" />
+    <Content Include="fonts\css\font-awesome.css" />
+    <Content Include="fonts\css\font-awesome.min.css" />
+    <Content Include="fonts\fonts\colabthi-webfont.svg" />
+    <Content Include="fonts\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fonts\stylesheet.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\HELP-US-OUT.txt" />
+    <Content Include="fonts\opensans-bold.svg" />
+    <Content Include="fonts\opensans-regular.svg" />
+    <Content Include="fonts\opensans-semibold.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="img\4.jpg" />
     <Content Include="img\book.jpg" />
+    <Content Include="img\C++.jpg" />
     <Content Include="img\cover_files\2.5194f.main.js" />
     <Content Include="img\cover_files\5194f.main.css" />
     <Content Include="img\cover_files\5194f.main.js" />
@@ -364,11 +398,15 @@
     <Content Include="img\cover_files\handler-script.js" />
     <Content Include="img\cover_files\sp.js" />
     <Content Include="img\logo-1.gif" />
+    <Content Include="img\logo..png" />
     <Content Include="img\logo.gif" />
+    <Content Include="img\logo.jpg" />
+    <Content Include="img\logo.png" />
     <Content Include="img\onlinelogo.png" />
     <Content Include="img\section1.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\gruntfile.js" />
     <Content Include="js\jquery.main.js" />
     <Content Include="js\npm.js" />
     <Content Include="js\wow.js" />
@@ -384,6 +422,45 @@
     <Content Include="img\cover_files\book2_files\photo-1462037629520-2a7c6feac7f4" />
     <Content Include="img\cover_files\book2_files\profile-1462033746071-38ac4e9659de" />
     <Content Include="img\cover_files\profile-1464795563162-9cdef1ffb1fe" />
+    <Content Include="fonts\fonts\colabthi-webfont.eot" />
+    <Content Include="fonts\fonts\colabthi-webfont.ttf" />
+    <Content Include="fonts\fonts\colabthi-webfont.woff" />
+    <Content Include="fonts\fonts\colabthi-webfont.woff2" />
+    <Content Include="fonts\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fonts\FontAwesome.otf" />
+    <Content Include="fonts\less\animated.less" />
+    <Content Include="fonts\less\bordered-pulled.less" />
+    <Content Include="fonts\less\core.less" />
+    <Content Include="fonts\less\fixed-width.less" />
+    <Content Include="fonts\less\font-awesome.less" />
+    <Content Include="fonts\less\icons.less" />
+    <Content Include="fonts\less\larger.less" />
+    <Content Include="fonts\less\list.less" />
+    <Content Include="fonts\less\mixins.less" />
+    <Content Include="fonts\less\path.less" />
+    <Content Include="fonts\less\rotated-flipped.less" />
+    <Content Include="fonts\less\stacked.less" />
+    <Content Include="fonts\less\variables.less" />
+    <Content Include="fonts\scss\font-awesome.scss" />
+    <Content Include="fonts\scss\_animated.scss" />
+    <Content Include="fonts\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\scss\_core.scss" />
+    <Content Include="fonts\scss\_fixed-width.scss" />
+    <Content Include="fonts\scss\_icons.scss" />
+    <Content Include="fonts\scss\_larger.scss" />
+    <Content Include="fonts\scss\_list.scss" />
+    <Content Include="fonts\scss\_mixins.scss" />
+    <Content Include="fonts\scss\_path.scss" />
+    <Content Include="fonts\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\scss\_stacked.scss" />
+    <Content Include="fonts\scss\_variables.scss" />
+    <Content Include="fonts\opensans-semibold.woff" />
+    <Content Include="fonts\opensans-regular.woff" />
+    <Content Include="fonts\opensans-bold.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -406,7 +483,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\STU_Student\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
@@ -507,13 +584,42 @@
     <Content Include="Views\MS_Batch\Edit.cshtml" />
     <Content Include="Views\MS_Batch\Delete.cshtml" />
     <Content Include="Views\Shared\WebPageLayout.cshtml" />
+    <Content Include="Views\MenuPages\Create.cshtml" />
+    <Content Include="Views\MenuPages\Delete.cshtml" />
+    <Content Include="Views\MenuPages\Details.cshtml" />
+    <Content Include="Views\MenuPages\Edit.cshtml" />
+    <Content Include="Views\MenuPages\Index.cshtml" />
+    <Content Include="Views\Shared\_WebPageLayout.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Shared\LoginLayout.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\QuiZExam\Index.cshtml" />
+    <Content Include="Views\QuiZExam\MyExam.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\StudentDashboard\Index.cshtml" />
+    <Content Include="Views\EXM_ExamHistory\Index.cshtml" />
+    <Content Include="Views\EXM_ExamHistory\Details.cshtml" />
+    <Content Include="Views\EXM_ExamHistory\Create.cshtml" />
+    <Content Include="Views\EXM_ExamHistory\Edit.cshtml" />
+    <Content Include="Views\EXM_ExamHistory\Delete.cshtml" />
+    <Content Include="Views\EXM_ExamHistoryDetail\Index.cshtml" />
+    <Content Include="Views\EXM_ExamHistoryDetail\Details.cshtml" />
+    <Content Include="Views\EXM_ExamHistoryDetail\Create.cshtml" />
+    <Content Include="Views\EXM_ExamHistoryDetail\Edit.cshtml" />
+    <Content Include="Views\EXM_ExamHistoryDetail\Delete.cshtml" />
+    <Content Include="Views\StudentDashboard\LoadNews.cshtml" />
+    <Content Include="Views\Shared\_StudentLayout.cshtml" />
+    <Content Include="Views\StudentDashboard\LoadCourses.cshtml" />
+    <Content Include="Views\ASS_AssignmentPost\LoadAssignment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="CourseContent\file\" />
+    <Folder Include="Assignments\AssignmentPost\" />
+    <Folder Include="Assignments\AssignmentSubmit\" />
     <Folder Include="CourseContent\Video\" />
     <Folder Include="images\CourseContent\" />
+    <Folder Include="Views\Register\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
