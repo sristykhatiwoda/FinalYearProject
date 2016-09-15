@@ -13,8 +13,7 @@ namespace OnlineCourse.Controllers
     public class LoginController : Controller
     {
         private I_SC_User db = new SC_UserDA();
-        private I_SC_UserType dbtype = new SC_UserTypeDA();
-        private I_STU_Student dbS = new STU_StudentDA();
+       
         // GET: Login
         public ActionResult Index()
         {
