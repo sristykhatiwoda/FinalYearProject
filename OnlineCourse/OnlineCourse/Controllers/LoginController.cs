@@ -27,7 +27,7 @@ namespace OnlineCourse.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(SC_User user,STU_Student student)
+        public ActionResult Login(SC_User user)
         {
             if (ModelState.IsValid)
             {
