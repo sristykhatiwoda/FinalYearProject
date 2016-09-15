@@ -18,5 +18,7 @@ namespace OnlineCourse.DapperObject
         int Update(STU_Student student);
 
         int Delete(int? id);
+
+        STU_Student LoginStudentExists(string Username, string Password);
     }
 }
