@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -18,12 +17,12 @@
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
     <!--<link href="css/main.css" rel="stylesheet">-->
-    <link href="~/css/custom.css" rel="stylesheet">
-    <link rel="stylesheet" href="~/css/lightbox.css">
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/lightbox.css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css">
     <link rel="stylesheet" href="css/hover.css">
-
-
+    <!--<link rel="stylesheet" type="text/css" href="css/effects.min.css">
+     <link rel="stylesheet" href="fonts/css/effectspre.css">-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,139 +34,14 @@
 
 
     <!-- Modalforsignin -->
-    <div class="modal fade" id="myModalog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="padding:35px 50px;">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">SigninForm</h4>
-                    <p class="para">Not Yet joined?<a class="reg" href=""> Registry</a></p>
-                </div>
-                <div class="modal-body" style="padding:40px 50px;">
-                    <form>
-                        <div class="form-group">
-
-                            <label for="username"><span class="glyphicon glyphicon-user" aria-hidden="true">Username:</span></label>
-                            <input type="text" class="form-control" id="name" placeholder="Username">
-                        </div>
-                        <div class="form-group">
-                            <label for="pwd"><span class="glyphicon glyphicon-eye-open" aria-hidden="true">Password:</span></label>
-                            <input type="password" class="form-control" id="pwd" placeholder="Username">
-                        </div>
-
-                        <!--<div class="checkbox">
-                          <label><input type="checkbox"> Remember me</label>
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>-->
-                    </form>
-
-                </div>
-                <div class="modal-footer">
-
-                    <button type="button" class="btn btn-primary btn-block">Sign in</button>
-                </div>
-            </div>
-        </div>
-    </div>
+   @* @Html.Action("StudentLogin", "Home")*@
     <!-- mobalendforsignin -->
     <!-- mobalstartforregistry -->
-
-    <!--Partial-->
-
-    @*<div class="modal fade" id="myModalreg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        @using (Html.BeginForm("Register", "Register", FormMethod.Post))
-        {
-          @Html.AntiForgeryToken()
-          @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header" style="padding:30px 50px;">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">RegistryForm</h4>
-                        <p class="para">Already Joined?<a class="reg" href="#">LogIn</a></p>
-                    </div>
-                    <div class="modal-body" style="padding:30px 50px;">
-                        <form>
-                            <div class="form-group">
-
-                                <label for="username">FirstName:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your firstname">
-                            </div>
-                            <div class="form-group">
-
-                                <label for="username">MiddleName:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your middlename">
-                            </div>
-                            <div class="form-group">
-
-                                <label for="username">LastName:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your lastname">
-                            </div>
-                            <div class="form-group">
-                                <label for="pwd">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter your Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter ypur email">
-                            </div>
-                            <div class="form-group">
-                                <label for="Faculty">Faculty:</label>
-                                <select class="form-control" id="sel1">
-                                    <option>Bsc.Csit</option>
-                                    <option>BBA</option>
-                                    <option>Engineering</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="Batch">Batch:</label>
-                                <select class="form-control" id="sel1">
-                                    <option>2012</option>
-                                    <option>2013</option>
-                                    <option>2014</option>
-                                    <option>2015</option>
-                                    <option>2016</option>
-                                    <option>2017</option>
-
-                                   
-                                </select>
-                            </div>
-                           
-                            <div class="form-group">
-                                <label for="Semester">Semester:</label>
-                                <select class="form-control" id="sel1">
-                                   <option>First</option>
-                                    <option>Second</option>
-                                    <option>Third</option>
-                                    <option>Fourth</option>
-                                    <option>Fifth</option>
-                                    <option>Sixth</option>
-                                    <option>Seventh</option>
-                                    <option>Eigth</option>
-                                    
-                                </select>
-                            </div>
-                            <div class="checkbox">
-                              <label><input type="checkbox"> Remember me</label>
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-
-                    </div>
-                    <div class="modal-footer">
-
-                        <button type="button" class="btn btn-primary btn-block">Register</button>
-                    </div>
-                </div>
-            </div>
-        }
-    </div>*@
-
     <!-- mobalendforregistry -->
     <!--Fixed Top Navbar-->
     <header>
 
-        <div class="navbar navbar-default">
+        <div class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -177,8 +51,8 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <div class="logo pull-left animated wow fadeInLeft">
-                        <img src="~/img/logo.gif" alt="">
+                    <div class="logo pull-left animated wow fadeInLeft img-responsive">
+                        <img src="img/logo.png" style="width:150px; height:80px;" alt="">
                     </div>
                 </div>
                 <!--<div>
@@ -191,16 +65,16 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <nav class="pull-left">
                         <ul class="list-unstyled">
-                            <li class="animated wow fadeInLeft " data-wow-delay="0s"><a href="#first">Courses</a></li>
+                            <li class="animated wow fadeInLeft " data-wow-delay="0s"><a href="#">Courses</a></li>
                             <li class="animated wow fadeInLeft " data-wow-delay=".1s"><a href="#introd">Programs</a></li>
-                            <li class="animated wow fadeInLeft " data-wow-delay=".1s"><a href="#project">About</a></li>
+                            <li class="animated wow fadeInLeft " data-wow-delay=".1s"><a href="#about">About</a></li>
                         </ul>
                     </nav>
 
                     <div class="pull-right">
-                        <button type="button" class=" btn btn-default signbtn signin " data-toggle="modal" data-target="#myModalog">Sign in</button>
+                        <button type="button" class=" btn btn-default signbtn signin grow-shadow " data-toggle="modal" data-target="#myModalog">LogIn</button>
 
-                        <button type="button" class=" btn btn-default regbtn signin " data-toggle="modal" data-target="#myModalreg">Register</button>
+                        <button type="button" class=" btn btn-default regbtn signin grow-shadow " data-toggle="modal" data-target="#myModalreg">Register</button>
 
                     </div>
 
@@ -219,7 +93,7 @@
 
                 </div>
                 <div class="col-md-8 col-sm-12">
-                    <h1 class="text">
+                    <h1 class="animated wow fadeInLeft text " data-wow-delay="0s">
                         What would you
                         <br>
                         like to learn?
@@ -230,18 +104,131 @@
             </div>
 
         </div>
-       
-            @RenderBody()
-           
 
 
     </section>
     <!-- sectionfirstEnd -->
+    <!--  courses  -->
+    <!--<section class="courses jumptarget" id="courses">
+      <div class="container">
+      <div class="row">
+      <div class="header-container col-md-12"><h2 id="gallaryfont" class="wow animated zoomIn">Our Courses</h2></div>
+            <div class="col-lg-4 col-md-4 col-xs-12 box ">
+
+            <div class="image-back"><img src="img/C++.jpg" class="img-responsive" alt=""></div>
+             <div class="box-content"> <h2>C++</h2></div>
+             <p>This is some text</p>
+            <div class="learnmore"><a href="#" target="blank"class="btn btn-block btn-primary hvr-curl-bottom-right">learn more</a></div>
+             </div>
+
+
+              <div class="col-lg-4 col-md-4 col-xs-12 box jumbotron">
+
+            <div class="image-back"><div><img src="img/C++.jpg" class="img-responsive" alt=""></div></div>
+             <div class="box-content"> <h2>C++</h2></div>
+             <p>This is some text</p>
+            <div class="learnmore"><a href="#" target="blank" class="btn btn-block btn-primary hvr-curl-bottom-right">learn more</a></div>
+             </div>
+
+
+
+              <div class="col-lg-4 col-md-4 col-xs-12 box jumbotron">
+
+            <div class="image-back"><div><img src="img/C++.jpg" class="img-responsive" alt=""></div></div>
+             <div class="box-content"> <h2>C++</h2></div>
+             <p>This is some text</p>
+            <div class="learnmore"><a href="#" target="blank" class="btn btn-block btn-primary hvr-curl-bottom-right">learn more</a></div>
+             </div>
+
+
+
+      </div>
+      </div>
+
+    </section>-->
+    <!--  end courses  -->
+    <section class="about" id="about">
+        <div class="container parallax">
+            <div class="row">
+                <h2>About</h2>
+                <div class="col-md-6 col-sm-12 row1">
+                    <div class="about">
+                        <img src="img/book2.jpg" style="width:100%;height:350px;" alt="">
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-sm-12 abttext row1">
+
+                    <strong>Our Courses</strong>
+                    <p id="abttext">
+                        We offer a diverse selection of courses from leading universities and cultural institutions from around the world. These are delivered one step at a time, and are accessible on mobile, tablet and desktop, so you can fit learning around your life.
+
+                        We believe learning should be an enjoyable, social experience, so our courses offer the opportunity to discuss what you’re learning with others as you go, helping you make fresh discoveries and form new ideas.
+                    </p>
+                    <div class="know"><a href="#" target="blank" class="btn btn-default btn-lg hvr-curl-bottom-right">Know More About Us</a></div>
+
+
+                </div>
+            </div>
+            <div class="row">
+
+
+                <div class="col-md-6 col-sm-12 abttext row1">
+
+                    <strong>Our Programs</strong>
+                    <p id="abttext">
+                        We offer a diverse selection of courses from leading universities and cultural institutions from around the world. These are delivered one step at a time, and are accessible on mobile, tablet and desktop, so you can fit learning around your life.
+
+                        We believe learning should be an enjoyable, social experience, so our courses offer the opportunity to discuss what you’re learning with others as you go, helping you make fresh discoveries and form new ideas.
+                    </p>
+
+                    <div class="know"><a href="#" target="blank" class="btn btn-default btn-lg hvr-curl-bottom-right">Know More About Us</a></div>
+
+
+                </div>
+                <div class="col-md-6 col-sm-12 row1">
+                    <div class="about">
+                        <img src="img/about1.jpg" style="width:100%;height:350px;" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="second">
+        <div class="jumbotron">
+            <p class="try">Try high quality online education – enjoy free online courses from <br> top universities and specialist organisations.</p>
+            <div class="join"><a href="#myModalreg" data-toggle="modal" data-dismiss="modal">Join Us</a></div>
+
+        </div>
+
+    </section>
+    @RenderBody()
+    <footer>
+
+        <h3>Connect With Online Courses</h3>
+        <a class="font" href="#">
+            <i class="fa fa-facebook" aria-hidden="true"></i><i class="fa fa-twitter" aria-hidden="true"></i><i class="fa fa-google-plus" aria-hidden="true"></i>
+        </a>
+        <p class="footer">Learning Management System’s mission is to pioneer the best social learning experiences for everyone, anywhere.</p>
+
+        </div>
+    </footer>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="js/ajaxchimp.js"></script>
     <script type="text/javascript" src="js/scrollTo.js"></script>
+    <script>
+// You can avoid the document.ready if you put the script at the bottom of the page
+$('#about').ScrollTo({
+    duration: 2000,
+    easing: 'linear'
+});
+    </script>
+    <!--<script type="text/javascript" src="js/gruntfile.js"></script>-->
     <script>
     $(function(){
 $('#myModalog').modal({
@@ -258,9 +245,7 @@ $('#myModalog').modal({
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 
-    <script src="~/js/jquery.main.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-  
 </body>
 </html>
-
