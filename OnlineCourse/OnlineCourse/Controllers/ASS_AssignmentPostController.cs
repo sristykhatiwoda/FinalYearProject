@@ -87,8 +87,7 @@ namespace OnlineCourse.Controllers
 
         // POST: ASS_AssignmentPost/Edit/5
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "AssignmentID,Questions,Deadline,CourseID," +
-            "UserID")]ASS_AssignmentPost assignmentPost,HttpPostedFileBase file1)
+        public ActionResult Edit(ASS_AssignmentPost assignmentPost,HttpPostedFileBase file1)
         {
             if (ModelState.IsValid)
             {
@@ -100,9 +99,9 @@ namespace OnlineCourse.Controllers
                     assignmentPost.Questions = fileName;
 
                 }
-
+                db.Update(assignmentPost);
+                return RedirectToAction("Index");
             }
-            
             return View(assignmentPost);
         }
 
