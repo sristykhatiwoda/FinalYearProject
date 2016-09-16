@@ -31,6 +31,17 @@
                                 @Html.ValidationMessageFor(u => u.Password, "", new { @class = "text-danger" })
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <div class="col-md-3 control-label label_padding">Role</div>
+                            <div class="col-md-8">
+                                @Html.DropDownList("UserTypeID", String.Empty)
+                                @Html.ValidationMessageFor(model => model.UserTypeID)
+                             </div>
+                        </div>
+                        
+
+
                         <div style="clear:both"></div>
                         <div class="form-group" style="padding:10px 0 0 0;">
                             <div class="col-md-offset-3 col-md-10">
