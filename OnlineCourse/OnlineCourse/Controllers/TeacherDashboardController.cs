@@ -31,5 +31,11 @@ namespace OnlineCourse.Controllers
             var courses = dbCourse.Courses();
             return PartialView(courses);
         }
+
+        //public ActionResult NewsDescription()
+        //{
+        //    var news = db.News();
+        //    return View(news);
+        //}
     }
 }
