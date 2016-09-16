@@ -52,10 +52,11 @@ namespace OnlineCourse.DapperObject
             var sqlQuery = "Delete from SC_User where UserID=" + id;
             return db.Execute(sqlQuery);
         }
-        public SC_User LoginUserExists(string Username,string Password)
+        public SC_User LoginUserExists(string Username,string Password,string UserTypeID)
         {
-            var query = "Select * from SC_User Where Username='" + Username + "' and Password='" + Password + "' AND UserTypeID='1'";
+            var query = "Select * from SC_User Where Username='" + Username + "' and Password='" + Password + "'and UserTypeID='" + UserTypeID+"'";
             return db.Query<SC_User>(query).SingleOrDefault();
         }
+        
     }
 }
