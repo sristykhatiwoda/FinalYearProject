@@ -16,6 +16,9 @@
             @Html.DisplayNameFor(model => model.AssignmentID)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Questions)
         </th>
         <th>
@@ -27,6 +30,9 @@
         <th>
             @Html.DisplayNameFor(model => model.UserID)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostedDate)
+        </th>
         <th></th>
     </tr>
 
@@ -34,6 +40,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.AssignmentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Questions)
@@ -46,6 +55,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostedDate)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new {  id=item.AssignmentID}) |
