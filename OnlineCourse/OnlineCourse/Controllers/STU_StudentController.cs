@@ -51,7 +51,7 @@ namespace OnlineCourse.Controllers
         // POST: STU_Student/Create
         [HttpPost]
         public ActionResult Create([Bind(Include = "StudentID,FirstName,MiddleName,LastName,Email,"+
-            "Password,FacultyID,BatchID,SemesterID")]STU_Student student)
+            "Password,Username,FacultyID,BatchID,SemesterID")]STU_Student student)
         {
             if (ModelState.IsValid)
             {
@@ -76,7 +76,7 @@ namespace OnlineCourse.Controllers
                 return HttpNotFound();
             }
             ViewBag.FacultyID = new SelectList(dbFaculty.Faculties(), "FacultyID", "FacultyTitle",student.FacultyID);
-            ViewBag.BatchID = new SelectList(dbBatch.Batches(), "BatchID", "Batch");
+            ViewBag.BatchID = new SelectList(dbBatch.Batches(), "BatchID", "Year");
             ViewBag.SemesterID = new SelectList(dbSemester.Semesters(), "SemesterID", "SemesterTitle",student.FacultyID);
             return View(student);
         }
@@ -84,7 +84,7 @@ namespace OnlineCourse.Controllers
         // POST: STU_Student/Edit/5
         [HttpPost]
         public ActionResult Edit([Bind(Include = "StudentID,FirstName,MiddleName,LastName,Email,"+
-            "Password,FacultyID,BatchID,SemesterID")]STU_Student student)
+            "Password,Username,FacultyID,BatchID,SemesterID")]STU_Student student)
         {
            if(ModelState.IsValid)
             {
