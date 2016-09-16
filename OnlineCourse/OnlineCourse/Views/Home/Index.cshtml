@@ -32,11 +32,7 @@
                                 <label for="pwd"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></label>
                                 <input type="password" class="form-control" id="pwd" placeholder="Enter your password">
                             </div>
-                            <select class="selectpicker">
-                                <option data-tokens="std">student</option>
-                                <option data-tokens="tea">Teacher</option>
-
-                            </select>
+                            
                             <div class="checkbox">
                                 <label><input type="checkbox" value="" checked>Remember me</label>
                             </div>
@@ -116,6 +112,11 @@
                                     <label for="email">Email:</label>
                                     @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Username:</label>
+                                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
                                     FacultyID
