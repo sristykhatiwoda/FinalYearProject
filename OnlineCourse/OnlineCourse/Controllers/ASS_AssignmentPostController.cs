@@ -128,5 +128,12 @@ namespace OnlineCourse.Controllers
             db.Delete(id);
             return RedirectToAction("Index");
         }
+
+        public ActionResult LoadAssignment()
+        {
+            var assignment = db.AssignmentPost();
+            return View(assignment);
+        }
     }
 }
+ 

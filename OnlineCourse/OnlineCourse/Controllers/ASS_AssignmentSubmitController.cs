@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using OnlineCourse.Models;
 using System.Net;
 using OnlineCourse.DapperObject;
+using System.IO;
 
 namespace OnlineCourse.Controllers
 {
@@ -46,11 +47,17 @@ namespace OnlineCourse.Controllers
 
         // POST: ASS_AssignmentSubmit/Create
         [HttpPost]
-        public ActionResult Create([Bind(Include = "SubmitAssignmentID,SubmissionDate,Answer,Point," +
-            "Remarks,AssignmentID,StudentID")]ASS_AssignmentSubmit assignmentSubmit)
+        public ActionResult Create(ASS_AssignmentSubmit assignmentSubmit,HttpPostedFileBase file1)
         {
             if(ModelState.IsValid)
             {
+                if (file1 != null)
+                {
+                    string fileName = file1.FileName;
+                    string filePath = Path.Combine(Server.MapPath("~/Assignments/AssignmentSubmit"), Path.GetFileName(fileName));
+                    file1.SaveAs(filePath);
+                    assignmentSubmit.Answer = fileName;
+                }
                 db.Add(assignmentSubmit);
                 return RedirectToAction("Index");
             }
@@ -79,10 +86,18 @@ namespace OnlineCourse.Controllers
         // POST: ASS_AssignmentSubmit/Edit/5
         [HttpPost]
         public ActionResult Edit([Bind(Include = "SubmitAssignmentID,SubmissionDate,Answer,Point," +
-            "Remarks,AssignmentID,StudentID")]ASS_AssignmentSubmit assignmentSubmit)
+            "Remarks,AssignmentID,StudentID")]ASS_AssignmentSubmit assignmentSubmit,HttpPostedFileBase file1)
         {
             if(ModelState.IsValid)
             {
+                if (file1 != null)
+                {
+                    string fileName = file1.FileName;
+                    string filePath = Path.Combine(Server.MapPath("~/Assignments/AssignmentSubmit"), Path.GetFileName(fileName));
+                    file1.SaveAs(filePath);
+                    assignmentSubmit.Answer = fileName;
+
+                }
                 db.Update(assignmentSubmit);
                 return RedirectToAction("Index");
             }
