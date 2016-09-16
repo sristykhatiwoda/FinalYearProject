@@ -53,7 +53,7 @@ namespace OnlineCourse.Controllers
 
                 return RedirectToAction("Index");
             }
-            ViewBag.UserID = new SelectList(dbStudent.Students(), "StudentID", "FirstName");
+            ViewBag.StudentID = new SelectList(dbStudent.Students(), "StudentID", "FirstName");
            
             return View(examHistory);
         }
