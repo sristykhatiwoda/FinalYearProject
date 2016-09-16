@@ -7,78 +7,152 @@
 
 <h2>Index</h2>
 
-    <div class="modal fade" id="myModalreg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        @using (Html.BeginForm("Home", "Home", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="modal fade" id="myModalog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+@using (Html.BeginForm("StudentLogin", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header" style="padding:30px 50px;">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">RegistryForm</h4>
-                        <p class="para">Already Joined?<a class="reg" href="#">LogIn</a></p>
+                        <h4 class="modal-title" id="myModalLabel">LoginForm</h4>
+                        <p class="para">Not Yet joined?<a class="reg" href="#myModalreg" data-toggle="modal" data-dismiss="modal"> Registry</a></p>
                     </div>
                     <div class="modal-body" style="padding:30px 50px;">
                         <form>
-                            <label for="username">FirstName:</label>
-                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                             <div class="form-group">
 
-                                <label for="username">MiddleName:</label>
-                                @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+                                <label for="username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your email">
                             </div>
                             <div class="form-group">
+                                <label for="pwd"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></label>
+                                <input type="password" class="form-control" id="pwd" placeholder="Enter your password">
+                            </div>
+                            <select class="selectpicker">
+                                <option data-tokens="std">student</option>
+                                <option data-tokens="tea">Teacher</option>
 
-                                <label for="username">LastName:</label>
-                                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                            </select>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="" checked>Remember me</label>
                             </div>
-                            <div class="form-group">
-                                <label for="pwd">Password:</label>
-                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                            <div>
+                                <p class="pull-right"><a class="for" href="">Forget your password?</a></p>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email:</label>
-                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="form-group">
-                                FacultyID
-                                    @Html.DropDownList("FacultyID", String.Empty)
-                                    @Html.ValidationMessageFor(model => model.FacultyID)
-                                </div>
-                           
-                            <div class="form-group">
-                                  BatchID
-                                    @Html.DropDownList("BatchID", String.Empty)
-                                    @Html.ValidationMessageFor(model => model.BatchID)
-                                </div>
-                          
-                            <div class="form-group">
-                                SemesterID
-                                    @Html.DropDownList("SemesterID", String.Empty)
-                                    @Html.ValidationMessageFor(model => model.SemesterID)
-                                </div>
-                            
+
+                            <!--<div class="form-group">
+                            <label for="option"> Sign in as-</label>
+                          <select class="form-control" placeholder="Post">
+
+                          <option>Student</option>
+                          <option>Teacher</option>
+
+                        </select>
+                        </div>-->
+           
+                        
+
                             <!--<div class="checkbox">
-                              <label><input type="checkbox"> Remember me</label>
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>-->
+                          <label><input type="checkbox"> Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>-->
                         </form>
 
                     </div>
                     <div class="modal-footer">
 
-                        <input type="Submit" value="Register" class="btn btn-primary btn-block"/>
+                        <button type="submit" class="btn  btn-block ">LogIn</button>
+
+
                     </div>
                 </div>
             </div>
-        }
-    </div>
+}
+        </div>
+
+
+
+
+        <div class="modal fade" id="myModalreg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            @using (Html.BeginForm("Home", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" style="padding:30px 50px;">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">RegistryForm</h4>
+                            <p class="para">Already Joined?<a class="reg" href="#">LogIn</a></p>
+                        </div>
+                        <div class="modal-body" style="padding:30px 50px;">
+                            <form>
+                                <label for="username">FirstName:</label>
+                                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                <div class="form-group">
+
+                                    <label for="username">MiddleName:</label>
+                                    @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+
+                                    <label for="username">LastName:</label>
+                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Password:</label>
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    FacultyID
+                                    @Html.DropDownList("FacultyID", String.Empty)
+                                    @Html.ValidationMessageFor(model => model.FacultyID)
+                                </div>
+
+                                <div class="form-group">
+                                    BatchID
+                                    @Html.DropDownList("BatchID", String.Empty)
+                                    @Html.ValidationMessageFor(model => model.BatchID)
+                                </div>
+
+                                <div class="form-group">
+                                    SemesterID
+                                    @Html.DropDownList("SemesterID", String.Empty)
+                                    @Html.ValidationMessageFor(model => model.SemesterID)
+                                </div>
+
+                                <!--<div class="checkbox">
+                                  <label><input type="checkbox"> Remember me</label>
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>-->
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+
+                            <input type="Submit" value="Register" class="btn btn-primary btn-block" />
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+
+
 
 
 
