@@ -1,0 +1,41 @@
+﻿@model IEnumerable<OnlineCourse.Models.NEW_News>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<section class="news" id="news">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h2 class="news1">News</h2>
+
+                    <ul class="news2" style="list-style-type:arrow">
+                        @*<li class="arrow" style="color:red;">Learning Management System’s mission is to pioneer the best social learning experiences for everyone, anywhere.</li>
+                        <li class="arrow">Learning Management System’s mission is to pioneer the best social learning experiences for everyone, anywhere.</li>
+                        <li class="arrow">Learning Management System’s mission is to pioneer the best social learning experiences for everyone, anywhere.</li>*@
+                        @foreach (var item in Model)
+                        {
+
+                            <li> @Html.DisplayFor(modelItem => item.NewsTitle)</li>
+                            @*<li> @Html.ActionLink(item.CourseTitle, "GetProduct", "Product", new { id = item.CourseID }, null)</li>*@
+
+
+
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12">
+
+            </div>
+        </div>
+
+
+
+    </section>
+
