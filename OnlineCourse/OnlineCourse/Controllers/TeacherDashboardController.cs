@@ -16,7 +16,7 @@ namespace OnlineCourse.Controllers
         public ActionResult Index()
         {
             var news = db.News();
-            return View();
+            return View(news);
         }
     }
 }
