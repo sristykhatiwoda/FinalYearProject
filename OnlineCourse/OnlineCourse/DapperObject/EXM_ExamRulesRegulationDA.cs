@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 namespace OnlineCourse.DapperObject
 {
   
-    public class EXM_ExamRulesRegulation : I_EXM_ExamRulesRegulation
+    public class EXM_ExamRulesRegulationDA : I_EXM_ExamRulesRegulation
     {
         private static string connStr = System.Configuration.ConfigurationManager.
         ConnectionStrings["DefaultConnection"].ToString();
@@ -19,9 +19,8 @@ namespace OnlineCourse.DapperObject
         public static IDbConnection db = new SqlConnection(connStr);
         public int Add(EXM_ExamRulesRegulation examRulesRegulation)
         {
-            var sqlQuery = "Insert into EXM_ExamRulesRegulation(ExamRulesRegulationID,ExamRulesRegulationText)" +
-                "values" +
-                "(@ExamRulesRegulationID,@ExamRulesRegulationText)";
+            var sqlQuery = "Insert into EXM_ExamRulesRegulation(ExamRulesRegulationText)" +
+                "values(@ExamRulesRegulationText)";
             return db.Execute(sqlQuery, examRulesRegulation);
         }
 
@@ -44,7 +43,7 @@ namespace OnlineCourse.DapperObject
 
         public int Update(EXM_ExamRulesRegulation examRulesRegulation)
         {
-            var sqlQuery = "Update EXM_ExamRulesRegulation set ExamRulesRegulation"+
+            var sqlQuery = "Update EXM_ExamRulesRegulation set ExamRulesRegulationText=@ExamRulesRegulationText"+
                 " where ExamRulesRegulationID=@ExamRulesRegulationID";
             return db.Execute(sqlQuery, examRulesRegulation);
 
