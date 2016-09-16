@@ -99,5 +99,22 @@ namespace OnlineCourse.Controllers
             db.Delete(id);
             return RedirectToAction("Index");
         }
-    }
+
+        public ActionResult GetNewsDescription(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var news = db.News().Where(a => a.NewsID == id).ToList();
+
+            if (news == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.NewsI = id;
+            ViewBag.returnUrl = Request.Url.AbsoluteUri;
+            return View(news);
+        } }
 }
