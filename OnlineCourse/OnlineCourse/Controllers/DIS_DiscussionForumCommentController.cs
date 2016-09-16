@@ -24,7 +24,7 @@ namespace OnlineCourse.Controllers
         }
 
         // GET: DIS_DiscussionForumComment/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int ? id)
         {
             if (id == null)
             {

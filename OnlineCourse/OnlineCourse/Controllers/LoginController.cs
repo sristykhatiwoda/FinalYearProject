@@ -13,41 +13,41 @@ namespace OnlineCourse.Controllers
     public class LoginController : Controller
     {
         private I_SC_User db = new SC_UserDA();
-       
+        private I_SC_UserType dbType = new SC_UserTypeDA();
         // GET: Login
         public ActionResult Index()
         {
+            ViewBag.UserTypeID = new SelectList(dbType.UserTypes(), "UserTypeID", "Type");
             return View();
         }
 
         [HttpGet]
         public ActionResult Login()
         {
+        
             return View();
         }
         [HttpPost]
         public ActionResult Login(SC_User user)
         {
             if (ModelState.IsValid)
-            {
-                // User user = new User();                
-                SC_User login = db.LoginUserExists(user.Username, user.Password);
+            {       
+                SC_User login = db.LoginUserExists(user.Username, user.Password,user.UserTypeID);
                 
-                // bool LoginUserExists = user.LoginUserExists(user.Username, user.Password);
-                if (login != null)
+                if (login != null && login.UserTypeID=="1")
                 {
                     Session["User"] = user.Username;
-                    return RedirectToAction("Index", "Dashboard");
+                    return RedirectToAction("Index", "SC_UserType");
                 }
-          
-                else
+                else if(login!=null && login.UserTypeID=="2")
                 {
-                    ModelState.AddModelError("", "Login data is incorrect!");
-                    ViewBag.LoginError = "Incorrect username or password"; 
+                    Session["User"] = user.Username;
+                    return RedirectToAction("Index", "SC_User");
                 }
-               
             }
+            ModelState.AddModelError("", "Login data is incorrect");
             return RedirectToAction("Index", "Login");
+       
         }
         public ActionResult Logout()
         {

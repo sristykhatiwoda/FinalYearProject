@@ -41,7 +41,7 @@ namespace OnlineCourse.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include ="NewsID, NewsTitle, NewsDescription, UserID")] NEW_News news)
+        public ActionResult Create([Bind(Include ="NewsID,NewsDate,NewsTitle, NewsDescription, UserID")] NEW_News news)
         {
             if (ModelState.IsValid)
             {
@@ -70,7 +70,7 @@ namespace OnlineCourse.Controllers
 
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "NewsID, NewsTitle, NewsDescription, UserID")] NEW_News news)
+        public ActionResult Edit([Bind(Include = "NewsID, NewsDate,NewsTitle, NewsDescription, UserID")] NEW_News news)
         {
             if (ModelState.IsValid)
             {

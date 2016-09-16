@@ -21,7 +21,7 @@ namespace OnlineCourse.Controllers
         }
 
         // GET: MenuPages/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int?id)
         {
             if (id == null)
             {
@@ -56,7 +56,7 @@ namespace OnlineCourse.Controllers
         }
 
         // GET: MenuPages/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int ? id)
         {
             if (id == null)
             {

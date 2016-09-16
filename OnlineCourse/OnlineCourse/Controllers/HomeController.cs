@@ -64,12 +64,13 @@ namespace OnlineCourse.Controllers
                 else
                 {
                     ModelState.AddModelError("", "Login data is incorrect!");
-                    ViewBag.LoginError = "Incorrect username or password";
+                 
                     return RedirectToAction("Index", "Home");
                 }
 
             }
             return View();
         }
+
     }
 }
