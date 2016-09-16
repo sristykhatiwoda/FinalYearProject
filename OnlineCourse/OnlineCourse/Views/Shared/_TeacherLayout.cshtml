@@ -13,16 +13,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap.theme.min.css" rel="stylesheet">
     <link href="css/bootstrap.theme.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/owl.transitions.css" />
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
-    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/owl.transitions.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/animate.css" />
     <!--<link href="css/main.css" rel="stylesheet">-->
     <!--<link href="css/custom.css" rel="stylesheet">-->
     <link rel="stylesheet" href="css/lightbox.css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css">
-    <link rel="stylesheet" href="css/hover.css">
-    <link rel="stylesheet" type="text/css" href="css/student.css">
-    <link rel="stylesheet" type="text/css" href="css/teacher.css">
+    <link rel="stylesheet" href="~css/hover.css">
+    <link rel="stylesheet" type="text/css" href="~/css/student.css">
+    <link rel="stylesheet" type="text/css" href="~/css/teacher.css">
     <!--<link rel="stylesheet" href="fonts/css/effectspre.css">-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -207,12 +207,12 @@
                                 <li class="dropdown up">
                                     <a class="" data-wow-delay=".1s" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Uploads</a>
                                     <ul class="dropdown-menu semester">
+                                        <li><a class="sem" href="#">Course1</a>
                                         <li>
-                                            <a class="sem" href="#">
-
-                                                @Html.Action("LoadCoursesUploads", "TeacherDashboard")
-                                            </a>
-                                        </li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a class="sem" href="#">Course2</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a class="sem" href="#">Course3</a></li>
 
                                     </ul>
                                 </li>
@@ -226,18 +226,12 @@
                                 <li class="dropdown drp">
                                     <a class="" data-wow-delay=".1s" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assignment</a>
                                     <ul class="dropdown-menu semester">
-                                        @*<li><a class="sem" href="file:///C:/Users/HOME/Desktop/onlineCourse/teacherassignment.html">Course1</a>
+                                        <li><a class="sem" href="">Course1</a>
                                         <li>
                                         <li role="separator" class="divider"></li>
-                                        <li><a class="sem" href="file:///C:/Users/HOME/Desktop/onlineCourse/teacherassignment1.html">Course2</a></li>
+                                        <li><a class="sem" href="">Course2</a></li>
                                         <li role="separator" class="divider"></li>
-                                        <li><a class="sem" href="">Course3</a></li>*@
-                                        <li>
-                                            <a class="sem" href="#">
-
-                                                @Html.Action("LoadCoursesAssignment", "TeacherDashboard")
-                                            </a>
-                                        </li>
+                                        <li><a class="sem" href="">Course3</a></li>
 
                                     </ul>
                                 </li>
@@ -392,7 +386,7 @@ $('#myModalog').modal({
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
 </body>
 </html>
