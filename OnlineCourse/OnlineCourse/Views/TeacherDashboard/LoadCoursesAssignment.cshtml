@@ -1,0 +1,14 @@
+﻿@model IEnumerable<OnlineCourse.Models.MS_Course>
+
+
+
+@foreach (var item in Model)
+{
+
+    @*<li> @Html.DisplayFor(modelItem => item.CourseTitle)</li>*@
+    <li> @Html.ActionLink(item.CourseTitle, "", "", new { id = item.CourseID }, null)</li>
+
+
+}
+
+
