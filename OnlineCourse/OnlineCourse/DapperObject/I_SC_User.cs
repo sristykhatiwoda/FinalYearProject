@@ -19,6 +19,7 @@ namespace OnlineCourse.DapperObject
 
         int Delete(int? id);
 
-        SC_User LoginUserExists(string Email, string Password);
+        SC_User LoginUserExists(string Username, string Password,string UserTypeID);
+
     }
 }
