@@ -207,12 +207,12 @@
                                 <li class="dropdown up">
                                     <a class="" data-wow-delay=".1s" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Uploads</a>
                                     <ul class="dropdown-menu semester">
-                                        <li><a class="sem" href="file:///C:/Users/HOME/Desktop/onlineCourse/uploadcourse1.html">Course1</a>
                                         <li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a class="sem" href="">Course2</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a class="sem" href="">Course3</a></li>
+                                            <a class="sem" href="#">
+
+                                                @Html.Action("LoadCoursesUploads", "TeacherDashboard")
+                                            </a>
+                                        </li>
 
                                     </ul>
                                 </li>
@@ -226,12 +226,18 @@
                                 <li class="dropdown drp">
                                     <a class="" data-wow-delay=".1s" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assignment</a>
                                     <ul class="dropdown-menu semester">
-                                        <li><a class="sem" href="file:///C:/Users/HOME/Desktop/onlineCourse/teacherassignment.html">Course1</a>
+                                        @*<li><a class="sem" href="file:///C:/Users/HOME/Desktop/onlineCourse/teacherassignment.html">Course1</a>
                                         <li>
                                         <li role="separator" class="divider"></li>
                                         <li><a class="sem" href="file:///C:/Users/HOME/Desktop/onlineCourse/teacherassignment1.html">Course2</a></li>
                                         <li role="separator" class="divider"></li>
-                                        <li><a class="sem" href="">Course3</a></li>
+                                        <li><a class="sem" href="">Course3</a></li>*@
+                                        <li>
+                                            <a class="sem" href="#">
+
+                                                @Html.Action("LoadCoursesAssignment", "TeacherDashboard")
+                                            </a>
+                                        </li>
 
                                     </ul>
                                 </li>
