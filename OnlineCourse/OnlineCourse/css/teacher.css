@@ -122,21 +122,21 @@ label.btn.btn-primary.left-file {
     float: left;
 }
 .upload_btn.left-file .btn {
-    padding: 10px 0;
-    margin-right: 0px;
-    background-color: #4a6371;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
-    border-radius: 5px;
     font-size: 16px;
-    display: inline-block;
-    float: left;
-    margin-bottom: 20px;
-    cursor: pointer;
-    font-weight: 400;
-    width: 180px;
-    line-height: normal;
+    border-radius: 5px;
+    /* box-shadow: 3px 3px 5px; */
 }
+.upload_btn.left-file .btn:hover {
+    box-shadow: 0px 3px 2px #4a6371;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    /* margin-bottom: 20px; */
+    margin-top: 38px;
+}
+
 input[type=submit] {
     -webkit-appearance: button;
     cursor: pointer;
@@ -195,12 +195,12 @@ h2.cou {
     padding-top: 75px;
     text-align: center;
     font-size: 44px;
-    color: #2c3e50;
+    color: #34495e;
     font-family: -webkit-pictograph;
     margin-bottom: 35px;
 }
 .parallax{
-    background-image: url(../img/cal.jpg);
+    background-image: url(../img/plain3.jpg);
     width: 100%;
     height: auto;
     background-attachment: fixed;
@@ -213,13 +213,15 @@ blockquote {
     margin: 0 0 20px;
     font-size: 17.5px;
     border-left: 5px solid #eee;
-    color: #2c3e50;
+    color: #34495e;
     font-family: -webkit-body;
     text-transform: initial;
     text-align: justify;
+    font-weight: 400;
 }
 a.prog img {
     opacity: 0.5;
+    margin: auto;
 }
 a.prog img:hover {
     opacity: 100;

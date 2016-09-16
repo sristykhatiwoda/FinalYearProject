@@ -20,7 +20,7 @@ header{
 }
 .navbar {
     background-color:#B7655E;
-    border-color: #B7655E;
+    border-color:#B7655E;
     margin: 0;
 }
 .logo {
@@ -284,6 +284,42 @@ strong {
 }
 
 /*aboutend*/
+/* sectioncontactus */
+
+.formholder {
+    padding-right: 50px;
+}
+.formdiv {
+    margin-bottom: 20px;
+    border-radius: 0px;
+    box-shadow: 5px 2px 5px black;
+}
+textarea.form-control {
+    height: auto;
+}
+button.btn.btn-default.btn-sm.btn3d {
+    position: relative;
+    top: -6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #666666;
+    background-color: #f9f9f9;
+}
+section#contact {
+    margin-bottom: 45px;
+}
+button.btn.btn-default.btn-block.btn-sm.btn3d {
+    border: 1px solid #bdc3c7;
+}
+button.btn.btn-default.btn-block.btn-sm.btn3d:hover {
+    box-shadow: 3px 3px 5px #bdc3c7;
+}
+
+/* contactusend */
 /*footer*/
 a.font {
     font-size: 25px;

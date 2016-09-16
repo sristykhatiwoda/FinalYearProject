@@ -1,0 +1,224 @@
+/* sectioncprogram */
+#cprogram.parallax{
+background-image: url(../img/abt.jpg);
+	width: 100%;
+	height: auto;
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;	
+
+	
+}
+h2.intro {
+    padding-top: 140px;
+    padding-left: 280px;
+    font-family: Times New Roman;
+    font-size: 50px;
+    font-weight: bold;
+}
+ .cprogram h4 {
+    font-size: 22px;
+    position: relative;
+    top: 150px;
+    left: 515px;
+    font-family: Book Antiqua;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+p.ctxt {
+    color: #34495e !important;
+    text-align: justify;
+    font-size: 17px;
+    display: inline-block;
+    color: #fff;
+    margin-left: 395px;
+    /* line-height: 1.8; */
+    margin-top: 35px;
+}
+button.btn.btn-default {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 520px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 0;
+    font-size: 20px;
+    border-color: orange;
+    color: orange;
+    background-color: #fff;
+}
+button.btn.btn-default:hover {
+    background-color: orange;
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 3px 3px 12px orange;
+    font-size: 22px;
+}
+ul.a-unorder {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12.64198px;
+    line-height: 1.4082;
+    margin-top: 1.42383em;
+    margin-bottom: 1.42383em;
+}
+.a-link {
+    font-size: inherit;
+    display: inline-block;
+}
+.a-info {
+    white-space: nowrap;
+}
+.a-icon {
+    display: inline-block;
+    vertical-align: top;
+   
+}
+.a-info-data {
+    font-weight: bold;
+}
+.a-section--alt {
+    background-color: #bdc3c7;
+}
+.a-section {
+    overflow: hidden;
+    /* margin-left: 16px; */
+    padding-left: 16px;
+    padding-right: 16px;
+}
+li.a-link {
+    margin-left: 195px;
+}
+/* sectioncprogramend */
+
+/* sectionheader */
+h3.header1 {
+    margin-bottom: 20px;
+    font-size: 17px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #eeeeee;
+    line-height: 2.8;
+    /* border-bottom: 1px solid #eeeeee; */
+}
+/* sectionheaderend */
+/* section */
+.a-tab {
+    background-color: #de00a5;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to right, #de00a5, #fecb51);
+    position: relative;
+    margin-top: 50px;
+}
+.b-tab {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+p.text-tab {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 22px;
+    /* top: 12px; */
+    position: relative;
+    top: 35px;
+    font-weight: bold;
+}
+.tab {
+    margin-left: 60px;
+}
+p.text-tab {
+    position: relative;
+    top: -70px;
+    text-align: center;
+    word-spacing: 3px;
+    text-shadow: none;
+}
+
+a.prog img {
+    margin: auto;
+}
+/* .tab {
+    max-width: 32em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 11px;
+    line-height: calc(1.25em + 2px);
+}
+h2.a-heading {
+    font-size: 2.02729rem;
+    line-height: calc(1em + 5px);
+    text-rendering: optimizelegibility;
+    margin-top: 0.5em;
+    margin-bottom: 0.7em;
+    font-weight: bold;
+} */
+/* sectionend */
+
+/* sectioniprogram */
+
+#iprogram.parallax{
+background-image: url(../img/book4.jpg);
+    width: 100%;
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+    }
+    .iprogram h4 {
+    font-size: 22px;
+    position: relative;
+    top: 150px;
+    left: 515px;
+    font-family: Book Antiqua;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+ p.itxt {
+    color: #fff !important;
+    text-align: justify;
+    font-size: 17px;
+    display: inline-block;
+    color: #fff;
+    margin-left: 395px;
+    line-height: 1.8;
+    margin-top: 35px;
+} 
+#sprogram.parallax{
+background-image: url(../img/cal.jpg);
+    width: 100%;
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+    }
+    #calprogram.parallax{
+background-image: url(../img/image.jpg);
+    width: 100%;
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+    }
+    h2.cou1 {
+    /* top: 185px; */
+    /* position: relative; */
+    margin-top: auto;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 44px;
+    color: #34495e;
+    font-family: -webkit-pictograph;
+    margin-bottom: 35px;
+}
+/* sectioniprogramend */
