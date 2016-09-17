@@ -1,10 +1,34 @@
-﻿@model OnlineCourse.Models.NEW_News
+﻿@model IEnumerable<OnlineCourse.Models.NEW_News>
 
 @{
     ViewBag.Title = "LoadNews";
     Layout = "~/Views/Shared/_StudentLayout.cshtml";
 }
-<h1>NEWS</h1>
+<section class="news" id="news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <h2 class="news1">News</h2>
+
+                <ul class="news2" style="list-style-type:arrow">
+                    @foreach (var item in Model)
+                    {
+                        <li>  @Html.ActionLink(item.NewsTitle, "", "", new { id = item.NewsID }, null)</li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+
+        </div>
+    </div>
+
+
+
+</section>
 
 
 
