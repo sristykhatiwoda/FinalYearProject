@@ -19,5 +19,9 @@ namespace OnlineCourse.DapperObject
         int Update(QUIZ_Quiz quiz);
 
         int Delete(int? id);
+
+        List<QUIZ_Quiz> Questions();
+
+        dynamic CourseQuizQuestion(int? id);
     }
 }
