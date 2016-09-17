@@ -1,5 +1,6 @@
-﻿@model OnlineCourse.Models.ASS_AssignmentPost
-
+﻿@*@model OnlineCourse.Models.ASS_AssignmentPost*@
+@using System.Dynamic;
+@model dynamic
 @{
     ViewBag.Title = "LoadAssignment";
     Layout = "~/Views/Shared/_StudentLayout.cshtml";
@@ -7,3 +8,67 @@
 
 <h2>LoadAssignment</h2>
 
+@*@Html.Action("AssignmentDetail", "ASS_AssignmentPost");*@
+@Model.FirstName
+
+<section class="news" id="news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-12">
+
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <h2 class="news1">Course1</h2>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                           
+                            <th>Title</th>
+                            <th>Assignments</th>
+                            <th>Deadline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                <th>@Model.Title</th>
+                                <th>@Model.Questions</th>
+                                <th>@Model.Deadline</th>
+                            </tr>
+                        
+                       
+                    </tbody>
+                </table>
+
+
+                <!-- <ul class="news2" style="list-style-type:arrow">
+                  <li class="ass">Assignment 1</li>
+                  <li class="ass">Assignment 2</li>
+                  <li class="ass">Assignment 3</li>
+                </ul> -->
+                <div class="uploads colorpicker">
+                    <div class="btn_clearfix">
+                        <label class="btn btn-primary left-file">
+                            Choose File
+                            <input type="file" name="logo" id="logo" style="display:none;">
+                        </label>
+                        <span id="choose-file-logo">
+                            No file choose
+
+                        </span>
+                        <div class="upload_btn left-file">
+                            <input class="btn" type="submit" name="submit" id="submit" value="Submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-12">
+
+        </div>
+    </div>
+
+
+
+</section>
