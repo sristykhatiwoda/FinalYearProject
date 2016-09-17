@@ -1,0 +1,104 @@
+﻿@using System.Dynamic;
+@model dynamic
+@{
+    ViewBag.Title = "LoadAssignment";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<div class="modal fade" id="myModalup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="padding:30px 50px;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Upload Assignments</h4>
+
+            </div>
+            <div class="modal-body" style="">
+                <form>
+                    <div class="">
+
+                        <label class="btn btn-primary left-file">
+                            Choose File
+                            <!-- <input type="text" class="form-control" id="name" placeholder="Enter your email"> -->
+                            <input type="file" name="logo" id="logo" style="display:none;">
+                        </label>
+                    </div>
+
+
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="submit" class="btn  btn-block ">Submit</button>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="news" id="news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-12">
+
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <h2 class="news1">Course1</h2>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            
+                            <th>Title</th>
+                            <th>Assignments</th>
+                            <th>Deadline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <th>@Model.Title</th>
+                            <th><a href="~/Assignments/AssignmentPost/@Model.Question">@Model.Questions</a></th>
+                            <th>@Model.Deadline</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <!-- <ul class="news2" style="list-style-type:arrow">
+                  <li class="ass">Assignment 1</li>
+                  <li class="ass">Assignment 2</li>
+                  <li class="ass">Assignment 3</li>
+                </ul> -->
+                <!-- <div class="uploads colorpicker">
+                <div class="btn_clearfix">
+                  <label class="btn btn-primary left-file">Choose File
+                  <input type="file" name="logo" id="logo" style="display:none;"></label>
+                  <span id="choose-file-logo">
+                    No file choose
+
+                  </span>
+                  <div class="upload_btn left-file">
+                    <input class="btn" type="submit" name="submit" id="submit" value="Submit">
+                  </div>
+                </div>
+                </div>
+                        </div>
+                            </div>
+                             <div class="col-md-2 col-sm-12">
+
+                            </div>
+                          </div> -->
+
+                <div class="pull-right">
+                    <button type="button" class=" btn btn-default left-file " data-toggle="modal" data-target="#myModalup">Upload Assignments</button>
+
+
+
+                </div>
+
+
+</section>
