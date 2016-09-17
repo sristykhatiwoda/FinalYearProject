@@ -129,11 +129,7 @@ namespace OnlineCourse.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult LoadAssignment()
-        {
-            var assignment = db.AssignmentPost();
-            return View(assignment);
-        }
+       
     }
 }
  

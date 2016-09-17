@@ -118,7 +118,11 @@ namespace OnlineCourse.Controllers
             return RedirectToAction("Index");
         }
 
-
+        public ActionResult LoadCourseAssignment(int? id)
+        {
+            var assignment = db.CourseAssignment(id);
+            return PartialView(assignment);
+        }
 
 
     }
