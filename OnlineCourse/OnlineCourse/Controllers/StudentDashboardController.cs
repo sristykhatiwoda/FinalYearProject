@@ -27,7 +27,7 @@ namespace OnlineCourse.Controllers
             return View(news);
         }
 
-        public ActionResult LoadCourses()
+        public ActionResult LoadCoursesInAssignment()
         {
             var courses = dbCourse.Courses();
             return PartialView(courses);
