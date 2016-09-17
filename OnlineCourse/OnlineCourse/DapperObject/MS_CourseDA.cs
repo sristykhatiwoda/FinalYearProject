@@ -45,5 +45,14 @@ namespace OnlineCourse.DapperObject
             var sqlQuery = "Update MS_Course set CourseTitle=@CourseTitle Where CourseID=@CourseID";
             return db.Execute(sqlQuery, course);
         }
+
+        
+
+        public dynamic CourseAssignment(int? id)
+        {
+            var sqlQuery = "Select * from MS_Course join ASS_AssignmentPost on MS_Course.CourseID = ASS_AssignmentPost.CourseID where MS_Course.CourseID=" + id;
+            return db.Query<dynamic>(sqlQuery).SingleOrDefault(); 
+            //throw new NotImplementedException();
+        }
     }
 }
