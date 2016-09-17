@@ -54,6 +54,17 @@ namespace OnlineCourse.DapperObject
             return db.Execute(sqlQuery, quiz);
         }
 
-       
+       public  List<QUIZ_Quiz> Questions()
+        {
+            string sqlQuery = "Select QuizQuestion,Option1,Option2,Option3,Option4 from QUIZ_Quiz";
+            return db.Query<QUIZ_Quiz>(sqlQuery).ToList();
+        }
+
+        public dynamic CourseQuizQuestion(int? id)
+        {
+            var query = "Select * from QUIZ_Quiz join MS_Course on QUIZ_Quiz.CourseID=MS_Course.CourseID where MS_Course.CourseID=" + id;
+            return db.Query<dynamic>(query).SingleOrDefault();
+            //throw new NotImplementedException();
+        }
     }
 }
