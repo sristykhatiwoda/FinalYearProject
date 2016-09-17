@@ -23,11 +23,17 @@ namespace OnlineCourse.Controllers
 
         public ActionResult LoadNews()
         {
-           
-            return View();
+            var news = dbNews.News();
+            return View(news);
         }
 
         public ActionResult LoadCourses()
+        {
+            var courses = dbCourse.Courses();
+            return PartialView(courses);
+        }
+
+        public ActionResult LoadCoursesInQuiz()
         {
             var courses = dbCourse.Courses();
             return PartialView(courses);
