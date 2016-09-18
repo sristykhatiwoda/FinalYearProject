@@ -1,0 +1,209 @@
+.pull-right.stdbtn {
+    list-style: none;
+    position: relative;
+    top: 3px;
+    left: -35px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    font-family: open;
+}
+
+ul.dropdown-menu.stud1 a.std1 {
+    color: #fff;
+    font-weight: bold;
+    margin: auto;
+    padding-right: 60px;
+    padding-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+ul.dropdown-menu.stud1 {
+    margin-left: -75px;
+    background-color: #30cb70;
+    border-color: #30cb70;
+}
+ul.dropdown-menu.stud1 a.std1:hover {
+    background-color: #30cb70;
+    color: blue;
+}
+
+/* assignment1html */
+ul.news2 .ass {
+    /* color: red; */
+    font-size: 20px;
+    font-family: serif;
+    padding: 0;
+    margin-left: 0;
+}
+.upload_btn {
+    display: inline-block;
+    /* float: left; */
+    margin-left: 20px;
+    float: left;
+}
+label.btn.btn-link.left-file {
+    background-color: #fff;
+    color: #30cb70;
+    border: 1px solid #30cb70;
+    /* box-shadow: 2px 2px 2px 2px green; */
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 0;
+    margin-right: 0;
+    display: inline-block;
+    font-weight: bold;
+    /* float: left; */
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    width: 180px;
+    line-height: normal;
+    text-transform: uppercase;
+}
+label.btn.btn-link.left-file:hover{
+    background-color: #30cb70;
+    color: #ffffff;
+    text-decoration: none;
+
+
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    /* margin-bottom: 20px; */
+    margin-top: 38px;
+    color: #000;
+    font-family: open sans-serif;
+}
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    background-color: #4a6371;
+    border-color: #4a6371;
+    border-bottom: #4a6371;
+    border-right: #4a6371;
+    float: left;
+    clear: both;
+    margin-left: 35px;
+    text-transform: uppercase;
+}
+.uploads.colorpicker {
+    margin-top: 75px;
+    /* padding: 31px; */
+}
+button.btn.btn-default.left-file {
+    /* padding: 14px; */
+    border-radius: 0;
+    border-color: #30cb70;
+    font-size: 16px;
+    font-weight: bold;
+    color: #30cb70;
+    box-sizing: border-box;
+}
+button.btn.btn-default.left-file:hover {
+    background-color: #30cb70;
+    color: #fff;
+    border-radius: 5px;
+    box-sizing: content-box;
+    box-shadow: 2px 2px 3px #30cb70;
+}
+/* assignment1html */
+/*newstart*/
+section#news {
+    margin-top: 111px;
+}
+h2.news1 {
+    text-align: center;
+}
+
+ul.news2 {
+    text-align: justify;
+    margin-top: 35px;
+    /* padding-bottom: 45px; */
+}
+li.arrow {
+    padding-bottom: 20px;
+    color: black;
+    font-family: -webkit-body;
+}
+/*newsend*/
+
+/*quizend*/
+.start strong {
+    display: block;
+    font-size: 25px;
+    font-family: serif;
+}
+.start span {
+    display: block;
+    font-size: 16px;
+    margin: 8px 0;
+    font-family: -webkit-body;
+}
+
+.start .btn{
+padding: 10px 0;
+    margin-right: 0px;
+    background-color: #4a6371;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 0px;
+    font-size: 16px;
+    display: inline-block;
+    float: left;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    width: 180px;
+    line-height: normal;
+    text-transform: uppercase;
+}
+/*quizend*/
+/*Startquizsidebar*/
+
+.jumbotron.question {
+    /* padding: 213px; */
+    margin-top: 114px;
+    /* padding-top: 293px; */
+}
+nav#mySidenav {
+    
+    left: 0;
+    width: 298px;
+    margin-top: 99px;
+}
+.container-fluide {
+    width: 1050px;
+}
+a.sidebar.w3-panel {
+    background-color: #30cb70;
+    color: #ffffff;
+    padding: 25px;
+    font-size: 17px;
+}
+a.sidebar.w3-panel.active {
+    background-color: #eeeeee;
+    color: #30cb70;
+}
+.container-fluide footer {
+    margin-top: 62px;
+    height: 193px;
+}
+.container-fluide a.font {
+    padding-left: 450px;
+}
+/*startquizsidebarend*/
+/* courses */
+h2.cou {
+    margin-top: 150px;
+}
+a.navbar-brand {
+    font-size: 23px;
+    margin-top: 15px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+/* courses */
