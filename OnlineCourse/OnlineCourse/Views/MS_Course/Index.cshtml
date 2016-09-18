@@ -19,6 +19,7 @@
         <th>
             @Html.DisplayNameFor(model => model.CourseTitle)
         </th>
+        <th>CourseImages</th>
         <th></th>
     </tr>
 
@@ -27,6 +28,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.CourseTitle)
+            </td>
+            <td>
+                <img src="~/CourseContent/CourseImages/@Html.DisplayFor(modelItem => item.CourseImage)" style="height:50px;" />
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) |
