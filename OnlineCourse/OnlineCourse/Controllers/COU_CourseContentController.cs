@@ -138,5 +138,21 @@ namespace OnlineCourse.Controllers
             db.Delete(id);
             return RedirectToAction("Index");
         }
+
+        public ActionResult GetCourseContent(int? id)
+        {
+            if (id == null)
+            {
+                return  new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var courseContent = db.CourseContent().Where(a => a.CourseID == id).ToList();
+            if(courseContent==null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.CourseID = id;
+            ViewBag.returnUrl = Request.Url.AbsoluteUri;
+            return View(courseContent);
+        }
     }
 }
