@@ -1,0 +1,49 @@
+﻿@model IEnumerable<OnlineCourse.Models.EXM_ExamRulesRegulation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+
+<section class="news" id="news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-12">
+
+            </div>
+            <div class="col-md-6 col-sm-12 rul">
+                <h2 class="">Rules</h2>
+
+                <ul class="news2" style="list-style-type:">
+                    @*<li class="arrow" style="">The test contains 25 questions and there is no time limit. </li>
+                    <li class="arrow">The test is not official, it's just a nice way to see how much you know, or don't know, about CSS.</li>
+                    <li class="arrow">You will  1 point for each correct answer. At the end of the Quiz, your total score will be displayed. Maximum score is 25 points.</li>*@
+                    @foreach(var item in Model)
+                    {
+                        <li class="arrow">@Html.DisplayFor(modelItem => item.ExamRulesRegulationText)</li>
+                    }
+                </ul>
+                <div class="start">
+                   
+                   
+                    
+                    <span>Good Luck !</span>
+                    <h1 class="btn btn-primary" style="background-color:orange;border-color:orange;" >@Html.ActionLink("Start the Quiz", "MyExam", "QuizExam")</h1>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-12 start">
+
+        </div>
+
+    </div>
+
+
+
+</section>
+
+
