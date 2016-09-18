@@ -114,7 +114,29 @@ pre {
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
+.product_box{
+    width: 252px;
+    height: 311px;
+    padding: 10px; 
+    background-color:#dddddd; 
+    float:left; 
+    margin:10px 20px 10px 10px;
+    
+}
 
+.product_box:hover{
+    
+    margin: -2px 32px 22px -2px;
+    padding: 10px; 
+    box-shadow: 4px 4px 13px -2px;
+}
+
+.product_img_box{
+    height: 185px;
+    width: 232px; 
+    background-color:#fff; 
+    margin-bottom:10px;
+}
 small {
   font-size: 80%;
 }
@@ -3022,7 +3044,14 @@ input[type="button"].btn-block {
 .glyphicon-flash:before {
   content: "\e162";
 }
-
+.login
+{
+    width:400px; 
+    margin:100px auto; 
+    border:1px solid #eeeeee; 
+    border-radius:5px;
+    box-shadow: 0px 0px 16px -3px;
+}
 .glyphicon-log-out:before {
   content: "\e163";
 }
