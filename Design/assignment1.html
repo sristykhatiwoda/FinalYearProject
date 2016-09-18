@@ -1,0 +1,253 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Online Course</title>
+    <!-- bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+   
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+    <script src="js/pace.js"></script>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" type="text/css" href="css/std.css">
+    </head>
+    <body>
+
+<!-- Modalforsignin -->
+<div class="modal fade" id="myModalup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header" style="background-color:palegoldenrod;color:#fff;text-align:left;font-size:22px;">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="myModalLabel">Upload Assignments</h4>
+
+</div>
+<div class="modal-body" style="">
+<form>
+
+  <div class="form-group">
+  <label for="option">Course Title</label>
+  <select class="form-control" placeholder="Post">
+
+  <option>Advance Database Management System</option>
+  <option>Internet Technology</option>
+  <option>Database Administrator</option>
+  <option>Advanced Java Programming</option>
+  
+</select>
+</div>
+<div class="">
+
+<label class="btn btn-link left-file">Choose File
+<!-- <input type="text" class="form-control" id="name" placeholder="Enter your email"> -->
+<input type="file" name="logo" id="logo" style="display:none;"></label>
+<span id="chose-file-logo">
+    No file Choose
+    </span>
+</div>
+
+
+
+<!-- <select class="selectpicker" >
+<option data-tokens="std">student</option>
+<option data-tokens="tea">Teacher</option> 
+
+</select>-->
+
+</div>
+
+</form>
+<div class="modal-footer" style="">
+
+<button type="submit" class="btn  btn-success modalsub">Submit</button>
+
+<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+<!-- mobalendforsignin -->
+<header>
+      
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+        <div class="logo pull-left animated wow fadeInLeft img-responsive">
+            <img src="img/learn2.png" style="width:150px; height:80px;" alt="">
+        </div>
+      </div>
+            <!--<div>
+              <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Courses</a></li>
+               <li><a href="#">Programs</a></li>
+               <li><a href="#">About</a></li>
+             </ul>
+             </div>-->
+             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <nav class="pull-left">
+              <ul class="list-unstyled">
+              <li class="animated wow fadeInLeft " data-wow-delay="0s"><a href="#">Courses</a></li>
+              <li class="animated wow fadeInLeft " data-wow-delay=".1s"><a href="#introd">News</a></li>
+              <li class="dropdown stud">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quiz <b class="caret"></b></a>
+                <ul class="dropdown-menu stud1">
+                    <li><a class="std1" href="#">Course1</a></li>
+                    <li><a class="std1" href="#">Course2</a></li>
+                    <li><a class="std1" href="#">Course3</a></li>
+                    
+                </ul>
+            </li>
+
+           
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Assignments <b class="caret"></b></a>
+                <ul class="dropdown-menu stud1">
+                    <li><a class="std1" href="#">Course1</a></li>
+                    <li><a class="std1" href="#">Course2</a></li>
+                    <li><a class="std1" href="#">Course3</a></li>
+                </ul>
+            </li>
+        </ul>
+          <ul class="pull-right">
+        
+            </ul>
+        
+             
+            </nav>
+
+             <div class="pull-right stdbtn">
+            <li class="dropdown ">
+                <span class="wel">welcome </span><a href="#" data-toggle="dropdown" class="btn btn-default static dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">SB <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i> Signed in as</a></li>
+                     <li class="divider"></li>
+                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> your Profile</a></li>
+                    <li><a href="#"><span class="fa fa-cog" aria-hidden="true"></span> Setting</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><span class="fa fa-sign-out" aria-hidden="true"></span> Sign out</a></li>
+                </ul>
+            </li>
+                   
+        </div>
+        
+           
+      </div>
+      
+    </div>
+  </div>
+    </header>
+
+    <section class="news" id="news">
+<div class="container">
+<div class="row">
+<div class="col-md-2 col-sm-12">
+
+</div>
+<div class="col-md-8 col-sm-12">
+<h2 class="news1">Course1</h2>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>S.N</th>
+<th>Title</th>
+<th>Assignments</th>
+<th>Deadline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1</th>
+<td>Course1</td>
+<td></td>
+<td>2073/09/20</td>
+</tr>
+<tr>
+<th scope="row">2</th>
+<td>Course2</td>
+<td>Assignment2</td>
+<td>2073/09/20</td>
+</tr>
+<tr>
+<th scope="row">3</th>
+<td>Course3</td>
+<td></td>
+<td>2073/09/20</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<div class="">
+<button type="button" class=" btn btn-default left-file  " data-toggle="modal" data-target="#myModalup">Upload Assignments</button>
+
+
+
+</div>
+
+</div>
+</div>
+</div>
+
+</section>
+
+
+
+    <script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/nicescroll.js"></script>
+ 
+ 
+<script>
+
+
+ /*$(function() {
+    $('.scrollto, .gototop').bind('click',function(event){
+     var $anchor = $(this);
+     $('html, body').stop().animate({
+         scrollTop: $($anchor.attr('href')).offset().top
+          }, 1500,'easeInOutExpo');
+     event.preventDefault();
+      });
+  });
+        */
+
+</script>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <!--<script type="text/javascript" src="js/ajaxchimp.js"></script>
+    <script src="js/jquery.main.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scrollTo.js"></script>
+   <script src="js/bootstrap.min.js"></script>-->
+  </body>
+</html>
