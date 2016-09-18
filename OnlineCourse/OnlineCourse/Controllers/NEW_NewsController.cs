@@ -113,8 +113,10 @@ namespace OnlineCourse.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.NewsI = id;
+            ViewBag.NewsID = id;
             ViewBag.returnUrl = Request.Url.AbsoluteUri;
             return View(news);
-        } }
+        }
+      
+    }
 }
