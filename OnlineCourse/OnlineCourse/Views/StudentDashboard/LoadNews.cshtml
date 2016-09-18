@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<OnlineCourse.Models.NEW_News>
-
 @{
-    ViewBag.Title = "LoadNews";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_StudentLayout.cshtml";
 }
 <section class="news" id="news">
@@ -16,7 +15,10 @@
                 <ul class="news2" style="list-style-type:arrow">
                     @foreach (var item in Model)
                     {
-                        <li>  @Html.ActionLink(item.NewsTitle, "", "", new { id = item.NewsID }, null)</li>
+
+                        @Html.ActionLink(item.NewsTitle, "GetNewsDescription", "NEW_News", new { id = item.NewsID }, null)
+
+
                     }
                 </ul>
             </div>
@@ -29,6 +31,3 @@
 
 
 </section>
-
-
-
