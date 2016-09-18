@@ -23,14 +23,19 @@ namespace OnlineCourse.Controllers
         
         public ActionResult MyExam()
         {
-            int id = (int)Session["CourseID"];
-            var questions = db.CourseQuizQuestion(id);
-            //var questions = db.Questions();
+            if (Session["CourseID"]!=null)
+            { 
+             int id = (int)Session["CourseID"];
+            
+            // var questions = db.CourseQuizQuestion(id);
+            List<QUIZ_Quiz> questions = db.CourseQuizQuestion(id);
             List<QUIZ_Quiz> randomizedQuestions = RandomizedQuestionList(questions);
-            int numberOfQuestionsToAsk = 10;
+            int numberOfQuestionsToAsk = 4;
             List<QUIZ_Quiz> questionToAsk = randomizedQuestions.Take(numberOfQuestionsToAsk).ToList();
 
             return View(questionToAsk);
+            }
+            return View();
         }
 
         public static List<QUIZ_Quiz> RandomizedQuestionList(IList<QUIZ_Quiz> originalList)
