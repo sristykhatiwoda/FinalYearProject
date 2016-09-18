@@ -1,0 +1,64 @@
+﻿@model IEnumerable<OnlineCourse.Models.EXM_ExamHistory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamHistoryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamTakenDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamStartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamCompletedTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Score)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamHistoryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamTakenDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamStartTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamCompletedTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Score)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.ExamHistoryID }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.ExamHistoryID }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.ExamHistoryID  })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,67 @@
+﻿@model OnlineCourse.Models.EXM_ExamHistory
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EXM_ExamHistory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ExamHistoryID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExamHistoryID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExamTakenDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExamTakenDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExamStartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExamStartTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExamCompletedTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExamCompletedTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Score)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.ExamHistoryID}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
