@@ -37,20 +37,22 @@ namespace OnlineCourse.Controllers
                 if (login != null && login.UserTypeID=="1")
                 {
                     Session["User"] = user.Username;
-                    return RedirectToAction("Index", "SC_UserType");
+                    return RedirectToAction("Index", "Dashboard");
                 }
                 else if(login!=null && login.UserTypeID=="2")
                 {
                     Session["User"] = user.Username;
-                    return RedirectToAction("Index", "SC_User");
+                    return RedirectToAction("Index", "TeacherDashboard");
                 }
             }
             ModelState.AddModelError("", "Login data is incorrect");
-            return RedirectToAction("Index", "Login");
+            //return RedirectToAction("Index", "Login");
+            return View(user);
        
         }
         public ActionResult Logout()
         {
+            Session.Clear();
             return RedirectToAction("Index", "Login");
         }
     }
