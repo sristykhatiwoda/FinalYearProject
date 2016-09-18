@@ -16,7 +16,9 @@ namespace OnlineCourse.Controllers
             // GET: StudentDashboard
         public ActionResult Index()
         {
-            return View();
+            var courses = dbCourse.Courses();
+            
+            return View(courses);
        
         }
       
