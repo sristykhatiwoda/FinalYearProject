@@ -85,7 +85,7 @@ namespace OnlineCourse.Controllers
         }
 
         // GET: MenuPages/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int?id)
         {
             if (id == null)
             {
