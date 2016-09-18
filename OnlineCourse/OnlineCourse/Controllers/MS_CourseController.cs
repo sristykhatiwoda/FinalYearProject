@@ -47,10 +47,18 @@ namespace OnlineCourse.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CourseID,CourseTitle")] MS_Course course)
+        public ActionResult Create(MS_Course course, HttpPostedFileBase file1)
         {
             if (ModelState.IsValid)
             {
+                if (file1 != null)
+                {
+                    string fileName = file1.FileName;
+                    string filePath = Path.Combine(Server.MapPath("~/CourseContent/CourseImages"), Path.GetFileName(fileName));
+                    file1.SaveAs(filePath);
+                    course.CourseImage = fileName;
+
+                }
                 db.Add(course);
 
                 return RedirectToAction("Index");
@@ -79,10 +87,18 @@ namespace OnlineCourse.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CourseID,CourseTitle")] MS_Course course)
+        public ActionResult Edit(MS_Course course, HttpPostedFileBase file1)
         {
             if (ModelState.IsValid)
             {
+                if (file1 != null)
+                {
+                    string fileName = file1.FileName;
+                    string filePath = Path.Combine(Server.MapPath("~/CourseContent/CourseImages"), Path.GetFileName(fileName));
+                    file1.SaveAs(filePath);
+                    course.CourseImage = fileName;
+
+                }
                 //db.Entry(category).State = EntityState.Modified;
                 db.Update(course);
                 return RedirectToAction("Index");
@@ -99,7 +115,7 @@ namespace OnlineCourse.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MS_Course course= db.Find(id);
+            MS_Course course = db.Find(id);
             if (course == null)
             {
                 return HttpNotFound();
@@ -113,17 +129,18 @@ namespace OnlineCourse.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            
+
             db.Delete(id);
             return RedirectToAction("Index");
         }
+
 
         public ActionResult LoadCourseAssignment(int? id)
         {
             var assignment = db.CourseAssignment(id);
             return PartialView(assignment);
         }
-
-
     }
+
+
 }
