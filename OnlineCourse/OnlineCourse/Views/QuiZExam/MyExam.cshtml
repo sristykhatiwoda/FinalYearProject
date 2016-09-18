@@ -1,56 +1,173 @@
-﻿@model OnlineCourse.Models.QUIZ_Quiz
+﻿@model IEnumerable<OnlineCourse.Models.QUIZ_Quiz>
 
-@{
+@*@{
     ViewBag.Title = "MyExam";
     Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}*@
+
+
+@using (Html.BeginForm())
+{
+
+    <div>
+        @{ int count = Model.Count(); int divid = 0; }
+
+        <input type="hidden" name="hddCount" id="hddCount" value="@count">
+        <input type="hidden" name="hhdtime" id="hhdtime" value="">
+        @foreach (var a in Model)
+        {
+
+            string opt = "Q" + divid;
+            string quest = "quest" + divid;
+
+            <div class="ExamBlock" id='@opt' @{ if (opt != "Q0")
+                { <text> style="display:none" </text> }
+                else { <text> style="display:block" </text> }}>
+
+                @{
+                    int previd = divid - 1;
+                    int nextid = divid + 1;
+                    string next = "Q" + nextid;
+                    string prev = "Q" + previd;
+
+                }
+                <div class="Question">@a.QuizQuestion</div>
+                <div class="Options">
+                    <br />
+                    <input type="hidden" name="@quest" value="@a.QuizID" />
+                    <div class="Option">
+                        <input type="radio" value="Option1" id="option1" name='@opt' />
+
+                        @a.Option1
+                    </div>
+                    <div class="Option">
+                        <input type="radio" id="option2" value="Option2" name='@opt' />
+
+                        @a.Option2
+                    </div>
+                    <div class="Option">
+                        <input type="radio" id="option3" value="Option3" name='@opt' />
+
+                        @a.Option3
+                    </div>
+                    <div class="Option">
+                        <input type="radio" id="option4" value="Option4" name='@opt' />
+
+                        @a.Option4
+                    </div>
+                </div>
+                <div class="PrevNextBtn" @if (divid == 0)
+                { <text> style="display:none" </text> } onclick="disp('@opt','@prev')">Previous</div>
+                <div class="PrevNextBtn" @if (divid == count - 1)
+                { <text> style="display:none" </text> } onclick="disp('@opt','@next')">Next</div>
+                <input class="start" type="submit" id="btnSubmit" name="btnSubmit" value="Submit Exam" />
+                <div style="clear:both"></div>
+            </div>
+                        divid++;
+                    }
+
+
+
+        @*<input type="submit" value="Previous" />
+            <input type="submit" value="Next" onclick />
+            <input type="submit" value="End Test" />*@
+
+
+
+    </div>}
+@section scripts{
+    <script type="text/javascript" language="javascript">
+      function disp(id, nextid) {
+          document.getElementById(nextid).removeAttribute("style");
+          document.getElementById(id).setAttribute("style", "display:none");
+
+      }
+
+      /* Timer */
+
+
+
+
+      var TimerUpStat = false;
+      var GivenTime;
+      var isQuestionTimeFinish = false;
+      var seconds;
+
+      countdown();
+
+      /* var count = 30;
+       var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
+
+       function timer() {
+           count = count - 1;
+           if (count == -1) {
+               clearInterval(counter);
+               return;
+           }
+       }*/
+
+      function countdown() {
+          GivenTime = $('#hhdtime').val();
+          //GivenTime = 180;
+          seconds = GivenTime;
+
+          setTimeout('Decrement(' + seconds + ')', 1000);
+      }
+      function Decrement(totseconds) {
+
+          // watch for spelling
+          var seconds = totseconds % 60;
+          var minutes = Math.floor(totseconds / 60);
+          var hours = Math.floor(minutes / 60);
+          minutes %= 60;
+          hours %= 60;
+          //$('#countdownTimer').html(hour:minute:seconds);
+          if (totseconds == 0) {
+              isQuestionTimeFinish = true;
+              $('#btnSubmit').click();
+              //return 0;
+
+
+
+          }
+          else {
+              totseconds--;
+              setTimeout('Decrement(' + totseconds + ')', 1000);
+          }
+          document.getElementById("countdownTimer").innerHTML = hours + ":" + minutes + ":" + seconds;
+
+      }
+
+      function getminutes() {
+          // minutes is seconds divided by 60, rounded down
+          mins = Math.floor(secs / 60);
+          return mins;
+      }
+      function getseconds() {
+          // take mins remaining (as seconds) away from total seconds remaining
+          return secs - Math.round(mins * 60);
+      }
+
+
+
+
+
+      function countdownReset() {
+          clearTimeout();
+
+
+          countdown();
+      }
+
+      function pad(number, length) {
+          var str = '' + number;
+          while (str.length < length) { str = '0' + str; }
+          return str;
+      }
+    </script>
+
+
+
 }
 
-<h2>MyExam</h2>
-<div class="col-md-10 col-sm-12">
-    <div class="container-fluide">
-        <div class="jumbotron question">
-            <p class="qust">
-                1. 
-
-            </p>
-            <form>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="quiz" id="3" value="3">
-                        Cascading Style Sheets
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="quiz" id="3" value="3">
-                        Cascading Style Sheets
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="quiz" id="3" value="3">
-                        Cascading Style Sheets
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="quiz" id="3" value="3">
-                        Cascading Style Sheets
-                    </label>
-                </div>
-                <input type="submit" class="w3-btn w3-orange w3-large w3-text-white" value="Next">
-            </form>
-
-        </div>
-        <footer>
-
-            <h3>Connect With Online Courses</h3>
-            <a class="font" href="#">
-                <i class="fa fa-facebook" aria-hidden="true"></i><i class="fa fa-twitter" aria-hidden="true"></i><i class="fa fa-google-plus" aria-hidden="true"></i>
-            </a>
-            <p class="footer">Learning Management System’s mission is to pioneer the best social learning experiences for everyone, anywhere.</p>
-
-    </div>
-    </footer>
-</div>
 
