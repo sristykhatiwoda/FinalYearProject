@@ -25,44 +25,29 @@
                         <form>
                             <div class="form-group">
 
-                                <label for="username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your email">
+                                <label for="username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Username</label>
+                                @*<input type="text" class="form-control" id="name" placeholder="Enter your username">*@
+                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                                @*@Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })*@
                             </div>
                             <div class="form-group">
-                                <label for="pwd"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter your password">
-                            </div>
+                                <label for="pwd"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Password</label>
+                             
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                                @*@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })*@
+
+                             </div>
                             
-                            <div class="checkbox">
+                            @*<div class="checkbox">
                                 <label><input type="checkbox" value="" checked>Remember me</label>
-                            </div>
-
-                            <div>
-                                <p class="pull-right"><a class="for" href="">Forget your password?</a></p>
-                            </div>
-
-                            <!--<div class="form-group">
-                            <label for="option"> Sign in as-</label>
-                          <select class="form-control" placeholder="Post">
-
-                          <option>Student</option>
-                          <option>Teacher</option>
-
-                        </select>
-                        </div>-->
-           
-                        
-
-                            <!--<div class="checkbox">
-                          <label><input type="checkbox"> Remember me</label>
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>-->
+                            </div>*@
+                            
                         </form>
 
                     </div>
                     <div class="modal-footer">
 
-                        <button type="submit" class="btn  btn-block ">LogIn</button>
+                        <input type="Submit" value="Login" class="btn btn-primary btn-block" />
 
 
                     </div>
