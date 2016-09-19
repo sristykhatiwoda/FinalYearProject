@@ -19,8 +19,8 @@ namespace OnlineCourse.DapperObject
         public int Add(NEW_News news)
         {
             //throw new NotImplementedException();
-            var sqlQuery = "Insert into NEW_News (NewsTitle, NewsDescription, UserID)"+
-                " values (@NewsTitle,@NewsDescription,@UserID)";
+            var sqlQuery = "Insert into NEW_News (NewsTitle,NewsDate,NewsDescription, UserID)"+
+                " values (@NewsTitle,@NewsDate,@NewsDescription,@UserID)";
             return db.Execute(sqlQuery, news); 
         }
 
@@ -48,7 +48,7 @@ namespace OnlineCourse.DapperObject
         {
             //throw new NotImplementedException();
             var sqlQuery = "Update NEW_News set NewsTitle = @NewsTitle,"+
-                "NewsDescription=@NewsDescription, UserID=@UserID where NewsID=@NewsID";
+                "NewsDate=@NewsDate,NewsDescription=@NewsDescription, UserID=@UserID where NewsID=@NewsID";
             return db.Execute(sqlQuery, news);
         }
     }
