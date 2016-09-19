@@ -71,5 +71,12 @@ namespace OnlineCourse.DapperObject
                 " join SC_User on ASS_AssignmentPost.UserID = SC_User.UserID where AssignmentID="+id;
             return db.Query<dynamic>(sqlQuery).SingleOrDefault();
         }
+
+        public List<ASS_AssignmentPost> CourseAssignment(int? id)
+        {
+            var sqlQuery = "Select * from ASS_AssignmentPost join MS_Course on MS_Course.CourseID = ASS_AssignmentPost.CourseID where MS_Course.CourseID=" + id;
+            return db.Query<ASS_AssignmentPost>(sqlQuery).ToList();
+            //throw new NotImplementedException();
+        }
     }
 }

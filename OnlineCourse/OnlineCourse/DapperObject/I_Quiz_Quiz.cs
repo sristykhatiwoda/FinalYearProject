@@ -22,6 +22,6 @@ namespace OnlineCourse.DapperObject
 
         List<QUIZ_Quiz> Questions();
 
-        dynamic CourseQuizQuestion(int? id);
+        List<QUIZ_Quiz> CourseQuizQuestion(int? id);
     }
 }

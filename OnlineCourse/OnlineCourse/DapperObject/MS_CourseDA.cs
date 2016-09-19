@@ -48,10 +48,10 @@ namespace OnlineCourse.DapperObject
 
         
 
-        public dynamic CourseAssignment(int? id)
+        public List<MS_Course> CourseAssignment(int? id)
         {
             var sqlQuery = "Select * from MS_Course join ASS_AssignmentPost on MS_Course.CourseID = ASS_AssignmentPost.CourseID where MS_Course.CourseID=" + id;
-            return db.Query<dynamic>(sqlQuery).SingleOrDefault(); 
+            return db.Query<MS_Course>(sqlQuery).ToList(); 
             //throw new NotImplementedException();
         }
     }

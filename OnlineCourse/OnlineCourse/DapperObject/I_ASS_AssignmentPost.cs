@@ -19,5 +19,7 @@ namespace OnlineCourse.DapperObject
 
         int Delete(int? id);
         dynamic AssignmentDetail(int id) ;
+
+        List<ASS_AssignmentPost> CourseAssignment(int? id);
     }
 }
