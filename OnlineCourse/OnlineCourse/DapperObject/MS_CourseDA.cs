@@ -17,7 +17,7 @@ namespace OnlineCourse.DapperObject
         public static IDbConnection db = new SqlConnection(connStr);
         public int Add(MS_Course course)
         {
-            var sqlQuery = "Insert into MS_Course(CourseTitle)Values(@CourseTitle)";
+            var sqlQuery = "Insert into MS_Course(CourseTitle,CourseImage)Values(@CourseTitle,@CourseImage)";
             return db.Execute(sqlQuery, course);
         }
 
@@ -42,7 +42,7 @@ namespace OnlineCourse.DapperObject
 
         public int Update(MS_Course course)
         {
-            var sqlQuery = "Update MS_Course set CourseTitle=@CourseTitle Where CourseID=@CourseID";
+            var sqlQuery = "Update MS_Course set CourseTitle=@CourseTitle,CourseImage=@CourseImage Where CourseID=@CourseID";
             return db.Execute(sqlQuery, course);
         }
 
