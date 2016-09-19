@@ -18,5 +18,6 @@ namespace OnlineCourse.DapperObject
         int Update(MS_Course course);
 
         int Delete(int? id);
+        object CourseAssignment(int? id);
     }
 }
