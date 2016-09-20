@@ -65,11 +65,16 @@ namespace OnlineCourse.Controllers
                 {
                     ModelState.AddModelError("", "Login data is incorrect!");
                  
-                    return RedirectToAction("StudentLogin", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
 
             }
             return View();
+        }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
 
     }
