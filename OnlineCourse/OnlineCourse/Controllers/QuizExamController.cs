@@ -71,8 +71,8 @@ namespace OnlineCourse.Controllers
                 if(!string.IsNullOrEmpty(frm[ans]))
                 {
                     historyDetail.SubmittedAnswer = frm[ans];
-                    
-                    QUIZ_Quiz question = quiz.QuizQuestion.Where(a => a.QuizID == questionID && a.Answer == historyDetail.SubmittedAnswer).FirstOrDefault();
+                    QUIZ_Quiz question = db.Questions(questionID, historyDetail.SubmittedAnswer);
+                    //QUIZ_Quiz question = quiz.QuizQuestion.Where(a => a.QuizID == questionID && a.Answer == historyDetail.SubmittedAnswer).FirstOrDefault();
                     if (question != null)
                         score++;
                     historyDetail.Attempted = true;
@@ -107,6 +107,16 @@ namespace OnlineCourse.Controllers
             }
             //return the randomized list
             return randomList;
+        }
+
+        public ActionResult MyResult()
+        {
+            if(historyId!=null)
+            {
+                ViewData["History"] = dbHistory.examHistories(historyId);
+                ViewData["HistoryDetail"] = dbHistoryDetail.examHistoryDetail(historyId);
+            }
+            return View("MyExam");
         }
     }
 }
