@@ -23,5 +23,7 @@ namespace OnlineCourse.DapperObject
         List<QUIZ_Quiz> Questions();
 
         List<QUIZ_Quiz> CourseQuizQuestion(int? id);
+
+        QUIZ_Quiz Questions(int? id, string answer);
     }
 }

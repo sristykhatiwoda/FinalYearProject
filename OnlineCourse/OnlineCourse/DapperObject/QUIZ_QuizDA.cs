@@ -66,5 +66,12 @@ namespace OnlineCourse.DapperObject
             return db.Query<QUIZ_Quiz>(query).ToList();
             //throw new NotImplementedException();
         }
+
+        public QUIZ_Quiz Questions(int? id, string answer)
+        {
+            var query = "Select * from QUIZ_Quiz where QuizID='" + id + "' and  Answer='" + answer + "'";
+            return db.Query<QUIZ_Quiz>(query).SingleOrDefault();
+            //throw new NotImplementedException();
+        
     }
 }

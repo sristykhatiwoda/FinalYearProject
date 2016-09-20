@@ -31,6 +31,12 @@ namespace OnlineCourse.DapperObject
             //throw new NotImplementedException();
         }
 
+        public List<EXM_ExamHistoryDetail> examHistoryDetail(int? id)
+        {
+            return db.Query<EXM_ExamHistoryDetail>("Select * from EXM_ExamHistoryDetail where ExamHistoryID=" + id).ToList();
+            //throw new NotImplementedException();
+        }
+
         public List<EXM_ExamHistoryDetail> ExamHistoryDetails()
         {
             return db.Query<EXM_ExamHistoryDetail>("Select * from EXM_ExamHistoryDetail").ToList();

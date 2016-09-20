@@ -18,5 +18,7 @@ namespace OnlineCourse.DapperObject
         int Update(EXM_ExamHistory examHistory);
 
         int Delete(int? id);
+
+        List<EXM_ExamHistory> examHistories(int? id);
     }
 }
