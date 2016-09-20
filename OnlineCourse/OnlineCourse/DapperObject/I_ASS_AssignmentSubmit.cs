@@ -22,5 +22,7 @@ namespace OnlineCourse.DapperObject
         int Update(ASS_AssignmentSubmit assignmentSubmit);
 
         int Delete(int? id);
+
+        int InsertAssignment (ASS_AssignmentSubmit assignmentSubmit);
     }
 }

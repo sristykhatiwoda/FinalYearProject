@@ -41,6 +41,15 @@ namespace OnlineCourse.DapperObject
             return db.Query<ASS_AssignmentSubmit>(query).SingleOrDefault();
         }
 
+        
+
+        public int InsertAssignment(ASS_AssignmentSubmit assignmentSubmit)
+        {
+            var sqlQuery = "Insert into ASS_AssignmentSubmit(StudentID,AssignmentID,Answer) values(@StudentID,AssignmentID,@Answer)";
+            return db.Execute(sqlQuery, assignmentSubmit);
+           // throw new NotImplementedException();
+        }
+
         public int Update(ASS_AssignmentSubmit assignmentSubmit)
         {
             var sqlQuery = "Update ASS_AssignmentSubmit set " +
