@@ -25,12 +25,12 @@ namespace OnlineCourse.Controllers
         // GET: ASS_AssignmentSubmit/Details/5
         public ActionResult Details(int? id)
         {
-            if(id==null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ASS_AssignmentSubmit assignmentSubmit = db.Find(id);
-            if(assignmentSubmit==null)
+            if (assignmentSubmit == null)
             {
                 return HttpNotFound();
             }
@@ -41,15 +41,15 @@ namespace OnlineCourse.Controllers
         public ActionResult Create()
         {
             ViewBag.AssignmentID = new SelectList(dbAssignmentPost.AssignmentPost(), "AssignmentID", "Questions");
-            ViewBag.StudentID= new SelectList(dbStudent.Students(), "StudentID", "FirstName");
+            ViewBag.StudentID = new SelectList(dbStudent.Students(), "StudentID", "FirstName");
             return View();
         }
 
         // POST: ASS_AssignmentSubmit/Create
         [HttpPost]
-        public ActionResult Create(ASS_AssignmentSubmit assignmentSubmit,HttpPostedFileBase file1)
+        public ActionResult Create(ASS_AssignmentSubmit assignmentSubmit, HttpPostedFileBase file1)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 if (file1 != null)
                 {
@@ -77,18 +77,18 @@ namespace OnlineCourse.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AssignmentID = new SelectList(dbAssignmentPost.AssignmentPost(), "AssignmentID", "Questions",assignmentSubmit.AssignmentID);
-            ViewBag.StudentID = new SelectList(dbStudent.Students(), "StudentID", "FirstName",assignmentSubmit.StudentID);
+            ViewBag.AssignmentID = new SelectList(dbAssignmentPost.AssignmentPost(), "AssignmentID", "Questions", assignmentSubmit.AssignmentID);
+            ViewBag.StudentID = new SelectList(dbStudent.Students(), "StudentID", "FirstName", assignmentSubmit.StudentID);
             return View(assignmentSubmit);
         }
-    
+
 
         // POST: ASS_AssignmentSubmit/Edit/5
         [HttpPost]
         public ActionResult Edit([Bind(Include = "SubmitAssignmentID,SubmissionDate,Answer,Point," +
-            "Remarks,AssignmentID,StudentID")]ASS_AssignmentSubmit assignmentSubmit,HttpPostedFileBase file1)
+            "Remarks,AssignmentID,StudentID")]ASS_AssignmentSubmit assignmentSubmit, HttpPostedFileBase file1)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 if (file1 != null)
                 {
@@ -107,7 +107,7 @@ namespace OnlineCourse.Controllers
         // GET: ASS_AssignmentSubmit/Delete/5
         public ActionResult Delete(int? id)
         {
-            if(id==null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -125,6 +125,25 @@ namespace OnlineCourse.Controllers
         {
             db.Delete(id);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult InsertAssignment(ASS_AssignmentSubmit assignmentSubmit, HttpPostedFileBase file1)
+        {
+            if (ModelState.IsValid)
+            {
+                if (file1 != null)
+                {
+                    string fileName = file1.FileName;
+                    string filePath = Path.Combine(Server.MapPath("~/Assignments/AssignmentSubmit"), Path.GetFileName(fileName));
+                    file1.SaveAs(filePath);
+                    assignmentSubmit.Answer = fileName;
+                }
+                db.Add(assignmentSubmit);
+                return RedirectToAction("LoadCourseAssignment", "MS_Course");
+            }
+            return View(assignmentSubmit);
+
+
         }
     }
 }
