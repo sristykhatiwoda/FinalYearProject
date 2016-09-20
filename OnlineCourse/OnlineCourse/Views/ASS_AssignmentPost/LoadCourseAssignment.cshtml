@@ -1,0 +1,122 @@
+﻿@using System.Dynamic;
+@*@model dynamic*@
+@model IEnumerable<OnlineCourse.Models.ASS_AssignmentPost>
+@{
+    ViewBag.Title = "LoadAssignment";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<!-- Modalforsignin -->
+<div class="modal fade" id="myModalup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    @using (Html.BeginForm("Insert", "ASS_AssignmentSubmit", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:palegoldenrod;color:#fff;text-align:left;font-size:22px;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Upload Assignments</h4>
+
+                </div>
+                <div class="modal-body" style="">
+                    <form>
+
+                        <div class="form-group">
+                            <label for="option">Course Title</label>
+                            <select class="form-control" placeholder="Post">
+
+                                @*<option>Advance Database Management System</option>
+                                    <option>Internet Technology</option>
+                                    <option>Database Administrator</option>
+                                    <option>Advanced Java Programming</option>*@
+
+                                @foreach (var item in @Model)
+                                {
+                                    <option>@Html.DisplayFor(modelItem => item.Title)</option>
+                                }
+
+                            </select>
+                        </div>
+                        <div class="">
+
+                            <label class="btn btn-link left-file">
+                                Choose File
+                                <!-- <input type="text" class="form-control" id="name" placeholder="Enter your email"> -->
+                                <input type="file" name="logo" id="logo" style="display:none;">
+                            </label>
+                            <span id="chose-file-logo">
+                                No file Choose
+                            </span>
+                        </div>
+
+
+
+
+                    </form>
+                </div>
+
+
+                <div class="modal-footer" style="">
+
+                    <button type="submit" class="btn  btn-success modalsub">Submit</button>
+
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    }
+</div>
+<!-- mobalendforsignin -->
+<section class="news" id="news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-12">
+
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <h2 class="news1">Course1</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+
+                                <th>Title</th>
+                                <th>Assignments</th>
+                                <th>Deadline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in @Model)
+                            {
+                                <tr>
+                                    <th>@Html.DisplayFor(modelItem => item.Title)</th>
+                                    <th><a href="~/Assignments/AssignmentPost/@Html.DisplayFor(modelItem => item.Questions)">@Html.DisplayFor(modelItem => item.Questions)</a></th>
+                                    <th>@Html.DisplayFor(modelItem => item.Deadline)</th>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+                <div class="">
+                    <button type="button" class=" btn btn-default left-file " data-toggle="modal" data-target="#myModalup">Upload Assignments</button>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
