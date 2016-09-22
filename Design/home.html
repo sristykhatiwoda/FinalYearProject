@@ -1,0 +1,600 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Online Course</title>
+    <!-- bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+   
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+    <script src="js/pace.js"></script>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Material Design Bootstrap -->
+   <!--  <link href="css/mdb.min.css" rel="stylesheet"> -->
+        <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <!--<script >
+          function validaion() {
+            if(document.register-form.Fname.value == " "){
+              document.getElementById('error').innerHTML = "please enter a username";// body...
+          }
+      </script>-->
+    </head>
+    <body>
+      <div class="preloader"></div>
+
+      <!-- *************HeaderPart******************* -->
+  <!-- Modalforsignin -->
+<div class="modal fade" id="myModalog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="padding:30px 50px;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">LoginForm</h4>
+        <p class="para">Not Yet joined?<a class="reg" href="#myModalreg" data-toggle="modal" data-dismiss="modal"> Registry</a></p>
+      </div>
+      <div class="modal-body" style="padding:30px 50px;">
+        <form  data-toggle="validator" role="form">
+  <div class="form-group">
+
+    <label for="inputEmail" class="control-label"><span  class="fa fa-user" aria-hidden="true"></span></label>
+    <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" data-error="Please enter a valid email address" required>
+    <div class="help-block with-errors"></div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="control-label"><span  class="fa fa-eye-slash" aria-hidden="true"></span></label>
+    <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Enter your password" required>
+    <div class="help-block"></div>
+  </div>
+
+<!-- <select class="selectpicker" >
+  <option data-tokens="std">student</option>
+  <option data-tokens="tea">Teacher</option> -->
+  
+</select>
+<div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
+            </div>
+              
+              <div>
+               <p class="pull-right"><a  class="for" href="">Forget your password?</a></p>
+               </div>
+
+<div class="modal-footer">
+        
+        <button type="submit" class="btn  btn-block ">LogIn</button>
+       
+       
+      </div>
+  
+</form>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!-- mobalendforsignin -->
+
+<!-- mobalstartforregistry -->
+<div class="modal fade" id="myModalreg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="padding:30px 50px;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">RegistryForm</h4>
+        <p class="para">Already Joined?<a class="reg" href="#myModalog" data-toggle="modal" data-dismiss="modal">LogIn</a></p>
+      </div>
+      <div class="modal-body" style="padding:30px 50px;">
+        <form data-toggle="validator" role="form">
+  <div class="form-group">
+
+    <label for="inputName" class="control-label">FirstName:</label>
+    <input type="text" class="form-control" id="inputName" placeholder="Enter your firstname" data-error="please enter your firstname" required>
+    <div class="help-block with-errors"></div>
+  </div>
+    <div class="form-group">
+
+    <label for="inputName" class="control-label">MiddleName:</label>
+    <input type="text" class="form-control" id="inputName" placeholder="Enter your middlename" >
+  </div>
+    <div class="form-group">
+
+    <label for="inputName" class="control-label">LastName:</label>
+    <input type="text" class="form-control" id="inputName" placeholder="Enter your lastname" data-error="please enter your lastname" required>
+    <div class="help-block with-errors"></div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail" class="control-label">Email:</label>
+    <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" data-error="Please enter a valid email address" required>
+     <div class="help-block with-errors"></div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="control-label">Password:</label>
+    <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+    <div class="help-block">Minimum of 6 characters</div>
+  </div>
+ 
+  <div class="form-group">
+    <label for="Faculty">Faculty:</label>
+        <select class="form-control" id="sel1">
+        <option>Bsccsit</option>
+        <option>BBA</option>
+        <option>Computer Science</option>
+        </select>
+  </div>
+      <div class="form-group">
+      <label for="Batch">Batch:</label>
+      <select class="form-control" id="sel1">
+        <option>1st</option>
+        <option>2nd</option>
+        <option>3rd</option>
+        <option>4th</option>
+        <option>5th</option>
+        <option>6th</option>
+        
+      </select>
+    </div>
+     <div class="form-group">
+      <label for="Semester">Semester:</label>
+      <select class="form-control" id="sel1">
+        <option>1st</option>
+        <option>2nd</option>
+        <option>3rd</option>
+        <option>4th</option>
+        <option>5th</option>
+        <option>6th</option>
+        <option>7th</option>
+        <option>8th</option>
+        
+      </select>
+    </div>
+  <!--<div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>-->
+  <div class="modal-footer">
+        
+        <button type="submit" class="btn  btn-primary btn-block">Register</button>
+      </div>
+</form>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- mobalendforregistry -->
+
+    <header>
+      
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+        <div class="logo pull-left animated wow fadeInLeft img-responsive">
+            <img src="img/learn2.png" style="width:150px; height:80px;" alt="">
+        </div>
+      </div>
+            <!--<div>
+              <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Courses</a></li>
+               <li><a href="#">Programs</a></li>
+               <li><a href="#">About</a></li>
+             </ul>
+             </div>-->
+             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <nav class="pull-left">
+              <ul class="list-unstyled">
+              <li class="animated wow fadeInLeft " data-wow-delay="0s"><a href="#course">Courses</a></li>
+              <li class="animated wow fadeInLeft " data-wow-delay=".1s"><a href="#program">Programs</a></li>
+              <li class="animated wow fadeInLeft " data-wow-delay=".1s"><a href="#about">About</a></li>
+              <li class="animated wow fadeInLeft " data-wow-delay=".1s"><a href="#contact">Contact Us</a></li>
+              </ul>
+            </nav>
+
+             <div class="pull-right">
+            <button type="button" class=" btn btn-default signbtn  signin grow-shadow " data-toggle="modal" data-target="#myModalog">LogIn</button>
+  
+            <button type="button" class=" btn btn-default regbtn  signin grow-shadow " data-toggle="modal" data-target="#myModalreg">Register</button> 
+                   
+        </div>
+        
+           
+      </div>
+      
+    </div>
+  </div>
+    </header>
+
+        <!-- *************HeaderPartEnd******************* -->
+
+        
+  
+    <!-- ********************mastheadsection************************* --> 
+  <main id="top" class="masthead" role="main">
+    <div class="container">
+      <!--div class="logo"> <a href="index.html#"><img src="img/.png" alt="logo"></a> -->
+      </div>
+ 
+      <h1 style="margin:85px 0px;font-size:60px;line-height:70px;">What would <strong>you</strong> <br>
+      like to <strong>learn</strong>.</h1>
+ 
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-md-offset-3 subscribe">
+          <form class="form-horizontal" role="form" action="" id="" method="">
+            <div class="form-group">
+              <div class="col-md-7 col-sm-6 col-sm-offset-1 col-md-offset-0">
+                <input class="form-control input-lg" name="email" type="email" id="address" placeholder="Enter your email" data-validate="validate(required, email)" required="required">
+              </div>
+              <div class="col-md-5 col-sm-4">
+                <button type="submit" class="btn btn-success btn-lg">GET EARLY ACCESS</button>
+              </div>
+            </div>
+          </form>
+          <span id="result" class="alertMsg"></span> </div>
+        </div>
+ 
+        <a href="index.html#explore" class="scrollto">
+        <p>SCROLL DOWN TO EXPLORE</p>
+        <p class="scrollto--arrow"><img src="images/scroll_down.png" alt="scroll down arrow"></p>
+        </a>
+    </div><!--container -->
+  </main><!--/main -->
+ <!-- ********************mastheadsection************************* --> 
+  <!-- ********************Coursesection************************* --> 
+  <section class="course" id="course">
+      <div class="container parallax" style="margin-top:0px;">
+
+        <div class="row">
+           <h2 class="cou" style="text-align:center;text-decoration:underline;margin-bottom:65px;color:#34495e;">Courses</h2>
+          <div class="col-md-3 col-sm-2">
+            <a class="prog" href="file:///C:/Users/HOME/Desktop/onlineCourse/C++.html"><img src="img/database.jpg" style="width:250px;height:150px" class="img-responsive" alt=""></a>
+            <h3 style="text-align:center;text-decoration:underline;color:#34495e;font-family: -webkit-body;">Advance Database Management System</h3>
+            <blockquote>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </blockquote>
+          </div>
+          <div class="col-md-3 col-sm-2">
+            <a class="prog" href="#"><img src="img/it.jpg" style="width:250px;height:150px" class="img-responsive" alt=""></a>
+            <h3 style="text-align:center;color:#34495e;text-decoration:underline;">Internet technology</h3>
+            <blockquote>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </blockquote>
+          </div>
+          <div class="col-md-3 col-sm-2">
+            <a class="prog" href="#"><img src="img/databaseadministrator.jpg" style="width:250px;height:150px" class="img-responsive" alt=""></a>
+            <h3 style="text-align:center;color:#34495e;text-decoration:underline;">Database Administrator</h3>
+            <blockquote>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </blockquote>
+          </div>
+          <div class="col-md-3 col-sm-2">
+            <a class="prog" href="#"><img src="img/java.jpg" style="width:250px;height:150px" class="img-responsive" alt=""></a>
+            <h3 style="text-align:center;color:#34495e;text-decoration:underline;">Advanced Java Programming</h3>
+            <blockquote>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </blockquote>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+     <!-- ********************coursesectionend************************* --> 
+ 
+      <!-- ******************aboutstart********************************* -->
+     <section class="about" id="about">
+      <div class="row">
+      <div class="col-md-12 col-sm-12 col-lg-12">
+      <div class="a-content" style="text-align:center;font-size:40px;text-decoration:underline;color:#34495e;">
+        <h2>About</h2>
+            
+          </div>
+          </div>
+       <div class="col-md-6 col-sm-12" class="img-responsive">
+         <img src="img/about1.jpg" style="width:100%;height:350px;" alt="book">
+       </div>
+       <div class="col-md-6 col-sm-12">
+         <article class="a-section">
+          <div class="text-content" style="color: #fff;">
+            <h3 id="content"><strong>Our Courses</strong></h3>
+            <p class="txt1" style="font-family: open sans-serif;font-size: 18px;font-weight: bold;text-align:justify;">We offer a diverse selection of courses from leading universities and cultural institutions from around the world. These are delivered one step at a time, and are accessible on mobile, tablet and desktop, so you can fit learning around your life.</p>
+            <p class="txt1" style="font-family: open sans-serif;font-size: 18px;font-weight: bold;text-align:justify;">
+              We believe learning should be an enjoyable, social experience, so our courses offer the opportunity to discuss what you’re learning with others as you go, helping you make fresh discoveries and form new ideas.
+            </p>
+            
+          </div>
+           
+         </article>
+       
+       
+       </div>
+       </div>
+       <div class="row" id="program">
+        <div class="col-md-12 col-sm-12 col-lg-12">
+      <div class="a-content" style="text-align:center;font-size:40px;text-decoration:underline;color:#34495e;">
+        <h2>Programs</h2>
+            
+          </div>
+          </div>
+                <div class="col-md-6 col-sm-12">
+         <article class="a-section">
+          <div class="text-content" style="color: #fff;">
+            <h3 id="content"><strong>Our Courses</strong></h3>
+            <p class="txt1" style="font-family: open sans-serif;font-size: 18px;font-weight: bold;text-align:justify;">We offer a diverse selection of courses from leading universities and cultural institutions from around the world. These are delivered one step at a time, and are accessible on mobile, tablet and desktop, so you can fit learning around your life.</p>
+            <p class="txt1" style="font-family: open sans-serif;font-size: 18px;font-weight: bold;text-align:justify;">
+              We believe learning should be an enjoyable, social experience, so our courses offer the opportunity to discuss what you’re learning with others as you go, helping you make fresh discoveries and form new ideas.
+            </p>
+            
+          </div>
+           
+         </article>
+         <div style="text-align:center;font-size:18px;    font-weight: bold;" class="col-md-12 col-sm-12">View Detail About<i class="fa fa-chevron-down"></i></div>
+         <div style="text-align:center;" class="col-md-12 col-sm-12"><a class="btn btn-success succ" href="">How Our Programs Work</a></div></div>
+       <div class="col-md-6 col-sm-12" class="img-responsive">
+         <img src="img/csit4.png" style="width:100%;height:350px;" alt="book">
+       </div>
+       </div>
+
+      
+     </section>
+  
+  <section>
+     <div class="row fbox">
+        <div class="col-md-12 col-sm-12">
+      <h2 style="color:#34495e;font-size:25px;text-align:center;text-decoration:underline;font-family: cursive;">Learn more about how our courses work </h2>
+      </div>        
+      <div class="col-lg-3 text-center fbox">
+        <span class="font"><i class="fa fa-book fa-5x" aria-hidden="true"></i></span>
+        <h3 style="color:#34495e;">4 Courses</h3>
+        <p style="text-align:justify;color:#34495e;font-weight:bold;">varius blandit sit amet non magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. </p>
+        <a href="#myModalreg" data-toggle="modal" data-dismiss="modal" class="btn btn-default fbox1">Know more about us</a>
+      </div>
+
+      <div class="col-lg-3 text-center fbox">
+        <span class="font"><i class="fa fa-newspaper-o fa-5x" aria-hidden="true"></i></span>
+        <h3 style="color:#34495e;">News</h3>
+        <p style="text-align:justify;color:#34495e;font-weight:bold;">varius blandit sit amet non magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. </p>
+        <a href="#myModalreg" data-toggle="modal" data-dismiss="modal" class="btn btn-default fbox1">know more about us</a>
+      </div>
+
+      <div class="col-lg-3 text-center fbox">
+        <span class="font"><i class="fa fa-check-circle fa-5x" aria-hidden="true"></i></span>
+        <h3 style="color:#34495e;">Quiz</h3>
+        <p style="text-align:justify;color:#34495e;font-weight:bold;">varius blandit sit amet non magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. </p>
+        <a href="#myModalreg" data-toggle="modal" data-dismiss="modal"class="btn btn-default fbox1">Know more about us</a>
+      </div>
+      <div class="col-lg-3 text-center fbox">
+        <span class="font"><i class="fa fa-file-text-o fa-5x" aria-hidden="true"></i></span>
+        <h3 style="color:#34495e;">Assignments</h3>
+        <p style="text-align:justify;color:#34495e;font-weight:bold;">varius blandit sit amet non magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. </p>
+        <a href="#myModalreg" data-toggle="modal" data-dismiss="modal" class="btn btn-default fbox1">Know more about us</a>
+      </div>
+          
+      </div>
+  </section>
+   <!-- ********************aboutsectionend************************* --> 
+   
+         </div>
+    
+  <!-- </section>
+  <section class="page-section breadcrumbs " id="contact">
+            <div class="container">
+                <div class="page-header">
+                    <h1 style="text-align:center;color:#34495e;font-weight:600;text-decoration:underline;">Contact</h1>
+                </div>
+                
+            </div>
+        </section> -->
+
+ <!-- PAGE -->
+ <!--        <section class="page-section color">
+     <div class="container">
+ 
+         <div class="row">
+ 
+             <div class="col-md-4">
+                 <div class="contact-info">
+ 
+                     <h2 class="block-title"><span>Contact Us</span></h2>
+ 
+                     <div class="media-list">
+                         <div class="media">
+                             <i class="pull-left fa fa-home"></i>
+                             <div class="media-body">
+                                 <strong>Address:</strong><br>
+                                 kathford International College,<br>
+                                 Kathmandu Nepal
+                             </div>
+                         </div>
+                         <div class="media">
+                             <i class="pull-left fa fa-phone"></i>
+                             <div class="media-body">
+                                 <strong>Telephone:</strong><br>
+                                 (012) 345-7689
+                             </div>
+                         </div>
+                         <div class="media">
+                             <i class="pull-left fa fa-envelope-o"></i>
+                             <div class="media-body">
+                                 <strong>Fax:</strong><br>
+                                 0123456789
+                             </div>
+                         </div>
+                         <div class="media">
+                             <div class="media-body">
+                                 Phasellus pellentesque purus in massa aenean in pede phasellus libero ac tellus pellentesque semper.
+                             </div>
+                         </div>
+                         <div class="media">
+                             <div class="media-body">
+                                 <strong>Customer Service:</strong><br>
+                                 <a href="mailto:hello@bella.com">hello@bella.com</a>
+                             </div>
+                         </div>
+                         <div class="media">
+                             <div class="media-body">
+                                 <strong>Returns and Refunds:</strong><br>
+                                 <a href="mailto:hello@bella.com">hello@bella.com</a>
+                             </div>
+                         </div>
+                     </div>
+ 
+                 </div>
+             </div>
+ 
+             <div class="col-md-8 text-left">
+ 
+                 <h2 class="block-title"><span>Contact Form</span></h2>
+ 
+                 Contact form
+                 <form name="contact-form" method="post" action="#" class="contact-form" id="contact-form">
+ 
+                     <div class="outer required">
+                         <div class="form-group af-inner">
+                             <label class="sr-only" for="name">Name</label>
+                             <input
+                                     type="text" name="name" id="name" placeholder="Name" value="" size="30"
+                                     data-toggle="tooltip" title="Name is required"
+                                     class="form-control placeholder" required />
+                         </div>
+                     </div>
+ 
+                     <div class="outer required">
+                         <div class="form-group af-inner">
+                             <label class="sr-only" for="email">Email</label>
+                             <input
+                                     type="text" name="email" id="email" placeholder="Email" value="" size="30"
+                                     data-toggle="tooltip" title="Email is required"
+                                     class="form-control placeholder" required />
+                         </div>
+                     </div>
+ 
+                     <div class="outer required">
+                         <div class="form-group af-inner">
+                             <label class="sr-only" for="subject">Subject</label>
+                             <input
+                                     type="text" name="subject" id="subject" placeholder="Subject" value="" size="30"
+                                     data-toggle="tooltip" title="Subject is required"
+                                     class="form-control placeholder" required />
+                         </div>
+                     </div>
+ 
+                     <div class="form-group af-inner">
+                         <label class="sr-only" for="input-message">Message</label>
+                         <textarea
+                                 name="message" id="input-message" placeholder="Message" rows="3" cols="50"
+                                 data-toggle="tooltip" title="Message is required"
+                                 class="form-control placeholder" required ></textarea>
+                     </div>
+ 
+                     <div class="outer required">
+                         <div class="form-group">
+                             <input type="submit" name="submit" class="form-button form-button-submit btn btn-theme btn-theme-dark" id="submit_btn" value="Send message" />
+                         </div>
+                     </div>
+ 
+                 </form>
+                 /Contact form
+ 
+             </div>
+ 
+         </div>
+ 
+     </div>
+ </section>
+ /PAGE
+ <div class="col-md-12 col-sm-12">
+ <div id="map" style="width:100%;height:500px"></div></div> -->
+
+<footer>
+  <div class="row foot">
+    <div class="col-md-12 col-sm-12">
+  <h3 style="text-align:center;color:#fff;">Connect With Online Courses</h3>
+  <div class="col-md-12 text-center">
+    <a class="font" href="#">
+  <i class="fa fa-facebook face" aria-hidden="true"></i><i class="fa fa-twitter face" aria-hidden="true"></i><i class="fa fa-google-plus face" aria-hidden="true"></i></a>
+  <p style="text-align:center;color:#fff;font-weight:bold;" class="footer">Learning Management System’s mission is to pioneer the best social learning experiences for everyone, anywhere.</p>
+  </div>
+  </div>
+</div>
+</footer> 
+<!-- <footer id="footer">
+<div class="row foot">
+<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 connect">
+<h3 style="text-align:center;color:#fff;">Connect With Online Courses</h3>
+<div class="col-md-5"></div>
+<div class="col-md-3">
+<a style="text-align:center;" href=""><img src="img/learn2.png" class="learn2"></a></div>
+<div class="col-md-4"></div>
+</div>
+<div class="col-md-12 text-center connect">
+<a class="font" href="#">
+<i class="fa fa-facebook face" aria-hidden="true"></i><i class="fa fa-twitter face" aria-hidden="true"></i><i class="fa fa-google-plus face" aria-hidden="true"></i><i class="fa fa-linkedin face" aria-hidden="true"></i><i class="fa fa-instagram face" aria-hidden="true"></i><i class="fa fa-youtube face" aria-hidden="true"></i></a>
+
+<p style="text-align:center;color:#fff;font-weight:bold;" class="footer">Online Course Management System’s mission is to pioneer the best social learning experiences for everyone, anywhere.</p>
+</div>
+
+</div>
+
+</footer> -->
+<script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("password").value;
+        var cpassword = document.getElementById("cpassword").value;
+        if (password != cpassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+    </script>
+<script>
+function myMap() {
+  var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 5};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+      
+      
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/validator.js"></script>
+
+<script src="js/easing.js"></script>
+<script type="text/javascript" src="js/scrollTo.js"></script>
+   <script>// You can avoid the document.ready if you put the script at the bottom of the page
+$(document).ready(function() {
+  // Bind to the click of all links with a #hash in the href
+  $('a[href^="#"]').click(function(e) {
+    // Prevent the jump and the #hash from appearing on the address bar
+    e.preventDefault();
+    // Scroll the window, stop any previous animation, stop on user manual scroll
+    // Check https://github.com/flesler/jquery.scrollTo for more customizability
+    $(window).stop(true).scrollTo(this.hash, {duration:1000, interrupt:true});
+  });
+});</script>
+<!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
+
+    <!--<script type="text/javascript" src="js/ajaxchimp.js"></script>
+    <script src="js/jquery.main.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scrollTo.js"></script>
+   <script src="js/bootstrap.min.js"></script>-->
+  </body>
+</html>
