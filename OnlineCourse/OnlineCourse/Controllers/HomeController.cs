@@ -39,7 +39,7 @@ namespace OnlineCourse.Controllers
 
             return View();
         }
-        public ActionResult Home(STU_Student student)
+        public ActionResult Register(STU_Student student)
         {
 
             if (ModelState.IsValid)
