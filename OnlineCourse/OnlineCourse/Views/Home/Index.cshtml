@@ -60,7 +60,7 @@
 
 
         <div class="modal fade" id="myModalreg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            @using (Html.BeginForm("Home", "Home", FormMethod.Post))
+            @using (Html.BeginForm("Register", "Home", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -74,6 +74,7 @@
                         <div class="modal-body" style="padding:30px 50px;">
                             <form>
                                 <label for="username">FirstName:</label>
+                               
                                 @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                                 <div class="form-group">
