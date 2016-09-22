@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -13,8 +14,9 @@ namespace OnlineCourse.Models
 
         public string Tutorials { get; set; }
 
+        [Required]
         public int CourseID { get; set; }
-
+        [Required]
         public int UserID { get; set; }
     }
 }

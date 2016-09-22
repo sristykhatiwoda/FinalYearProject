@@ -9,6 +9,7 @@ namespace OnlineCourse.Models
     {
         public int QuizSubmitID { get; set; }
 
+
         public int QuizID { get; set; }
 
         public int StudentID { get; set; }
