@@ -24,8 +24,10 @@ namespace OnlineCourse.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-        
+
+            ViewBag.UserTypeID = new SelectList(dbType.UserTypes(), "UserTypeID", "Type");
             return View();
+
         }
         [HttpPost]
         public ActionResult Login(SC_User user)
@@ -46,8 +48,8 @@ namespace OnlineCourse.Controllers
                 }
             }
             ModelState.AddModelError("", "Login data is incorrect");
-            //return RedirectToAction("Index", "Login");
-            return View(user);
+            return RedirectToAction("Index", "Login");
+           
        
         }
         public ActionResult Logout()
