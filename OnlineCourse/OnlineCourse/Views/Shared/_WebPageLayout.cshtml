@@ -10,17 +10,17 @@
     <title>Online Course</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap.theme.min.css" rel="stylesheet">
-    <link href="css/bootstrap.theme.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/owl.transitions.css" />
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
-    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap.theme.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap.theme.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/owl.transitions.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/animate.css" />
     <!--<link href="css/main.css" rel="stylesheet">-->
-    <link href="css/custom.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/lightbox.css">
-    <link rel="stylesheet" href="fonts/css/font-awesome.css">
-    <link rel="stylesheet" href="css/hover.css">
+    <link href="~/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/lightbox.css">
+    <link rel="stylesheet" href="~/fonts/css/font-awesome.css">
+    <link rel="stylesheet" href="~/css/hover.css">
     <!--<link rel="stylesheet" type="text/css" href="css/effects.min.css">
      <link rel="stylesheet" href="fonts/css/effectspre.css">-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -65,7 +65,16 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <nav class="pull-left">
                         <ul class="list-unstyled">
-                            <li class="animated wow fadeInLeft " data-wow-delay="0s"><a href="#">Courses</a></li>
+                            <li class="animated wow fadeInLeft " data-wow-delay="0s">
+                                <a href="#">Courses</a>
+                                <ul class="dropdown-menu semester">
+
+                                    <li>
+                                        @Html.Action("LoadCoursesInQuiz", "StudentDashboard")
+                                    </li>
+
+                                </ul>
+                            </li>
                             <li class="animated wow fadeInLeft " data-wow-delay=".1s"><a href="#introd">Programs</a></li>
                             <li class="animated wow fadeInLeft " data-wow-delay=".1s"><a href="#about">About</a></li>
                         </ul>
@@ -171,7 +180,6 @@
                 </div>
             </div>
             <div class="row">
-
 
                 <div class="col-md-6 col-sm-12 abttext row1">
 
