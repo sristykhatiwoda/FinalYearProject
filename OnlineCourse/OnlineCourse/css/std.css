@@ -44,7 +44,7 @@ ul.news2 .ass {
 }
 label.btn.btn-link.left-file {
     background-color: #fff;
-    color: #30cb70;
+    color:#30cb70 ;
     border: 1px solid #30cb70;
     /* box-shadow: 2px 2px 2px 2px green; */
     font-family: 'Open Sans', sans-serif;
@@ -99,7 +99,7 @@ button.btn.btn-default.left-file {
     border-color: #30cb70;
     font-size: 16px;
     font-weight: bold;
-    color: #30cb70;
+    color: #ffffff;
     box-sizing: border-box;
 }
 button.btn.btn-default.left-file:hover {
@@ -107,7 +107,7 @@ button.btn.btn-default.left-file:hover {
     color: #fff;
     border-radius: 5px;
     box-sizing: content-box;
-    box-shadow: 2px 2px 3px #30cb70;
+   
 }
 /* assignment1html */
 /*newstart*/
@@ -166,16 +166,19 @@ padding: 10px 0;
 .jumbotron.question {
     /* padding: 213px; */
     margin-top: 114px;
+    padding-bottom: 60px;
     /* padding-top: 293px; */
+    
 }
 nav#mySidenav {
     
     left: 0;
     width: 298px;
-    margin-top: 99px;
+    margin-top: 145px;
 }
 .container-fluide {
     width: 1050px;
+     overflow-x: hidden;
 }
 a.sidebar.w3-panel {
     background-color: #30cb70;
@@ -195,15 +198,19 @@ a.sidebar.w3-panel.active {
     padding-left: 450px;
 }
 /*startquizsidebarend*/
-/* courses */
+/* studenthtmlstart*/
 h2.cou {
     margin-top: 150px;
 }
 a.navbar-brand {
-    font-size: 23px;
+   
     margin-top: 15px;
     font-family: cursive;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
-/* courses */
+/* studenttmlend */
+
+
+

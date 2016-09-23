@@ -6,7 +6,9 @@ background-image: url(../img/abt.jpg);
 	background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;	
+    background-size: 100%;	
+    overflow-x:hidden;
+    position: relative; 
 
 	
 }
@@ -36,7 +38,7 @@ p.ctxt {
     /* line-height: 1.8; */
     margin-top: 35px;
 }
-button.btn.btn-default {
+button.btn.btn-link {
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 520px;
@@ -50,7 +52,7 @@ button.btn.btn-default {
     color: orange;
     background-color: #fff;
 }
-button.btn.btn-default:hover {
+button.btn.btn-link:hover {
     background-color: orange;
     color: #fff;
     border-color: #fff;
@@ -92,6 +94,19 @@ ul.a-unorder {
 }
 li.a-link {
     margin-left: 195px;
+}
+span.a-data {
+    /* margin-right: 2px; */
+    position: relative;
+    left: 85px;
+    font-size: 65px;
+    color: #5600a7;
+}
+i.size {
+    font-size: 60px;
+    line-height: 1.8;
+    position: relative;
+    left: 22px;
 }
 /* sectioncprogramend */
 
@@ -169,6 +184,11 @@ background-image: url(../img/book4.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
+    background-size: 100%;
+    overflow-x:hidden;
+    position: relative; 
+    width: 100%;
+    height: auto;
 
     }
     .iprogram h4 {
@@ -210,6 +230,16 @@ background-image: url(../img/image.jpg);
     background-size: cover; 
 
     }
+     #Dprogram.parallax{
+background-image: url(../img/image.jpg);
+    width: 100%;
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+    }
     h2.cou1 {
     /* top: 185px; */
     /* position: relative; */
@@ -222,3 +252,89 @@ background-image: url(../img/image.jpg);
     margin-bottom: 35px;
 }
 /* sectioniprogramend */
+
+
+/* @media only screen and (max-width: 800px) {
+
+    } */
+    @media (max-width: 570px) {
+   h4.free {
+    position: absolute;
+    left: 90px;
+    top: 325px;
+    font-size: smaller;
+}
+h2.intro {
+    position: relative;
+    top: -45px;
+    left: -520px;
+    font-size: small;
+}
+p.itxt {
+    position: relative;
+    left: -369px;
+    font-size: 8px;
+    top: -78px;
+    text-align: center;
+}
+h4.intro {
+    position: relative;
+    top: 95px;
+    color: #fff;
+    font-size: small;
+    left: 80px;
+}
+button.btn.btn-link.joinnow {
+    position: relative;
+    left: -447px;
+    font-size: smaller;
+    padding: 10px;
+    top: -60px;
+}
+
+}
+
+@media (max-width: 640px) {
+
+    h4.free {
+   position: absolute;
+    left: 110px;
+    top: 260px;
+    font-size: smaller;
+}
+h4.intro {
+    position: relative;
+    top: 95px;
+    color: #fff;
+    font-size: small;
+    left: 80px;
+}
+h2.intro {
+    position: relative;
+    top: -45px;
+    left: -520px;
+    font-size: small;
+}
+button.btn.btn-link.joinnow {
+    position: relative;
+    left: -447px;
+    font-size: smaller;
+    padding: 10px;
+    top: -60px;
+}
+p.itxt {
+    position: relative;
+    left: -369px;
+    font-size: 8px;
+    top: -78px;
+    text-align: center;
+}
+
+    }
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+   
+}
